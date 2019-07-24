@@ -16,7 +16,7 @@
     </div>
     <div class="denglu">登录</div>
     <div class="zhuce">
-        <p>还不是我们的会员？<a href="../person/person.vue" class="yemian2">去注册</a></p>
+        <p>还不是我们的会员？<a href="#" class="yemian2">去注册</a></p>
     </div>
 </div>
 </template>
@@ -25,13 +25,6 @@ export default {
 }
 </script>
 <style scoped>
-body{
-    width:100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: red;
-}
 .head{
     height: 40%;
 }
@@ -98,7 +91,7 @@ p{
     font-size: .8rem;
     line-height: 2.133333rem;
     margin-left: 15%;
-    margin-top: 20%;
+    margin-top: 14%;
 }
 .zhuce{
     width: 40%;

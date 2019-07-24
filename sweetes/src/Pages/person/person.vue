@@ -34,8 +34,8 @@
     </div>
     <div class="PersonOrder2">
         <div>全部</div>
-        <div>待评价</div>
         <div>待付款</div>
+        <div>待评价</div>
     </div>
     <div class="PersonActive"></div>
     <div class="PersonFoot">
