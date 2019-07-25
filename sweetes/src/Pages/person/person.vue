@@ -1,7 +1,7 @@
 <template>
 <div class="person">
-    <!-- <img src="./img/setting.png" alt="setting" class="setting">
-    <img src="./img/write.png" alt="write" class="write"> -->
+    <a href="#"><img src="./img/setting.png" alt="setting" class="setting"></a>
+    <a href="#"><img src="./img/write.png" alt="write" class="write"></a>
     <div class="head">
         <img src="./img/personHead.png" alt="" class="background">
         <img src="./img/head.png" alt="" class="picture">
@@ -55,6 +55,19 @@ export default {
 <style scoped>
 .person{
     width: 100%;
+}
+.setting,.write{
+    width: 1.066667rem;
+    height: 1.066667rem;
+    position: absolute;
+    top: .533333rem;
+    z-index: 5;
+}
+.setting{
+    right: .533333rem;
+}
+.write{
+    left: .533333rem;
 }
 .head{
     width: 100%;
