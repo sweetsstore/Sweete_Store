@@ -12,8 +12,16 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
 body{
   margin:0;
   padding:0;
+=======
+#app {
+          
+            margin:0;
+            padding:0;
+      
+>>>>>>> origin/leimin
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+
 <div>
   <header>
     <img src="./img/默认头像.png" id="pic">
@@ -141,4 +142,5 @@ section{
     height:2rem;
     width: 2rem;
 }
+
 </style>
