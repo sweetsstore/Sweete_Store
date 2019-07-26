@@ -116,7 +116,6 @@
 }
 
 .container {
-  background-image: url("./img/bjimg.png");
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
