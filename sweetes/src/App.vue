@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
+<div id="app">
     <router-view/>
-  </div>
+</div>
 </template>
 
 <script>
@@ -12,16 +11,7 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
 body{
-  margin:0;
-  padding:0;
-=======
-#app {
-          
-            margin:0;
-            padding:0;
-      
->>>>>>> origin/leimin
+    margin: 0;
 }
 </style>

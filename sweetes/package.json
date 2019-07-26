@@ -1,8 +1,8 @@
 {
-  "name": "sweetes",
+  "name": "y",
   "version": "1.0.0",
-  "description": "A Vue.js project named sweetes",
-  "author": "c",
+  "description": "A Vue.js project",
+  "author": "lalala-zjr <1365351516@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -33,7 +33,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^2.0.1",
-    "chromedriver": "^2.27.2",
+    "chromedriver": "^2.46.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
