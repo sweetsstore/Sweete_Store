@@ -71,7 +71,7 @@ header{
     position:absolute;
     left:6rem;
     top:2.6rem;
-} 
+}
 #search button{
     border:none;
     padding:0;
@@ -101,22 +101,22 @@ section{
     height: 14rem;
     border-radius: 5%;
     position: absolute;
-} 
+}
 .banner-slide2{
     left: 120%;
-    top: 0; 
+    top: 0;
     /* display: none; */
-} 
+}
 .banner-slide3{
     left: 200%;
-    top: 0; 
+    top: 0;
     /* display: none; */
- } 
+ }
  .banner-slide4{
     left: 300%;
-    top: 0; 
+    top: 0;
     /* display: none; */
-} 
+}
 .dot{
     display:flex;
     align-items:center;
@@ -142,5 +142,4 @@ section{
     height:2rem;
     width: 2rem;
 }
-
 </style>
