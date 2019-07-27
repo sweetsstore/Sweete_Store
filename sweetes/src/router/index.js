@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import comment from '../Pages/comment/comment.vue'
-import degree from '../Pages/degree/degree.vue'
 import merchandise from '../Pages/merchandise/merchandise.vue'
+import review from '../Pages/review/review.vue'
 
 Vue.use(Router)
 
@@ -20,16 +20,6 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'degree',
-      component: degree
-    },
-    {
-      path: '/degree',
-      name: 'degree',
-      component: degree
-    },
-    {
-      path: '/',
       name: 'merchandise',
       component: merchandise
     },
@@ -37,6 +27,15 @@ export default new Router({
       path: '/merchandise',
       name: 'merchandise',
       component: merchandise
+    },{
+      path: '/',
+      name: 'review',
+      component: review
+    },
+    {
+      path: '/review',
+      name: 'review',
+      component: review
     }
   ]
 })
