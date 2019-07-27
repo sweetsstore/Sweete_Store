@@ -1,9 +1,5 @@
 <template>
 <div>
-    <div id="app">
-    <img src="../../assets/logo.png">
-    <router-view/>
-  </div>
   <div id="top">
         <div id="return">
             <img alt="" src="./img/fanhui.png">
