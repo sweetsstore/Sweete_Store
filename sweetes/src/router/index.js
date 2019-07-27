@@ -27,7 +27,8 @@ export default new Router({
       path: '/merchandise',
       name: 'merchandise',
       component: merchandise
-    },{
+    },
+    {
       path: '/',
       name: 'review',
       component: review

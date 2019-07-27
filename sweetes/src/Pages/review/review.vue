@@ -103,7 +103,6 @@ body{
         display: inline-block;
         width: 2.5rem;
         height: 10.71rem;
-        
     }
     .photo img{
         height: 2.5rem;
