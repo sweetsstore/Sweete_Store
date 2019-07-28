@@ -8,13 +8,28 @@
         <button><img src="./img/search.png" alt="" srcset=""></button>
     </form>
   </header>
-  <section>
-    <div class="banner clearfloat">
-        <a href="#"><img src="./img/1.jpg" alt="" class="banner-slide1"></a>
-        <a href="#"><img src="./img/2.jpg" alt="" class="banner-slide2"></a>
-        <a href="#"><img src="./img/3.jpg" alt="" class="banner-slide3"></a>
-        <a href="#"><img src="./img/6.jpg" alt="" class="banner-slide4"></a>
+<section>
+    <div class="c_banner">
+        <div class="banner">
+            <a href="#"><img src="./img/1.jpg" alt="" class="banner-slide1"></a>
+            <a href="#"><img src="./img/2.jpg" alt="" class="banner-slide2"></a>
+            <a href="#"><img src="./img/3.jpg" alt="" class="banner-slide3"></a>
+            <a href="#"><img src="./img/6.jpg" alt="" class="banner-slide4"></a>
+        </div>
+        <div class="left-right">
+                <button id="prev"><img src="./img/left.png"></button>
+                <button id="next"><img src="./img/right.png"></button>
+        </div>
+        <div class="point">
+            <ul>
+                <li pointimg="0"></li>
+                <li pointimg="1"></li>
+                <li pointimg="2"></li>
+                <li pointimg="3"></li>
+            </ul>
+        </div>
     </div>
+
     <div class="dot">
         <a href="#"><img src="./img/cha.png" alt=""></a>
         <a href="#"><img src="./img/liwu.png" alt=""></a>
@@ -29,17 +44,19 @@
         <span>尝美食</span>
         <span>去秒杀</span>
     </div>
-    <!-- <div class="left-right">
-            <button id="prev"><img src="./img/left.png"></button>
-            <button id="next"><img src="./img/right.png"></button>
-    </div> -->
   </section>
   <footer></footer>
 </div>
 </template>
 <script>
 export default {
+//     var time=null;
+// var nextImg=0;
+// var ImgLength=$(".c_banner .banner a img").length;
+//  $(".c_banner .point ul li[pointimg"+nextImg+"]").css("background-color","white");
+
 }
+
 </script>
 <style scoped>
 *{
@@ -81,41 +98,65 @@ header{
     background-color:transparent;
 }
 section{
-    height: 14rem;
-    margin-top: 7%;
-    margin-left: 2%;
-    margin-right: 2%;
+    height:20rem;
 }
-.banner{
+.c_banner{
     width: 100%;
     height: 14rem;
     position: relative;
+    top:1rem;
 }
-.banner a{
-    display: block;
-    width: 100%;
-    height: 14rem;
+.c_banner .banner a{
+    display:block;
+    position:absolute;
+    display:none;
 }
-.banner-slide1,.banner-slide2,.banner-slide3,.banner-slide4 {
-    width: 100%;
-    height: 14rem;
-    border-radius: 5%;
-    position: absolute;
+.c_banner .banner a:nth-child(1){
+    display:block;
+    position:relative;
 }
-.banner-slide2{
-    left: 120%;
-    top: 0;
-    /* display: none; */
+.c_banner .banner a img{
+    width:100%;
+    height:14rem;
+    opacity:1;
+    border-radius:0.5rem;
 }
-.banner-slide3{
-    left: 200%;
-    top: 0;
-    /* display: none; */
- }
- .banner-slide4{
-    left: 300%;
-    top: 0;
-    /* display: none; */
+.c_banner .left-right button{
+    padding: .333333rem .133333rem;
+    position:absolute;
+    top: 38%;
+    margin-top: -0.706667rem;
+    background-color: #000000;
+    opacity: 0.3;
+    border-radius:0.5rem;
+    z-index:1;
+}
+#prev{
+    left:0;
+}
+#next{
+    right:0;
+}
+.c_banner .point{
+    width:100%;
+    position:absolute;
+    bottom: .266667rem;
+}
+.c_banner .point ul{
+    list-style:none;
+}
+.c_banner .point ul li{
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: black;
+    opacity: 0.7;
+    z-index:10;
+    margin-left: .8rem;
+}
+.c_banner .point ul li:nth-child(1){
+    margin-left:35%;
 }
 .dot{
     display:flex;
@@ -142,4 +183,5 @@ section{
     height:2rem;
     width: 2rem;
 }
+
 </style>
