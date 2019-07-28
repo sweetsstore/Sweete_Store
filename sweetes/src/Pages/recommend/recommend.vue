@@ -30,6 +30,9 @@
             </div>
             <div class="id">zhangjinruileiminxiaoye</div>
             <div class="date">2019-7-27</div>
+            <div class="point">
+                <img alt="" src="./img/dianzan.png">
+            </div>
             <div class="inner">kajfbckahcljlihoihgiyhgvjGKCJBcnlakcljabkjgkJGLJHLJHBJFJGVjvjgchgdhtutetegfchgcjhfyiug</div>
         </div>
         <div class="piece">
@@ -38,6 +41,9 @@
             </div>
             <div class="id">zhangjinruileiminxiaoye</div>
             <div class="date">2019-7-27</div>
+            <div class="point">
+                <img alt="" src="./img/dianzan.png">
+            </div>
             <div class="inner">kajfbckahcljlihoihgiyhgvjGKCJBcnlakcljabkjgkJGLJHLJHBJFJGVjvjgchgdhtutetegfchgcjhfyiug</div>
         </div>
     </div>
@@ -49,7 +55,7 @@
 </script>
 
 <style>
-body{
+    body{
         background-color: white;
         margin: 0;
         padding: 0;
@@ -146,12 +152,13 @@ body{
         position: absolute;
         top: 32rem;
         display: block;
-        flex-direction: column;
-        flex-wrap: wrap;
+        /* flex-direction: column;
+        flex-wrap: wrap; */
         width: 100%;
         height: 100%;
     }
     .piece{
+        position: absolute;
         display: flex;
         margin: calc((100% - 98%)/2);
         width: 98%;
@@ -182,6 +189,13 @@ body{
     .date{
         display: inline-block;
         font-size: .55rem;
+        width: 3rem;
+    }
+    .point{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: .35rem;
     }
     .inner{
         display: inline-block;
