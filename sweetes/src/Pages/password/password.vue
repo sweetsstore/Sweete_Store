@@ -15,13 +15,18 @@
             </div>
             <input type="text" placeholder=" 请输入你的新密码">
             <input type="text" placeholder=" 请再次输入密码">
-            <div class="Forgetbottom">确认</div>
+            <div class="Forgetbottom" @click="back">确认</div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    back () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 <style scoped>

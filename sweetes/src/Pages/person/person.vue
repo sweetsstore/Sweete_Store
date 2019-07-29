@@ -20,7 +20,7 @@
         </div>
         <div class="box3">
             <span>0</span>
-            <div class="box33">红包</div>
+            <div class="box33" @click="goTo('/personmoney')">红包</div>
             <div class="border3"></div>
         </div>
         <div class="box4">
@@ -38,20 +38,29 @@
         <div>待评价</div>
     </div>
     <div class="PersonActive"></div>
+    <div class="empty"></div>
     <div class="PersonFoot">
-        <div class="Foot1"></div>
-        <div class="Foot2"></div>
-        <div class="Foot3"></div>
-        <div class="Foot4"></div>
+        <orderall></orderall>
+        <orderall></orderall>
+        <orderall></orderall>
+        <orderall></orderall>
+        <orderall></orderall>
+        <div class="empty"></div>
     </div>
 </div>
 </template>
 
 <script>
+import orderall from '../orderall/orderall.vue'
 export default {
+  components: {orderall},
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
-
 <style scoped>
 .person{
     width: 100%;
@@ -165,27 +174,6 @@ export default {
 }
 .PersonFoot{
     width: 100%;
-    height: 20.8rem;
-    position: relative;
     background-color: #f5f5f5;
-}
-.PersonFoot div{
-    width: 80%;
-    height: 4rem;
-    position: absolute;
-    left: 10%;
-    border: 1px solid black;
-}
-.Foot1{
-    top: .8rem;
-}
-.Foot2{
-    top: 5.6rem;
-}
-.Foot3{
-    top: 10.4rem;
-}
-.Foot4{
-    top: 15.2rem;
 }
 </style>
