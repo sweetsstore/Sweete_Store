@@ -1,24 +1,23 @@
 <template>
-
 <div>
   <header>
-    <img src="./img/默认头像.png" id="pic">
+    <img src="./homeimg/默认头像.png" id="pic">
     <form id="search" action="#" method="GET">
         <input type="text" >
-        <button><img src="./img/search.png" alt="" srcset=""></button>
+        <button><img src="./homeimg/search.png" alt="" srcset=""></button>
     </form>
   </header>
 <section>
     <div class="c_banner">
         <div class="banner">
-            <a href="#"><img src="./img/1.jpg" alt="" class="banner-slide1"></a>
-            <a href="#"><img src="./img/2.jpg" alt="" class="banner-slide2"></a>
-            <a href="#"><img src="./img/3.jpg" alt="" class="banner-slide3"></a>
-            <a href="#"><img src="./img/6.jpg" alt="" class="banner-slide4"></a>
+            <a href="#"><img src="./homeimg/1.jpg" alt="" class="banner-slide1"></a>
+            <a href="#"><img src="./homeimg/2.jpg" alt="" class="banner-slide2"></a>
+            <a href="#"><img src="./homeimg/3.jpg" alt="" class="banner-slide3"></a>
+            <a href="#"><img src="./homeimg/6.jpg" alt="" class="banner-slide4"></a>
         </div>
         <div class="left-right">
-                <button id="prev"><img src="./img/left.png"></button>
-                <button id="next"><img src="./img/right.png"></button>
+                <button id="prev"><img src="./homeimg/left.png"></button>
+                <button id="next"><img src="./homeimg/right.png"></button>
         </div>
         <div class="point">
             <ul>
@@ -31,11 +30,11 @@
     </div>
 
     <div class="dot">
-        <a href="#"><img src="./img/cha.png" alt=""></a>
-        <a href="#"><img src="./img/liwu.png" alt=""></a>
-        <a href="#"><img src="./img/meijiu.png" alt=""></a>
-        <a href="#"><img src="./img/meishi.png" alt=""></a>
-        <a href="#"><img src="./img/miaosha.png" alt=""></a>
+        <a href="#"><img src="./homeimg/cha.png" alt=""></a>
+        <a href="#"><img src="./homeimg/liwu.png" alt=""></a>
+        <a href="#"><img src="./homeimg/meijiu.png" alt=""></a>
+        <a href="#"><img src="./homeimg/meishi.png" alt=""></a>
+        <a href="#"><img src="./homeimg/miaosha.png" alt=""></a>
     </div>
     <div class="dots">
         <span>品好茶</span>
