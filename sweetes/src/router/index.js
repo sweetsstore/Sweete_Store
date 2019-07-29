@@ -6,9 +6,10 @@ import zhuce from '../Pages/zhuce/zhuce.vue'
 import password from '../Pages/password/password.vue'
 import zhuceOk from '../Pages/zhuceOk/zhuceOk.vue'
 import set from '../Pages/set/set.vue'
-import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
-import orders from '../Pages/orders/orders.vue'
-import home from '../Pages/home/home.vue'
+import orderall from '../Pages/orderall/orderall.vue'
+import guanzhu from '../Pages/guanzhu/guanzhu.vue'
+import redmoney from '../Pages/redmoney/redmoney.vue'
+import personmoney from '../Pages/personmoney/personmoney.vue'
 
 Vue.use(Router)
 
@@ -50,17 +51,24 @@ export default new Router({
       component: set
     },
     {
-      path: '/goodsdetails',
-      name: 'goodsdetails',
-      component: goodsdetails
-    }, {
-      path: '/order',
-      name: 'orders',
-      component: orders
-    }, {
-      path: '/home',
-      name: 'home',
-      component: home
+      path: '/orderall',
+      name: 'orderall',
+      component: orderall
+    },
+    {
+      path: '/guanzhu',
+      name: 'guanzhu',
+      component: guanzhu
+    },
+    {
+      path: '/redmoney',
+      name: 'redmoney',
+      component: redmoney
+    },
+    {
+      path: '/personmoney',
+      name: 'personmoney',
+      component: personmoney
     }
   ]
 })

@@ -127,7 +127,7 @@ a img{
     text-align: center;
 }
 .setuser2{
-    width: 40%;
+    width: 46%;
     height: 2.4rem;
     display: block;
     border: 0;
@@ -136,18 +136,18 @@ a img{
     right: .4rem;
     outline: none;
     line-height: 2.4rem;
-    text-align: center;
+    text-align: right;
     overflow: hidden;
 }
 .setOk{
     width: 60%;
-    height: 4rem;
+    height: 3.2rem;
     position: fixed;
     bottom: 15%;
     left: 20%;
-    border-radius: 2rem;
+    border-radius: 1.6rem;
     background-color: #fbcc02;
-    line-height: 4rem;
+    line-height: 3.2rem;
     text-align: center;
 }
 </style>

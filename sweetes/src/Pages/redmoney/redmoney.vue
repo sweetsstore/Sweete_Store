@@ -1,5 +1,7 @@
 <template>
-    <div id="app"></div>
+    <div class="redmoney">
+        <div></div>
+    </div>
 </template>
 <script>
 export default {

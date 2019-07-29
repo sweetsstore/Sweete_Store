@@ -12,16 +12,21 @@
             <span>登录密码 :</span>
             <input type="text" password="password" placeholder="  请输入登录密码">
         </div>
-        <a href="#" class="yemian1">忘记密码？</a>
+        <a href="#" class="yemian1" @click="goTo('/password')">忘记密码？</a>
     </div>
-    <div class="denglu">登录</div>
+    <div class="denglu" @click="goTo('/person')">登录</div>
     <div class="zhuce">
-        <p>还不是我们的会员？<a href="#" class="yemian2">去注册</a></p>
+        <p>还不是我们的会员？<a href="#" class="yemian2" @click="goTo('/zhuce')">去注册</a></p>
     </div>
 </div>
 </template>
 <script>
 export default {
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>
@@ -94,7 +99,7 @@ p{
     margin-top: 14%;
 }
 .zhuce{
-    width: 40%;
+    width: 50%;
     height: 20%;
     margin-left: 30%;
 }
