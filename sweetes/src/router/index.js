@@ -10,21 +10,20 @@ import zhuce from '../Pages/zhuce/zhuce.vue'
 import password from '../Pages/password/password.vue'
 import zhuceOk from '../Pages/zhuceOk/zhuceOk.vue'
 import set from '../Pages/set/set.vue'
-import bottomnav from '../components/bottomnav/bottomnav.vue'
-
+import bottomnav from '../Pages/bottomnav/bottomnav.vue'
+import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'bottomnav',
-      component: bottomnav
-    },
-    {
-      path: '/',
-      name: 'goodsdetails',
-      component: goodsdetails
+      name: 'shoppingcart',
+      component: shoppingcart
+    }, {
+      path: '/shoppingcart',
+      name: 'shoppingcart',
+      component: shoppingcart
     },
     {
       path: '/goodsdetails',
@@ -74,6 +73,11 @@ export default new Router({
       path: '/set',
       name: 'set',
       component: set
+    },
+    {
+      path: '/bottomnav',
+      name: 'bottomnav',
+      component: bottomnav
     }
   ]
 })

@@ -2,7 +2,7 @@
     <div id="app">
         <div id="pic"></div><!-- 头部轮播图 -->
         <div>
-        <span id="price"><strong>￥:58 </strong></span><div id="inventorynum">剩余库存3366件</div><!-- {{price}} -->
+        <span id="price"><strong>￥: 58 </strong></span><div id="inventorynum">剩余库存3366件</div><!-- {{price}} -->
         </div>
         <hr width="90%" text-align="center">
         <P id="goodsname">绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶</P><!-- {{goodsname}} -->
@@ -57,7 +57,7 @@ export default {
         #price{
             width:42%;
             height:8%;
-            font-size:25px;
+            font-size:23px;
             color: red;
             display:block;
             margin: 2% 0 0 5% ;
@@ -100,6 +100,7 @@ export default {
         }
         #shopcommit{
             font-size: 20px;
+            margin:0% 0 0 0;
         }
         #accountpic{
             width: 30px;
@@ -110,7 +111,7 @@ export default {
             display: inline-block;
             float: left;
             padding: 1.5% 0 0 0;
-            margin: 0 0 0 5%;
+            margin: 3% 0 0 5%;
         }
         #accountname{
             width: 30%;
@@ -129,7 +130,7 @@ export default {
             height: auto;
             color: black;
             font-size: 17px;
-            margin: 10px 10% 10px 10%;
+            margin: 2px 10% 10px 10%;
             text-align: left;
         }
         #tanggreyblock{
@@ -152,10 +153,12 @@ export default {
             padding: 0;
         }
         .nav .nav1{
-            width: 20%;
+            width: 18%;
             float: left;
             background-color: white;
             color: black;
+            text-align: center;
+            margin:3% 0 0 0%;
         }
         .nav .nav2{
             width: 30%;
@@ -163,9 +166,6 @@ export default {
             background-color: #fecf37;
             display: block;
             border-radius: 10%;
-        }
-        #linav2{
-            margin:2% 0 0 0;
         }
         .nav a{
             display:block;

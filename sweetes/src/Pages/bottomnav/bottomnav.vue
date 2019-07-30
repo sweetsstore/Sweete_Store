@@ -1,4 +1,4 @@
-<template>
+<template id="bottomnav">
     <div><nav>
     <ul class="list-wrap">
       <li data-color="#eccc68" title="主页" class="li1" @click="go1"></li>
