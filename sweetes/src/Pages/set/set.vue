@@ -10,6 +10,7 @@
             <div class="sethead">
                 <img src="./img/head.png" alt="" class="setpic">
                 <div class="setheadWord">更改头像</div>
+                <input type="file">
                 <a href="#"><img src="./img/youjiantou.png" alt=""></a>
             </div>
             <div class="setempty"></div>

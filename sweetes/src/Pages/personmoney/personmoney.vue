@@ -1,8 +1,17 @@
 <template>
-    <div class="personmoney">
-        <redmoney></redmoney>
-        <redmoney></redmoney>
+  <div class="personmoney">
+    <div class="redBack">
+        <div class="redjiantou">
+            <img src="./personmoneyimg/tou.png" alt="" class="jiantou" @click="back">
+        </div>
+        <div class="redWord">红包</div>
     </div>
+    <div class="white"></div>
+    <div class="redbody">
+      <redmoney></redmoney>
+      <redmoney></redmoney>
+    </div>
+  </div>
 </template>
 <script>
 import redmoney from '../redmoney/redmoney.vue'
@@ -11,4 +20,36 @@ export default {
 }
 </script>
 <style scoped>
+.redBack{
+    width: 100%;
+    height: 2rem;
+    position: relative;
+    top:0;
+    background-color: rgba(200, 200, 200, 0.6);
+}
+.redjiantou{
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+}
+.redWord{
+    width: 50%;
+    height: 1.4rem;
+    margin: auto;
+    position: absolute;
+    top: .3rem;
+    left: 25%;
+    font-size: .8rem;
+    line-height: 1.4rem;
+    text-align: center;
+}
+.white{
+  width: 100%;
+  height: 0.5rem;
+}
+.personmoney{
+  width: 100%;
+}
 </style>

@@ -1,7 +1,5 @@
 <template>
-    <div class="guanzhu">
-        <div></div>
-    </div>
+    <div class="personaddress"></div>
 </template>
 <script>
 export default {

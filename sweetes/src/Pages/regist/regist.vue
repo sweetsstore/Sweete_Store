@@ -12,7 +12,7 @@
             <span>登录密码 :</span>
             <input type="text" password="password" placeholder="  请输入登录密码">
         </div>
-        <a href="#" class="yemian1" @click="goTo('/password')">忘记密码？</a>
+        <a href="#" class="yemian1">忘记密码？</a>
     </div>
     <div class="denglu" @click="goTo('/person')">登录</div>
     <div class="zhuce">

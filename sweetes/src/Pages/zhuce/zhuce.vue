@@ -2,7 +2,7 @@
     <div class="zhuce">
         <div class="zhuceBack">
             <div class="zhucejiantou">
-                <img src="./img/tou.png" alt="" class="jiantou">
+                <img src="./img/tou.png" alt="" class="jiantou" @click="back">
             </div>
             <div class="zhuceWord">注册</div>
         </div>
@@ -15,12 +15,17 @@
             </button>
         </div>
         <input type="text" placeholder=" 请输入你的密码">
-        <div class="bottom">注册</div>
+        <div class="bottom" @click="goTo('/zhuceOk')">注册</div>
     </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>

@@ -1,10 +1,11 @@
 <template>
-    <div class="order-all">
-        <img src="./img/2.jpg" alt="">
+    <div class="orderevaluate">
+        <img src="./orderevaluateimg/3.jpg" alt="">
         <div class="order-body">
-            <span>草莓夹心蛋糕客家酿豆腐深刻的女的看女生看得出</span>
+            <span>巧克力蛋糕i减哦i说的就是如果梵蒂冈地方官第个</span>
             <div class="order-money">
                 <span>￥<p>25</p></span>
+                <div class="box">评价</div>
             </div>
         </div>
     </div>
@@ -14,14 +15,14 @@ export default {
 }
 </script>
 <style scoped>
-.order-all{
+.orderevaluate{
     width: 86%;
     height: 5rem;
     position: relative;
     left: 7%;
     margin-bottom: .8rem;
 }
-.order-all img{
+.orderevaluate img{
     width: 30%;
     height: 4rem;
     position: absolute;

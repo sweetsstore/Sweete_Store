@@ -2,7 +2,7 @@
     <div class="password">
         <div class="forget">
             <div>
-                <img src="./img/tou.png" alt="" class="jiantou">
+                <img src="./img/tou.png" alt="" class="jiantou"  @click="back">
             </div>
             <div class="forgetWord">忘记密码</div>
         </div>
