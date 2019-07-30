@@ -12,10 +12,11 @@ import redmoney from '../Pages/redmoney/redmoney.vue'
 import personmoney from '../Pages/personmoney/personmoney.vue'
 import personattention from '../Pages/personattention/personattention.vue'
 import personcollect from '../Pages/personcollect/personcollect.vue'
-import collect from '../Pages/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
 import orderpay from '../Pages/orderpay/orderpay.vue'
 import orderevaluate from '../Pages/orderevaluate/orderevaluate.vue'
+import review from '../Pages/review/review.vue'
+import recommend from '../Pages/recommend/recommend.vue'
 
 Vue.use(Router)
 
@@ -87,11 +88,6 @@ export default new Router({
       component: personcollect
     },
     {
-      path: '/collect',
-      name: 'collect',
-      component: collect
-    },
-    {
       path: '/newaddress',
       name: 'newaddress',
       component: newaddress
@@ -105,6 +101,16 @@ export default new Router({
       path: '/orderevaluate',
       name: 'orderevaluate',
       component: orderevaluate
+    },
+    {
+      path: '/review',
+      name: 'review',
+      component: review
+    },
+    {
+      path: '/recommend',
+      name: 'recommend',
+      component: recommend
     }
   ]
 })
