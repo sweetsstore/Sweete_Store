@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div id="gouwuche">购物车</div>
+        <div id="body"></div>
     </div>
 </template>
 <script>
@@ -23,5 +24,9 @@ export default {
         float: left;
         vertical-align: center;
         margin: 1%;
+    }
+    #body{
+        width: 100%;
+        background: -webkit-linear-gradient(#ddd,#fff);
     }
 </style>
