@@ -1,46 +1,55 @@
 <template slot-scope>
 <div class="main">
     <ul class="list">
-        <li class="xican">西餐</li>
-        <li class="zhongcan">中餐</li>
-        <li class="kafe">咖啡</li>
-        <li class="jiu">酒</li>
-        <li class="lingshi">零食</li>
-        <li class="shengxian">生鲜</li>
-        <li class="shuiguo">水果</li>
-        <li class="cha">茗茶</li>
-        <li class="baojianpin">保健品</li>
-        <li class="dangao">蛋糕</li>
+        <li class="xican"><a href="#">西餐</a></li>
+        <li class="zhongcan"><a href="#">中餐</a></li>
+        <li class="kafe"><a href="#">咖啡</a></li>
+        <li class="jiu"><a href="#">酒</a></li>
+        <li class="lingshi"><a href="#">零食</a></li>
+        <li class="shengxian"><a href="#">生鲜</a></li>
+        <li class="shuiguo"><a href="#">水果</a></li>
+        <li class="cha"><a href="#">茗茶</a></li>
+        <li class="baojianpin"><a href="#">保健品</a></li>
+        <li class="dangao"><a href="#">蛋糕</a></li>
     </ul>
     <section>
         <div>
             <p>西餐</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/意大利面.png" alt="">
                     <span>意大利面</span>
+                    </a>
                 </li>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/牛排.png" alt="">
                     <span>牛排</span>
+                    </a> 
                 </li>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/披萨.png" alt="">
                     <span>披萨</span>
+                    </a>
                 </li>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/牛排.png" alt="">
                     <span>牛排</span>
+                    </a> 
                 </li>
-               
             </ul>
         </div>
         <div>
             <p>中餐</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/中餐.png" alt="">
                     <span>中餐</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -48,8 +57,10 @@
             <p>咖啡</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/咖啡.png" alt="">
                     <span>咖啡</span>
+                    </a> 
                 </li>
             </ul>
         </div>
@@ -57,8 +68,10 @@
             <p>酒</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/酒杯.png" alt="">
                     <span>酒</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -66,16 +79,22 @@
             <p>零食</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/零食.png" alt="">
                     <span>零食</span>
+                    </a>
                 </li>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/零食_面包.png" alt="">
                     <span>面包</span>
+                    </a>
                 </li>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/零食罐头.png" alt="">
                     <span>罐头</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -83,8 +102,10 @@
             <p>生鲜</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/生鲜.png" alt="">
                     <span>生鲜</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -92,8 +113,10 @@
             <p>水果</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/水果.png" alt="">
                     <span>水果</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -101,8 +124,10 @@
             <p>茗茶</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/茶.png" alt="">
                     <span>茶</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -110,8 +135,10 @@
             <p>保健品</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/保健品.png" alt="">
                     <span>保健品</span>
+                    </a>   
                 </li>
             </ul>
         </div>
@@ -119,8 +146,10 @@
             <p>蛋糕</p>
             <ul>
                 <li>
+                    <a href="#">
                     <img src="./classifyimg/蛋糕.png" alt="">
                     <span>蛋糕</span>
+                    </a>
                 </li>
             </ul> 
         </div>
@@ -156,6 +185,13 @@ export default {
     text-align:center;
     line-height:4.3rem;
 }
+.list li a{
+    display:block;
+    width:100%;
+    height:100%;
+    text-decoration:none;
+    color:black;
+}
 .list li:hover{
     background-color:white;
 }
@@ -165,6 +201,7 @@ section{
     position:absolute;
     top:0;
     right:0;
+    overflow:hidden;
 }
 section div{
     width:100%;
@@ -187,6 +224,13 @@ section div ul li{
     display: inline-block;
     margin-right:.853333rem;
     margin-bottom: 3rem;
+}
+section div ul li a{
+    display: block;
+    width:100%;
+    height:100%;
+    text-decoration:none;
+    color:black;
 }
 section div ul li img{
     width:90%;
