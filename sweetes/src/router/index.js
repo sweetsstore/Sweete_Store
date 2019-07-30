@@ -10,11 +10,17 @@ import zhuce from '../Pages/zhuce/zhuce.vue'
 import password from '../Pages/password/password.vue'
 import zhuceOk from '../Pages/zhuceOk/zhuceOk.vue'
 import set from '../Pages/set/set.vue'
+import bottomnav from '../components/bottomnav/bottomnav.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'bottomnav',
+      component: bottomnav
+    },
     {
       path: '/',
       name: 'goodsdetails',

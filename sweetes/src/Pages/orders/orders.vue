@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="return-1"><span id="sureorder">确认订单</span><br></div>
+        <div id="return-1"><div id="return"></div><span id="sureorder">确认订单</span><br></div>
         <div id="bodyblock">
             <div id="personmsg">
                 <div id="addpic"></div>
@@ -10,12 +10,12 @@
                 <div id="seladd"></div>
             </div>
             <div id="shopgoodsdetails">
-                <div><div id="goodspic"></div>
                 <span id="shopname">纪梵希旗舰店</span>
+                <div><div id="goodspic"></div>
                 <div id="shoppic"> </div>
                 <span id="goodsname">绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶</span>
                 <span id="price">￥:35.5</span>
-            </div>
+                </div>
                 <div id="buynum"></div>
             </div>
         </div>
@@ -36,55 +36,73 @@ export default {
 <style scoped>
     #app{
             width: 100%;
-            height: 100%;
             margin: 0;
             padding: 0;
             background: -webkit-linear-gradient(#ddd,#fff);
-        font-family:sans-serif;
+            font-family:sans-serif;
     }
     #return-1{
         color: black;
         font-size:18px;
-        background-color: white;
         width: 100%;
         height:auto;
         vertical-align: middle;
         text-align: left;
-        padding:3% 0 2% 0;
+        background-color: white;
+        z-index: 0;
+    }
+    #return{
+        width: 9%;
+        height: 25px;
+        background: url(./img/fanhui.png);
+        display: inline-block;
+        z-index: 1;
+        margin:1.5% 0 0% 2%;
     }
     #sureorder{
-        margin:0 0 0 2%;
+        width: 30%;
+        height: 25px;
+        font-size: 17px;
+        padding:1.5% 0 3% 2%;
+        display: inline-block;
+        vertical-align: middle;
     }
     #personmsg{
+        width: 92%;
         background-color: white;
-        padding: 0 5%;
-        margin: 3% 3% 3% 3%;
+        padding: 3% 0 3% 0;
+        margin: 3% 0% 3% 3%;
         text-align:left;
     }
-    .addpic{
-        background:url(img/dizhi.png);
-        width: 100%;
-        height: 100%;
+    addpic{
+        background: url(./img/dizhi.png);
+        width: 25px;
+        height: 25px;
         border-radius: 50%;
         float: left;
     }
     #name{
         font-size: 20px;
-        display: inline;
+        display: inline-block;
     }
     #accounttel{
+        width:50%;
+        height: auto;
         font-size:10px;
         color: #aaa;
-        display: inline;
+        display: inline-block;
     }
     #accountadd{
         font-size: 16px;
         display: inline;
+        width: 70%;
+        float: left;
     }
     #seladd{
         width: 10%;
-        height: 100%;
-        background-image: url(img/seladd.png);
+        height: 25px;
+        background-image: url(./img/seladd.png);
+        float: right;
     }
     #shopgoodsdetails{
         text-align: left;
@@ -97,11 +115,11 @@ export default {
         margin: 5% 0 5% 0;
     }
     #shopgoodsdetails #shoppic{
-        width: 20%;
+        width: 10%;
         float: left;
     }
     #shopgoodsdetails #goodsname{
-        width: 72%;
+        width: 56%;
         float: left;
     }
     #shopgoodsdetails #price{
