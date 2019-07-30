@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
+import orders from '../Pages/orders/orders.vue'
+import comment from '../Pages/comment/comment.vue'
+import merchandise from '../Pages/merchandise/merchandise.vue'
 import regist from '../Pages/regist/regist.vue'
 import person from '../Pages/person/person.vue'
 import zhuce from '../Pages/zhuce/zhuce.vue'
@@ -16,6 +20,8 @@ import collect from '../Pages/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
 import orderpay from '../Pages/orderpay/orderpay.vue'
 import orderevaluate from '../Pages/orderevaluate/orderevaluate.vue'
+import bottomnav from '../Pages/bottomnav/bottomnav.vue'
+import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 
 Vue.use(Router)
 
@@ -25,6 +31,31 @@ export default new Router({
       path: '/',
       name: 'regist',
       component: regist
+    },
+    {
+      path: '/shoppingcart',
+      name: 'shoppingcart',
+      component: shoppingcart
+    },
+    {
+      path: '/goodsdetails',
+      name: 'goodsdetails',
+      component: goodsdetails
+    },
+    {
+      path: '/orders',
+      name: 'orders',
+      component: orders
+    },
+    {
+      path: '/comment',
+      name: 'comment',
+      component: comment
+    },
+    {
+      path: '/merchandise',
+      name: 'merchandise',
+      component: merchandise
     },
     {
       path: '/regist',
@@ -105,6 +136,11 @@ export default new Router({
       path: '/orderevaluate',
       name: 'orderevaluate',
       component: orderevaluate
+    },
+    {
+      path: '/bottomnav',
+      name: 'bottomnav',
+      component: bottomnav
     }
   ]
 })
