@@ -16,9 +16,6 @@ import collect from '../Pages/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
 import orderpay from '../Pages/orderpay/orderpay.vue'
 import orderevaluate from '../Pages/orderevaluate/orderevaluate.vue'
-import home from '../Pages/home/home.vue'
-import classify from '../Pages/classify/classify.vue'
-import goodsshow from '../Pages/goodsshow/goodsshow.vue'
 
 Vue.use(Router)
 
@@ -26,13 +23,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: home
+      name: 'regist',
+      component: regist
     },
     {
-      path: '/set',
-      name: 'set',
-      component: set
+      path: '/regist',
+      name: 'regist',
+      component: regist
+    },
+    {
+      path: '/person',
+      name: 'person',
+      component: person
     },
     {
       path: '/zhuce',
@@ -45,39 +47,14 @@ export default new Router({
       component: password
     },
     {
-      path: '/person',
-      name: 'person',
-      component: person
-    },
-    {
-      path: '/regist',
-      name: 'regist',
-      component: regist
-    },
-    {
       path: '/zhuceOk',
       name: 'zhuceOk',
       component: zhuceOk
     },
     {
-      path: '/home',
-      name: 'home',
-      component: home
-    },
-    {
-      path: '/',
-      name: 'classify',
-      component: classify
-    },
-    {
-      path: '/classify',
-      name: 'classify',
-      component: classify
-    },
-    {
-      path: '/goodsshow',
-      name: 'goodsshow',
-      component: goodsshow
+      path: '/set',
+      name: 'set',
+      component: set
     },
     {
       path: '/orderall',
