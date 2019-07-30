@@ -2,8 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '../Pages/home/home.vue'
 import classify from '../Pages/classify/classify.vue'
-import goods_show from '../Pages/goods_show/goods_show.vue'
- 
+import goodsshow from '../Pages/goodsshow/goodsshow.vue'
 
 Vue.use(Router)
 
@@ -30,14 +29,9 @@ export default new Router({
       component: classify
     },
     {
-      path: '/',
-      name: 'goods_show',
-      component: goods_show
-    },
-    {
-      path: '/goods_show',
-      name: 'goods_show',
-      component: goods_show
+      path: '/goodsshow',
+      name: 'goodsshow',
+      component: goodsshow
     }
   ]
 })

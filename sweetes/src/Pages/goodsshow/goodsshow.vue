@@ -1,7 +1,7 @@
 <template>
     <div>
         <header>
-            <a href="#"><img src="./goods_showimg/返回.png" alt=""></a>
+            <a href="#"><img src="./goodsshowimg/返回.png" alt=""></a>
             <span>热销榜单</span>
         </header>
         <div class="classes">
@@ -21,28 +21,28 @@
         </div>
         <ul class="cake">
             <li>
-                <a href="#"><img src="./goods_showimg/1.jpg" alt=""></a>
+                <a href="#"><img src="./goodsshowimg/1.jpg" alt=""></a>
                 <p class="name">粉红色的回忆---草莓味红丝绒蛋糕</p>
                 <button><a href="#">购买</a></button>
                 <p class="money">￥20</p>
                 <p class="number">已售:1345</p>
             </li>
             <li>
-                <a href="#"><img src="./goods_showimg/8.jpg" alt=""></a>
+                <a href="#"><img src="./goodsshowimg/8.jpg" alt=""></a>
                 <p class="name">橙色年华---橙味流心蛋糕</p>
                 <button><a href="#">购买</a></button>
                 <p class="money">￥30</p>
                 <p class="number">已售:356</p>
             </li>
             <li>
-                <a href="#"><img src="./goods_showimg/2.jpg" alt=""></a>
+                <a href="#"><img src="./goodsshowimg/2.jpg" alt=""></a>
                 <p class="name">粉色马卡龙---荔枝味夹心蛋糕</p>
                 <button><a href="#">购买</a></button>
                 <p class="money">￥40</p>
                 <p class="number">已售:58</p>
             </li>
             <li>
-                <a href="#"><img src="./goods_showimg/13.jpg" alt=""></a>
+                <a href="#"><img src="./goodsshowimg/13.jpg" alt=""></a>
                 <p class="name">奶油慕斯---草莓味软蛋糕</p>
                 <button><a href="#">购买</a></button>
                 <p class="money">￥45</p>
