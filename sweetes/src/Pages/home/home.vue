@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="homes">
   <header>
     <img src="./homeimg/默认头像.png" id="pic">
     <form id="search" action="#" method="GET">
@@ -15,36 +15,66 @@
             <a href="#"><img src="./homeimg/3.jpg" alt="" class="banner-slide3"></a>
             <a href="#"><img src="./homeimg/6.jpg" alt="" class="banner-slide4"></a>
         </div>
-        <div class="left-right">
+        <!-- <div class="left-right">
                 <button id="prev"><img src="./homeimg/left.png"></button>
                 <button id="next"><img src="./homeimg/right.png"></button>
-        </div>
-        <div class="point">
+        </div> -->
+        <!-- <div class="point">
             <ul>
                 <li pointimg="0"></li>
                 <li pointimg="1"></li>
                 <li pointimg="2"></li>
                 <li pointimg="3"></li>
             </ul>
-        </div>
+        </div>-->
     </div>
 
     <div class="dot">
         <a href="#"><img src="./homeimg/cha.png" alt=""></a>
-        <a href="#"><img src="./homeimg/liwu.png" alt=""></a>
         <a href="#"><img src="./homeimg/meijiu.png" alt=""></a>
         <a href="#"><img src="./homeimg/meishi.png" alt=""></a>
         <a href="#"><img src="./homeimg/miaosha.png" alt=""></a>
     </div>
     <div class="dots">
         <span>品好茶</span>
-        <span>寻好物</span>
         <span>挑美酒</span>
         <span>尝美食</span>
         <span>去秒杀</span>
     </div>
-  </section>
-  <footer></footer>
+</section>
+     <p class="new">今日新品</p>
+  <footer>
+      <ul >
+          <li>
+              <a href="#">
+                  <img src="./homeimg/1small.jpg" alt="">
+                  <p class="newname">草莓味红丝绒蛋糕</p>
+                  <p class="newmoney">￥20/份</p>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="./homeimg/2small.jpg" alt="">
+                  <p class="newname">橙味流心蛋糕</p>
+                  <p class="newmoney">￥30/份</p>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="./homeimg/8small.jpg" alt="">
+                  <p class="newname">荔枝味夹心蛋糕</p>
+                  <p class="newmoney">￥40/份</p>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <img src="./homeimg/13small.jpg" alt="">
+                  <p class="newname">草莓味软蛋糕</p>
+                  <p class="newmoney">￥45/份</p>
+              </a>
+          </li>
+      </ul>
+  </footer>
 </div>
 </template>
 <script>
@@ -62,52 +92,57 @@ export default {
     margin:0;
     padding:0;
 }
+.homes{
+    height:0;
+    margin:0;
+    padding:0;
+}
 header{
-    height: 4.3rem;
     width:100%;
     position:relative;
+    height:3.7rem;
 }
 #pic{
-    position:absolute;
-    left:0.5rem;
-    top:.6rem;
+    margin-left:0.5rem;
     display:inline-block;
 }
 #search{
-    height: 4.3rem;
-    width:100%;
+    height: 3.6rem;
+    width:75%;
     position:absolute;
+    left:5rem;
+    top:0;
 }
 #search input{
-    height:1.2rem;
-    width: 60%;
+    display:inline-block;
+    height:1.5rem;
+    width: 100%;
     border-radius: 2rem;
     background-color:white;
     border:.2px black solid;
-    position:absolute;
-    left:6rem;
-    top:2.6rem;
+    margin-top:1rem;
 }
 #search button{
+    height:.5rem;
     border:none;
-    padding:0;
-    position:absolute;
-    top:1.5rem;
-    right:.1rem;
     background-color:transparent;
+    position:absolute;
+    left:16rem;
+    top:1rem;
 }
 section{
-    height:20rem;
+    width:100%;
+    /* position: relative;
+    top:.8rem; */
+    margin-top:2rem;
 }
 .c_banner{
     width: 100%;
     height: 14rem;
-    position: relative;
-    top:1rem;
 }
 .c_banner .banner a{
     display:block;
-    position:absolute;
+    /* position:absolute; */
     display:none;
 }
 .c_banner .banner a:nth-child(1){
@@ -120,7 +155,7 @@ section{
     opacity:1;
     border-radius:0.5rem;
 }
-.c_banner .left-right button{
+/* .c_banner .left-right button{
     padding: .333333rem .133333rem;
     position:absolute;
     top: 38%;
@@ -129,22 +164,22 @@ section{
     opacity: 0.3;
     border-radius:0.5rem;
     z-index:1;
-}
-#prev{
+} */
+/* #prev{
     left:0;
-}
-#next{
+} */
+/* #next{
     right:0;
-}
-.c_banner .point{
+} */
+/* .c_banner .point{
     width:100%;
     position:absolute;
     bottom: .266667rem;
-}
-.c_banner .point ul{
+} */
+/* .c_banner .point ul{
     list-style:none;
-}
-.c_banner .point ul li{
+} */
+/* .c_banner .point ul li{
     width: .8rem;
     height: .8rem;
     border-radius: 50%;
@@ -153,22 +188,22 @@ section{
     opacity: 0.7;
     z-index:10;
     margin-left: .8rem;
-}
-.c_banner .point ul li:nth-child(1){
+} */
+/* .c_banner .point ul li:nth-child(1){
     margin-left:35%;
-}
+} */
 .dot{
     display:flex;
     align-items:center;
     justify-content:space-around;
     height:2rem;
-    margin-top:10%;
+    margin-top:2rem;
 }
 .dots{
     display:flex;
     align-items:center;
     justify-content:space-around;
-    margin-top:2%;
+    margin-top:.1rem;
 }
 .dots span{
     display:inline-block;
@@ -182,5 +217,51 @@ section{
     height:2rem;
     width: 2rem;
 }
-
+.new{
+    font-size: 120%;
+    font-weight:bold;
+    margin-top:2.5rem;
+    margin-left:.5rem;
+}
+footer{
+    width:100%;
+    height:8.3rem;
+    margin-top:1.2rem;
+}
+footer ul{
+    width:100%;
+    height:8.3rem;
+    list-style:none;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+}
+footer li {
+    width:35%;
+    margin-left:.5rem;
+    display:inline-block;
+}
+footer a{
+    display:block;
+    width:100%;
+    height:100%;
+    text-decoration:none;
+}
+footer li a img{
+    width:100%;
+    height:5.5rem;
+    border-radius:.5rem;
+}
+footer li a .newname{
+    margin-top:.2rem;
+    margin-bottom:.2rem;
+    font-size:90%;
+    text-decoration:none;
+    color:black;
+}
+footer li a .newmoney{
+    font-size:90%;
+    text-decoration:none;
+    color:#f5a9a9;
+}
 </style>

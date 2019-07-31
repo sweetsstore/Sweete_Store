@@ -29,6 +29,14 @@ export default new Router({
       component: classify
     },
     {
+<<<<<<< HEAD
+=======
+      path: '/',
+      name: 'goodsshow',
+      component: goodsshow
+    },
+    {
+>>>>>>> 334e794f0ba12b02551f590d48480d78b8eb785f
       path: '/goodsshow',
       name: 'goodsshow',
       component: goodsshow

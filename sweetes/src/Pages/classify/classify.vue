@@ -26,7 +26,7 @@
                     <a href="#">
                     <img src="./classifyimg/牛排.png" alt="">
                     <span>牛排</span>
-                    </a> 
+                    </a>
                 </li>
                 <li>
                     <a href="#">
@@ -38,7 +38,7 @@
                     <a href="#">
                     <img src="./classifyimg/牛排.png" alt="">
                     <span>牛排</span>
-                    </a> 
+                    </a>
                 </li>
             </ul>
         </div>
@@ -60,7 +60,7 @@
                     <a href="#">
                     <img src="./classifyimg/咖啡.png" alt="">
                     <span>咖啡</span>
-                    </a> 
+                    </a>
                 </li>
             </ul>
         </div>
@@ -138,7 +138,7 @@
                     <a href="#">
                     <img src="./classifyimg/保健品.png" alt="">
                     <span>保健品</span>
-                    </a>   
+                    </a>
                 </li>
             </ul>
         </div>
@@ -151,17 +151,13 @@
                     <span>蛋糕</span>
                     </a>
                 </li>
-            </ul> 
+            </ul>
         </div>
     </section>
 </div>
-    
 </template>
 <script>
-import Velocity from 'velocity-animate'
-
 export default {
-    
 }
 </script>
 <style scoped>
@@ -235,7 +231,7 @@ section div ul li a{
 section div ul li img{
     width:90%;
     height:90%;
-} 
+}
 section div span{
     display:block;
     width:100%;

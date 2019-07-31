@@ -52,8 +52,6 @@
     </div>
 </template>
 <script>
-import Velocity from 'velocity-animate'
-
 export default {
 //  method:{
 //      dofun(){
@@ -67,7 +65,6 @@ export default {
 //      }
 
 //  }
-    
 }
 </script>
 <style>
@@ -106,7 +103,7 @@ header span{
     overflow-x:scroll;
 }
 .classes ul{
-    width:1000%;
+    width:400%;
     list-style:none;
 }
 .classes ul li{
