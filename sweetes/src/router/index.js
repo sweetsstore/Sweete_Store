@@ -16,6 +16,9 @@ import collect from '../Pages/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
 import orderpay from '../Pages/orderpay/orderpay.vue'
 import orderevaluate from '../Pages/orderevaluate/orderevaluate.vue'
+import home from '../Pages/home/home.vue'
+import classify from '../Pages/classify/classify.vue'
+import goodsshow from '../Pages/goodsshow/goodsshow.vue'
 
 Vue.use(Router)
 
@@ -105,6 +108,21 @@ export default new Router({
       path: '/orderevaluate',
       name: 'orderevaluate',
       component: orderevaluate
+    },
+    {
+      path: '/classify',
+      name: 'classify',
+      component: classify
+    },
+    {
+      path: '/goodsshow',
+      name: 'goodsshow',
+      component: goodsshow
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: home
     }
   ]
 })
