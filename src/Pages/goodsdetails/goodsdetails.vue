@@ -1,0 +1,182 @@
+<template>
+    <div id="app">
+        <div id="pic"></div><!-- 头部轮播图 -->
+        <div>
+        <span id="price"><strong>￥: 58 </strong></span><div id="inventorynum">剩余库存3366件</div><!-- {{price}} -->
+        </div>
+        <hr width="90%" text-align="center">
+        <P id="goodsname">绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶</P><!-- {{goodsname}} -->
+        <div class="greyblock"></div>
+        <div id="discount"></div>
+        <div class="greyblock"></div>
+        <div id="comment">
+            <div><span id="shopcommit"><strong>商品评价</strong></span></div>
+            <div><div id="accountpic"></div>
+            <span id="accountname">猫儿</span>
+            <span id="committime">2019-07-24</span></div><br>
+            <div id="truecommit">挺！</div>
+        </div>
+        <div class="greyblock"></div>
+        <div class="tanggreyblock">图文详情</div>
+        <div id="shopdetails"></div>
+        <div id="shopbottomnav">
+        <ul class="nav">
+            <li class="nav1" id="linav1"  ><a href=""><img src="./img/dianpu.png" alt="" width="27px" height="27px;"></a></li>
+            <li class="nav1" id="linav2"><a href=""><img src="./img/shoucang.png" alt="" width="30px" height="30px;" color="black"></a></li>
+            <li class="nav2" id="shopcart"><a href="">加入购物车</a></li>
+            <li class="nav2"><a href="">立即购买</a></li>
+        </ul></div>
+    </div>
+</template>
+<script>
+import $ from 'jquery'
+console.log($)
+</script>
+<script src="/js/goodsdetails.js" ></script>
+<script>
+export default {
+    mounted: function(){
+    console.log($)
+  }
+}
+</script>
+<style scoped>
+        #app{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #pic{
+            width: 100%;
+            height: 300px;
+            background: url(img/1.jpg) no-repeat;/* {{shoppic}} */
+            margin:0;
+            padding:0;
+            background-size: cover;
+        }
+        #price{
+            width:42%;
+            height:8%;
+            font-size:23px;
+            color: red;
+            display:block;
+            margin: 2% 0 0 5% ;
+            text-align: left;
+            display: inline-block;
+        }
+        #inventorynum{
+            width:47%;
+            height:8%;
+            color: #aaa;
+            font-size: 13px;
+            margin: 0 3% 0 0;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        #goodsname{
+            width:85%;
+            height:auto;
+            color:black;
+            font-size:16px;
+            margin: 0% 5% 0 7%;
+            line-height:21px;
+            text-align: left;
+        }
+        .greyblock{
+            width: 100%;
+            height: 10px;
+            background-color: #eee;
+        }
+        #discount{
+            width:100%;
+            height:80px;
+            background:url(img/2.png) no-repeat;
+            margin: 5px auto;
+        }
+        #comment{
+            width: 95%;
+            height: auto;
+            margin: 0 0 0 5%;
+        }
+        #shopcommit{
+            font-size: 20px;
+            margin:0% 0 0 0;
+        }
+        #accountpic{
+            width: 30px;
+            height:25px;
+            background:url(img/touxiang.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: inline-block;
+            float: left;
+            padding: 1.5% 0 0 0;
+            margin: 3% 0 0 5%;
+        }
+        #accountname{
+            width: 30%;
+            font-size:20px;
+            color: grey;
+            margin: 0 0 0 3%;
+        }
+        #committime{
+            width: 30%;
+            float: right;
+            font-size: 17px;
+            color: grey;
+        }
+        #truecommit{
+            width: 80%;
+            height: auto;
+            color: black;
+            font-size: 17px;
+            margin: 2px 10% 10px 10%;
+            text-align: left;
+        }
+        #tanggreyblock{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            vertical-align: bottom;
+            font-size: 15px;
+            color: black;
+            position: inherit;
+            background-color: lightgray;
+        }
+        .nav{
+            width: 100%;
+            position:fixed;
+            bottom: 0;
+            left: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav .nav1{
+            width: 18%;
+            float: left;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin:3% 0 0 0%;
+        }
+        .nav .nav2{
+            width: 30%;
+            float: left;
+            background-color: #fecf37;
+            display: block;
+            border-radius: 10%;
+        }
+        .nav a{
+            display:block;
+            height: 50px;
+            color: black;
+           /*  background-color:white; */
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .nav a:hover{
+            background:lightgoldenrodyellow;
+        }
+</style>
