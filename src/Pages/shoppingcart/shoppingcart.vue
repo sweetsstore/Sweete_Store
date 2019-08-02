@@ -6,8 +6,8 @@
                 <p id="shopname">纪梵希旗舰店</p>
                 <div>
                     <div id="goodspic"></div>
-                    <div id="goodsname"></div>
-                    <span id="price"></span>
+                    <div id="goodsname">绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶</div>
+                    <span id="price">￥: 58</span>
                     <div>
                         <input type="button" value="-" />
                         <strong>0</strong>
