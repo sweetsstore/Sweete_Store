@@ -2,7 +2,7 @@
     <div class="zhuce">
         <div class="zhuceBack">
             <div class="zhucejiantou">
-                <img src="./img/tou.png" alt="" class="jiantou" @click="back">
+                <img src="./img/tou.png" alt="" class="jiantou" @click="goTo('/regist')">
             </div>
             <div class="zhuceWord">注册</div>
         </div>
@@ -11,14 +11,13 @@
         <input type="text" placeholder=" 请输入手机号码">
         <div class="send">
             <input type="text" placeholder=" 请输入验证码" class="send1">
-            <button class="send2">发送
+            <button class="send2" @click="send">发送
             </button>
         </div>
         <input type="text" placeholder=" 请输入你的密码">
         <div class="bottom" @click="goTo('/zhuceOk')">注册</div>
     </div>
 </template>
-
 <script>
 export default {
   methods: {

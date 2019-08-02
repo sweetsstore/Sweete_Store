@@ -1,6 +1,6 @@
 <template>
 <div class="person">
-    <a href="#"><img src="./img/setting.png" alt="setting" class="setting"></a>
+    <a href="#"><img src="./img/setting.png" alt="setting" class="setting" @click="goTo('/set')"></a>
     <a href="#"><img src="./img/write.png" alt="write" class="write"></a>
     <div class="head">
         <img src="./img/personHead.png" alt="" class="background">
@@ -8,22 +8,22 @@
     </div>
     <div class="user">用户</div>
     <div class="box">
-        <div class="box1">
+        <div class="box1" @click="goTo('/personcollect')">
             <span>0</span>
             <div class="box11">收藏</div>
             <div class="border1"></div>
         </div>
-        <div class="box2">
+        <div class="box2" @click="goTo('/personattention')">
             <span>0</span>
             <div class="box22">关注</div>
             <div class="border2"></div>
         </div>
-        <div class="box3">
+        <div class="box3" @click="goTo('/personmoney')">
             <span>0</span>
             <div class="box33" @click="goTo('/personmoney')">红包</div>
             <div class="border3"></div>
         </div>
-        <div class="box4">
+        <div class="box4" @click="goTo('/personaddress')">
             <span>0</span>
             <div class="box44">地址</div>
         </div>

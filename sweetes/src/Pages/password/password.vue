@@ -2,7 +2,7 @@
     <div class="password">
         <div class="forget">
             <div>
-                <img src="./img/tou.png" alt="" class="jiantou"  @click="back">
+                <img src="./img/tou.png" alt="" class="jiantou"  @click="goTo('/regist')">
             </div>
             <div class="forgetWord">忘记密码</div>
         </div>
@@ -15,7 +15,7 @@
             </div>
             <input type="text" placeholder=" 请输入你的新密码">
             <input type="text" placeholder=" 请再次输入密码">
-            <div class="Forgetbottom" @click="back">确认</div>
+            <div class="Forgetbottom" @click="goTo('/regist')">确认</div>
         </div>
     </div>
 </template>
@@ -23,8 +23,8 @@
 <script>
 export default {
   methods: {
-    back () {
-      this.$router.go(-1)
+    goTo (path) {
+      this.$router.replace(path)
     }
   }
 }

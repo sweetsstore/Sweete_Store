@@ -5,14 +5,14 @@
     </div>
     <div class="body">
         <div class="phone">
-            <span>手机号码 :</span>
-            <input type="text" name="username" placeholder="  请输入手机号码">
+            <span>用户昵称 :</span>
+            <input type="text" name="username" placeholder="  请输入用户名">
         </div>
         <div class="password">
             <span>登录密码 :</span>
-            <input type="text" password="password" placeholder="  请输入登录密码">
+            <input type="password" password="password" placeholder="  请输入登录密码">
         </div>
-        <a href="#" class="yemian1">忘记密码？</a>
+        <a href="#" class="yemian1" @click="goTo('/password')">忘记密码？</a>
     </div>
     <div class="denglu" @click="goTo('/person')">登录</div>
     <div class="zhuce">

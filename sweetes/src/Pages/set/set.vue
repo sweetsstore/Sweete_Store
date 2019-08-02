@@ -2,7 +2,7 @@
     <div class="set">
         <div class="setBack">
             <div class="setjiantou">
-                <img src="./img/tou.png" alt="jiantou">
+                <img src="./img/tou.png" alt="jiantou" @click="goTo('/person')">
             </div>
             <div class="setWord">设置</div>
         </div>
@@ -10,8 +10,9 @@
             <div class="sethead">
                 <img src="./img/head.png" alt="" class="setpic">
                 <div class="setheadWord">更改头像</div>
-                <input type="file">
-                <a href="#"><img src="./img/youjiantou.png" alt=""></a>
+                <a href="#">
+                    <img src="./img/youjiantou.png" alt="">
+                </a>
             </div>
             <div class="setempty"></div>
             <div class="setuser">
@@ -27,11 +28,16 @@
                 <input type="text" class="setuser2" value="18009240559">
             </div>
         </div>
-        <div class="setOk">确认并返回</div>
+        <div class="setOk" @click="goTo('/person')">确认并返回</div>
     </div>
 </template>
 <script>
 export default {
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>

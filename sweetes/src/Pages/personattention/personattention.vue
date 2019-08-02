@@ -2,7 +2,7 @@
     <div class="personattention">
         <div class="attentionBack">
             <div class="attentionjiantou">
-                <img src="./personattentionimg/tou.png" alt="" class="jiantou" @click="back">
+                <img src="./personattentionimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
             </div>
             <div class="attentionWord">关注</div>
         </div>
@@ -14,7 +14,12 @@
 <script>
 import attention from '../attention/attention.vue'
 export default {
-  components: {attention}
+  components: {attention},
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>

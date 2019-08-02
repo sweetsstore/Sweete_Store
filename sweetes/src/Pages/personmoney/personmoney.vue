@@ -2,7 +2,7 @@
   <div class="personmoney">
     <div class="redBack">
         <div class="redjiantou">
-            <img src="./personmoneyimg/tou.png" alt="" class="jiantou" @click="back">
+            <img src="./personmoneyimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
         </div>
         <div class="redWord">红包</div>
     </div>
@@ -16,7 +16,12 @@
 <script>
 import redmoney from '../redmoney/redmoney.vue'
 export default {
-  components: {redmoney}
+  components: {redmoney},
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>

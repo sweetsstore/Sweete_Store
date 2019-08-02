@@ -6,15 +6,15 @@
         <div class="okWord">
             <b>注册成功</b>
         </div>
-        <div class="okJump" @click="back">返回</div>
+        <div class="okJump" @click="goTo('/regist')">返回</div>
     </div>
 </template>
 
 <script>
 export default {
   methods: {
-    back: function () {
-      this.$router.go(-1)
+    goTo  (path) {
+      this.$router.replace(path)
     }
   }
 }
