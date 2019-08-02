@@ -12,8 +12,8 @@
         <textarea wrap="soft" cols="50" rows="6" required maxlength="300" placeholder="随便说点什么吧" style="width: 98%;height: 10rem"></textarea>
         <div id="add">
             <img alt="" src="./img/tianjia.png">
+            <input id="up_image" type="file" name="file"  multiple @change="change_image"/>
         </div>
-        <input id="up_image" type="file" name="file"  multiple @change="change_image"/>
     </div>
 </div>
 </template>

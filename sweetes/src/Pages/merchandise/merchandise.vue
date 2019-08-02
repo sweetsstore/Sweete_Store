@@ -121,13 +121,38 @@
           </div>
         <div id="add">
             <img alt="" src="./img/tianjia.png">
+            <input id="up_image" type="file" name="file"  multiple @change="change_image"/>
         </div>
     </div>
 </div>
 </template>
 
 <script>
-
+export default {
+    methods: {
+        go_back () {
+            this.$router.go(-1)
+        },
+        changeN (i) {
+            this.n = i
+        },
+        change_image (i) {
+            var htl = ''
+            var upimage = document.querySelector('#up_image')
+            var add = document.querySelector('#add')
+            var addPicturl = document.querySelector('.addPicturl')
+            for (var index = 0; index < upimage.files.length; index++) {
+                htl += `<img style="width:100px;height:100px;margin-left:10px" src="${URL.createObjectURL(upimage.files[index])}"></img>`
+            }
+            if (upimage.files.length > 9) {
+                alert('最多可传9张图片')
+            } else {
+                add.innerHTML = htl
+            }
+            addPicturl.style.left = 0.241546 + 'rem'
+        }
+    }
+}
 </script>
 
 <style>
@@ -331,4 +356,8 @@
   align-items: center;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
+#add{
+  display: block;
+  float: left;
+  }
 </style>
