@@ -14,10 +14,11 @@ import personattention from '../Pages/personattention/personattention.vue'
 import personcollect from '../Pages/personcollect/personcollect.vue'
 import collect from '../Pages/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
-import address from '../Pages/address/address.vue'
+import myaddress from '../Pages/myaddress/myaddress.vue'
 import orderpay from '../Pages/orderpay/orderpay.vue'
 import orderevaluate from '../Pages/orderevaluate/orderevaluate.vue'
 import personaddress from '../Pages/personaddress/personaddress.vue'
+import payOk from '../Pages/payOk/payOk.vue'
 
 Vue.use(Router)
 
@@ -109,14 +110,19 @@ export default new Router({
       component: orderevaluate
     },
     {
-      path: '/address',
-      name: 'address',
-      component: address
+      path: '/myaddress',
+      name: 'myaddress',
+      component: myaddress
     },
     {
       path: '/personaddress',
       name: 'personaddress',
       component: personaddress
+    },
+    {
+      path: '/payOk',
+      name: 'payOk',
+      component: payOk
     }
   ]
 })

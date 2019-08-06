@@ -2,18 +2,34 @@
     <div class="newaddress">
         <div class="addressBack">
             <div class="addressjiantou">
-                <img src="./newaddressimg/tou.png" alt="" class="jiantou" @click="back">
+                <img src="./newaddressimg/tou.png" alt="" class="jiantou" @click="goTo('/personaddress')">
             </div>
             <div class="addressWord">添加收货地址</div>
-            <div class="save">保存</div>
+            <div class="save" @click="goTo('/personaddress')">保存</div>
         </div>
         <input type="text" placeholder="  收货人">
         <input type="text" placeholder="  手机号码">
         <select class="se1">
+            <option>湖北省</option>
             <option>陕西省</option>
             <option>山西省</option>
             <option>山东省</option>
             <option>湖北省</option>
+            <option>陕西省</option>
+            <option>山西省</option>
+            <option>山东省</option>
+            <option>湖北省</option>
+            <option>陕西省</option>
+            <option>山西省</option>
+            <option>山东省</option>
+            <option>湖北省</option>
+            <option>陕西省</option>
+            <option>山西省</option>
+            <option>山东省</option>
+            <option>湖北省</option>
+            <option>陕西省</option>
+            <option>山西省</option>
+            <option>山东省</option>
         </select>
         <select class="se2">
             <option>西安市</option>
@@ -36,6 +52,11 @@
 </template>
 <script>
 export default {
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>
@@ -83,9 +104,11 @@ input{
     border-bottom: 1px solid #e6e7eb;
     outline: none;
 }
-select{
+select,option{
     width: 30%;
     height: 2rem;
+    border: 0;
+    padding: 0;
 }
 textarea{
     display: block;

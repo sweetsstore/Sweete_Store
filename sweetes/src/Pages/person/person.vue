@@ -33,30 +33,41 @@
         <b>我的订单</b>
     </div>
     <div class="PersonOrder2">
-        <div>全部</div>
-        <div>待付款</div>
-        <div>待评价</div>
+        <div @click="orderall">全部</div>
+        <div @click="orderpay">待付款</div>
+        <div @click="orderevaluate">待评价</div>
     </div>
-    <div class="PersonActive"></div>
+    <div class="PersonActive" ref="active"></div>
     <div class="empty"></div>
     <div class="PersonFoot">
         <orderall></orderall>
         <orderall></orderall>
         <orderall></orderall>
         <orderall></orderall>
-        <orderall></orderall>
-        <div class="empty"></div>
+        <!-- <div class="empty"></div> -->
     </div>
 </div>
 </template>
-
 <script>
 import orderall from '../orderall/orderall.vue'
 export default {
-  components: {orderall},
+  components: {
+    orderall
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    orderall () {
+      this.$refs.active.style.left = '8%'
+    },
+    orderpay (e) {
+      this.$refs.active.style.left = '30%'
+    //   console.log(e.currentTarget)
+    },
+    orderevaluate (e) {
+      this.$refs.active.style.left = '51%'
+    //   console.log(e.currentTarget)
     }
   }
 }
@@ -170,7 +181,7 @@ export default {
     height: .133333rem;
     background-color:#fecf37;
     position: relative;
-    left: 10%;
+    left: 8%;
 }
 .PersonFoot{
     width: 100%;

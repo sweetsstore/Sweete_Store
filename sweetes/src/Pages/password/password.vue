@@ -34,14 +34,17 @@ export default {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: #c7b9b0;
+    /* background-color: #c7b9b0; */
+    background: url("img/passwordBG.png") no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 .forget{
     width: 100%;
     height: 2rem;
     position: relative;
     top:0;
-    background-color: white;
+    background:rgba(255, 255, 255, 0.8);
 }
 .forget div{
     width: 1rem;
@@ -63,12 +66,12 @@ export default {
 .forgetAll{
     width: 80%;
     height: 70%;
-    background-color: white;
+    background:rgba(255, 255, 255, 0.6);
     margin: 20% auto;
 }
 .forgetEmpty{
     width: 100%;
-    height: 2.666667rem;
+    height: 2.2rem;
 }
 .jiantou{
     width: 1rem;
@@ -80,7 +83,7 @@ export default {
     margin-top: 15%;
     margin-left: 25%;
     border-radius: 1.333333rem;
-    background-color: #c7b9b0;
+    background-color: #dbdbdb;
     line-height: 2rem;
     text-align: center;
 }

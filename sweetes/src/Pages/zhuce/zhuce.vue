@@ -11,7 +11,7 @@
         <input type="text" placeholder=" 请输入手机号码">
         <div class="send">
             <input type="text" placeholder=" 请输入验证码" class="send1">
-            <button class="send2" @click="send">发送
+            <button class="send2" @click="send">{{time}}
             </button>
         </div>
         <input type="text" placeholder=" 请输入你的密码">
@@ -19,10 +19,22 @@
     </div>
 </template>
 <script>
+import { setInterval } from 'timers'
 export default {
+  data () {
+    return {
+      time: '发送'
+    }
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    send: function () {
+      this.time = 60
+      setInterval(function (t) {
+        console.log(t)
+      }, 1000)
     }
   }
 }

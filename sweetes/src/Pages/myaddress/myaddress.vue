@@ -1,5 +1,5 @@
 <template>
-    <div class="address">
+    <div class="myaddress">
         <div class="body1">
             <div class="name">张金蕊</div>
             <div class="phone">18009240559</div>
@@ -16,11 +16,11 @@ export default {
 }
 </script>
 <style scoped>
-.address{
+.myaddress{
     width: 100%;
     height: 4rem;
-    margin-top: 1rem;
     position: relative;
+    margin-top: 3%;
 }
 .body1{
     width: 95%;
@@ -31,9 +31,12 @@ export default {
 .name{
     width: 20%;
     height: 2rem;
-    font-size: 1.333333rem;
+    font-size: 1.2rem;
     line-height: 2rem;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .phone{
     width: 32%;
@@ -47,13 +50,14 @@ export default {
 .flag{
     width: 16%;
     position: absolute;
-    top: 0;
+    top: .2rem;
     right: 24%;
-    height: 2rem;
-    line-height: 2rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
     text-align: center;
     background-color: #ffebea;
     color: #dd7454;
+    font-size: .933333rem;
     /* display: none; */
 }
 .body2{
