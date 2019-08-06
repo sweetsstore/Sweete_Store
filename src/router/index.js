@@ -4,15 +4,14 @@ import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
 import orders from '../Pages/orders/orders.vue'
 import bottomnav from '../components/bottomnav/bottomnav.vue'
 import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
-import cart from '../Pages/cart/cart.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'shoppingcart',
-      component: shoppingcart
+      name: 'goodsdetails',
+      component: goodsdetails
     }, {
       path: '/shoppingcart',
       name: 'shoppingcart',
@@ -31,10 +30,6 @@ export default new Router({
       path: '/bottomnav',
       name: 'bottomnav',
       component: bottomnav
-    },{
-      path: '/cart',
-      name: 'cart',
-      component: cart
     }
   ]
 })

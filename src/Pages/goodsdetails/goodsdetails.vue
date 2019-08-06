@@ -17,8 +17,12 @@
             <div id="truecommit">挺！</div>
         </div>
         <div class="greyblock"></div>
-        <div class="tanggreyblock">图文详情</div>
-        <div id="shopdetails"></div>
+        <div class="tanggreyblock">图文详情</div><hr>
+        <div id="shopdetails">
+        <div class="imgdata" v-for="item in lists" :key="item">
+            <img v-bind:src="item.img">
+        </div>
+        </div>
         <div id="shopbottomnav">
         <ul class="nav">
             <li class="nav1" id="linav1"  ><a href=""><img src="./img/dianpu.png" alt="" width="27px" height="27px;"></a></li>
@@ -29,14 +33,16 @@
     </div>
 </template>
 <script>
-import $ from 'jquery'
-console.log($)
-</script>
-<script src="/js/goodsdetails.js" ></script>
-<script>
 export default {
-    mounted: function(){
-    console.log($)
+  name: 'goodsdetails',
+  data () {
+    return {
+      lists: [
+        {img: '4.jpg'},
+        {img: '5.jpg'},
+        {img: '6.jpg'},
+        {img: '7.jpg'}]
+    }
   }
 }
 </script>
@@ -111,7 +117,7 @@ export default {
             display: inline-block;
             float: left;
             padding: 1.5% 0 0 0;
-            margin: 3% 0 0 5%;
+            margin: 1% 0 0 5%;
         }
         #accountname{
             width: 30%;
@@ -133,15 +139,22 @@ export default {
             margin: 2px 10% 10px 10%;
             text-align: left;
         }
-        #tanggreyblock{
+        .tanggreyblock{
             width: 100%;
-            height: 40px;
+            height: 25px;
             text-align: center;
             vertical-align: bottom;
-            font-size: 15px;
+            font-size: 20px;
             color: black;
             position: inherit;
-            background-color: lightgray;
+            background-color: #fff;
+        }
+        #shopdetails{
+            width: 100%;
+            height: auto;
+        }
+        .imgdata{
+            width: 100%;
         }
         .nav{
             width: 100%;
@@ -158,14 +171,16 @@ export default {
             background-color: white;
             color: black;
             text-align: center;
-            margin:3% 0 0 0%;
+            bottom: 0;
         }
         .nav .nav2{
-            width: 30%;
+            width: 32%;
             float: left;
             background-color: #fecf37;
             display: block;
             border-radius: 10%;
+            bottom: 0;
+            color: black;
         }
         .nav a{
             display:block;

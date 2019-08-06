@@ -3,10 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import $ from 'jquery'
 import './components/bottomnav/iconstyle/iconfont.css'
-window.jQuery = $
-window.$ = $
+import './Pages/shoppingcart/style/iconfont.css'
 
 Vue.config.productionTip = false
 
