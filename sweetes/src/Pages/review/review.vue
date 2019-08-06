@@ -1,7 +1,7 @@
 <template>
 <div>
     <div id="top">
-        <div id="return">
+        <div id="return" @click="go_back">
             <img alt="" src="./img/fanhui.png">
         </div>
         <div id="shopcart">
@@ -38,8 +38,8 @@
             <div class="id">zhangjinruileiminxiaoye</div>
             <div class="date">2019-7-27</div>
             <div class="inner">kajfbckahcljlihoihgiyhgvjGKCJBcnlakcljabkjgkJGLJHLJHBJFJGVjvjgchgdhtutetegfchgcjhfyiug</div>
-            <div class="twice">
-                    <img alt="" src="./img/pinglun.png">
+            <div class="twice" @click="go_comment">
+                <img alt="" src="./img/pinglun.png">
             </div>
         </div>
     </div>
@@ -47,7 +47,16 @@
 </template>
 
 <script>
-
+export default {
+  methods: {
+    go_back () {
+      this.$router.go(-1)
+    },
+    go_comment () {
+      this.$router.push({path: '/comment'})
+    }
+  }
+}
 </script>
 
 <style>
@@ -126,7 +135,7 @@ body{
         font-size: 1.2rem;
         width: calc(98% - 2.5rem);
         height: calc(10.71rem - 3rem);
-        overflow: hidden;
+        overflow: scroll;
         word-wrap: break-word;
         word-break: break-all;
     }

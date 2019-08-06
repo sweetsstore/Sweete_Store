@@ -14,6 +14,7 @@ import orderall from '../Pages/orderall/orderall.vue'
 import guanzhu from '../Pages/guanzhu/guanzhu.vue'
 import redmoney from '../Pages/redmoney/redmoney.vue'
 import personmoney from '../Pages/personmoney/personmoney.vue'
+import recommending from '../Pages/recommending/recommending.vue'
 
 Vue.use(Router)
 
@@ -113,6 +114,11 @@ export default new Router({
       path: '/personmoney',
       name: 'personmoney',
       component: personmoney
+    },
+    {
+      path: '/recommending',
+      name: 'recommending',
+      component: recommending
     }
   ]
 })

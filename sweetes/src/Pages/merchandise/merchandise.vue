@@ -1,10 +1,10 @@
 <template>
 <div>
     <div id="top">
-        <div id="return">
+        <div id="return" @click="go_back">
             <img alt="" src="./img/fanhui.png">
         </div>
-        <div id="write">
+        <div id="write" @click="go_comment">
             <img alt="" src="./img/tijiao.png">
         </div>
     </div>
@@ -119,39 +119,20 @@
               </div>
             </div>
           </div>
-        <div id="add">
-            <img alt="" src="./img/tianjia.png">
-            <input id="up_image" type="file" name="file"  multiple @change="change_image"/>
-        </div>
     </div>
 </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        go_back () {
-            this.$router.go(-1)
-        },
-        changeN (i) {
-            this.n = i
-        },
-        change_image (i) {
-            var htl = ''
-            var upimage = document.querySelector('#up_image')
-            var add = document.querySelector('#add')
-            var addPicturl = document.querySelector('.addPicturl')
-            for (var index = 0; index < upimage.files.length; index++) {
-                htl += `<img style="width:100px;height:100px;margin-left:10px" src="${URL.createObjectURL(upimage.files[index])}"></img>`
-            }
-            if (upimage.files.length > 9) {
-                alert('最多可传9张图片')
-            } else {
-                add.innerHTML = htl
-            }
-            addPicturl.style.left = 0.241546 + 'rem'
-        }
+  methods: {
+    go_back () {
+      this.$router.go(-1)
+    },
+    go_write () {
+      this.$router.push({path: '/review'})
     }
+  }
 }
 </script>
 
