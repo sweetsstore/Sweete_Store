@@ -20,9 +20,13 @@
         <div class="tanggreyblock">图文详情</div><hr>
         <div id="shopdetails">
         <div class="imgdata" v-for="item in lists" :key="item">
-            <img v-bind:src="item.img">
+            <img v-bind:src="item.img" width="100%" height="auto">
         </div>
         </div>
+        <span class="line"></span>
+        <span class="txt">已经到最低了</span>
+        <span class="line"></span>
+        <div class="suojin"></div>
         <div id="shopbottomnav">
         <ul class="nav">
             <li class="nav1" id="linav1"  ><a href=""><img src="./img/dianpu.png" alt="" width="27px" height="27px;"></a></li>
@@ -38,10 +42,10 @@ export default {
   data () {
     return {
       lists: [
-        {img: '4.jpg'},
-        {img: '5.jpg'},
-        {img: '6.jpg'},
-        {img: '7.jpg'}]
+        {img: require('./img/4.jpg')},
+        {img: require('./img/5.jpg')},
+        {img: require('./img/6.jpg')},
+        {img: require('./img/7.jpg')}]
     }
   }
 }
@@ -123,7 +127,7 @@ export default {
             width: 30%;
             font-size:20px;
             color: grey;
-            margin: 0 0 0 3%;
+            margin: 0% 0 0 3%;
         }
         #committime{
             width: 30%;
@@ -141,10 +145,10 @@ export default {
         }
         .tanggreyblock{
             width: 100%;
-            height: 25px;
+            height: 18px;
             text-align: center;
             vertical-align: bottom;
-            font-size: 20px;
+            font-size: 17px;
             color: black;
             position: inherit;
             background-color: #fff;
@@ -155,6 +159,28 @@ export default {
         }
         .imgdata{
             width: 100%;
+        }
+        .goods-title {
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+        .goods-title .line {
+            display: inline-block;
+            width: 35%;
+            border-top: 1px solid #ccc ;
+        }
+        .goods-title .txt {
+            color: #985f0d;
+            height: 30px;
+            width: 30%;
+            line-height: 30px;
+            vertical-align: -15%;
+        }
+        .suojin{
+            width: 100%;
+            height: 50px;
+            background-color: white;
         }
         .nav{
             width: 100%;

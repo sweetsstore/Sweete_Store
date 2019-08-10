@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import './components/bottomnav/iconstyle/iconfont.css'
 import './Pages/shoppingcart/style/iconfont.css'
-
+import './Pages/orders/style/iconfont.css'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
