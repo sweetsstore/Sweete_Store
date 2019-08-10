@@ -113,11 +113,6 @@ export default new Router({
       component: orders
     },
     {
-      path: '/bottomnav',
-      name: 'bottomnav',
-      component: bottomnav
-    },
-    {
       path: '/orderall',
       name: 'orderall',
       component: orderall
@@ -249,19 +244,9 @@ export default new Router({
       component: comment
     },
     {
-      path: '/',
-      name: 'merchandise',
-      component: merchandise
-    },
-    {
       path: '/merchandise',
       name: 'merchandise',
       component: merchandise
-    },
-    {
-      path: '/',
-      name: 'review',
-      component: review
     },
     {
       path: '/review',
