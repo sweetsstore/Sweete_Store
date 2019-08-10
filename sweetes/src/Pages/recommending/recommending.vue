@@ -224,19 +224,18 @@ body{
     -moz-column-gap: .013333rem;
     -webkit-column-gap: .013333rem;
     column-gap: .013333rem;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     width: 49%;
     height: auto;
     margin: calc(.5%);
-    overflow: auto;
+    /* overflow: auto; */
     border-radius: .053333rem;
 }
 .pic{
-    display: inline-flex;
+    display: block;
     width: 100%;
-    max-width: 100%;
-    min-width: 100%;
+    /* max-width: 100%;
+    min-width: 100%; */
     /* height: 0;
     padding-bottom: 100%; */
 }
@@ -247,7 +246,7 @@ body{
     position: relative;
     display: flex;
     width: 100%;
-    height: 6.666667rem;
+    height: 6rem;
 }
 .clear{
     clear: both;
@@ -284,7 +283,7 @@ body{
     position: absolute;
     display: block;
     font-size: .9rem;
-    height: calc(6.666667rem - 3.5rem);
+    height: calc(6.666667rem - 4.1rem);
     width: 100%;
     overflow: hidden;
     word-wrap: break-word;
@@ -293,7 +292,7 @@ body{
 .point{
     display: block;
     position: absolute;
-    top: calc(6.666667rem - 1.5rem);
+    top: calc(6.666667rem - 2rem);
     right: .35rem;
 }
 .point:hover{
