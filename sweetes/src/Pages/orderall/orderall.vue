@@ -55,7 +55,7 @@ p{
     display: inline;
     margin: 0;
 }
-.box{
+/* .box{
     width: 32%;
     height: 1.4rem;
     position: absolute;
@@ -67,5 +67,5 @@ p{
     text-align: center;
     border-radius: 0.7rem;
     background-color: #ffce39;
-}
+} */
 </style>

@@ -37,7 +37,24 @@ export default new Router({
     {
       path: '/person',
       name: 'person',
-      component: person
+      component: person,
+      children: [
+        {
+          path: '/orderall',
+          name: 'orderall',
+          component: orderall
+        },
+        {
+          path: '/orderpay',
+          name: 'orderpay',
+          component: orderpay
+        },
+        {
+          path: '/orderevaluate',
+          name: 'orderevaluate',
+          component: orderevaluate
+        }
+      ]
     },
     {
       path: '/zhuce',
