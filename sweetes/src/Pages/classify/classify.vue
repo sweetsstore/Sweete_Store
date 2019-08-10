@@ -18,25 +18,25 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/意大利面.png" alt="">
+                    <img src="../../assets/classifyimg/意大利面.png" alt="">
                     <span>意大利面</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/牛排.png" alt="">
+                    <img src="../../assets/classifyimg/牛排.png" alt="">
                     <span>牛排</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/披萨.png" alt="">
+                    <img src="../../assets/classifyimg/披萨.png" alt="">
                     <span>披萨</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/牛排.png" alt="">
+                    <img src="../../assets/classifyimg/牛排.png" alt="">
                     <span>牛排</span>
                     </a>
                 </li>
@@ -47,7 +47,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/中餐.png" alt="">
+                    <img src="../../assets/classifyimg/中餐.png" alt="">
                     <span>中餐</span>
                     </a>
                 </li>
@@ -58,7 +58,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/咖啡.png" alt="">
+                    <img src="../../assets/classifyimg/咖啡.png" alt="">
                     <span>咖啡</span>
                     </a>
                 </li>
@@ -69,7 +69,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/酒杯.png" alt="">
+                    <img src="../../assets/classifyimg/酒杯.png" alt="">
                     <span>酒</span>
                     </a>
                 </li>
@@ -80,19 +80,19 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/零食.png" alt="">
+                    <img src="../../assets/classifyimg/零食.png" alt="">
                     <span>零食</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/零食_面包.png" alt="">
+                    <img src="../../assets/classifyimg/零食_面包.png" alt="">
                     <span>面包</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/零食罐头.png" alt="">
+                    <img src="../../assets/classifyimg/零食罐头.png" alt="">
                     <span>罐头</span>
                     </a>
                 </li>
@@ -103,7 +103,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/生鲜.png" alt="">
+                    <img src="../../assets/classifyimg/生鲜.png" alt="">
                     <span>生鲜</span>
                     </a>
                 </li>
@@ -114,7 +114,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/水果.png" alt="">
+                    <img src="../../assets/classifyimg/水果.png" alt="">
                     <span>水果</span>
                     </a>
                 </li>
@@ -125,7 +125,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/茶.png" alt="">
+                    <img src="../../assets/classifyimg/茶.png" alt="">
                     <span>茶</span>
                     </a>
                 </li>
@@ -136,7 +136,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/保健品.png" alt="">
+                    <img src="../../assets/classifyimg/保健品.png" alt="">
                     <span>保健品</span>
                     </a>
                 </li>
@@ -147,7 +147,7 @@
             <ul>
                 <li>
                     <a href="#">
-                    <img src="./classifyimg/蛋糕.png" alt="">
+                    <img src="../../assets/classifyimg/蛋糕.png" alt="">
                     <span>蛋糕</span>
                     </a>
                 </li>
