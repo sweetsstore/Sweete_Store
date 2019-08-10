@@ -37,6 +37,10 @@ import merchandise from '../Pages/merchandise/merchandise.vue'
 import review from '../Pages/review/review.vue'
 import recommend from '../Pages/recommend/recommend.vue'
 import recommending from '../Pages/recommending/recommending.vue'
+import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
+import orders from '../Pages/orders/orders.vue'
+import bottomnav from '../components/bottomnav/bottomnav.vue'
+import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 
 Vue.use(Router)
 
@@ -93,6 +97,25 @@ export default new Router({
       path: '/set',
       name: 'set',
       component: set
+    },
+    {
+      path: '/shoppingcart',
+      name: 'shoppingcart',
+      component: shoppingcart
+    },
+    {
+      path: '/goodsdetails',
+      name: 'goodsdetails',
+      component: goodsdetails
+    }, {
+      path: '/orders',
+      name: 'orders',
+      component: orders
+    },
+    {
+      path: '/bottomnav',
+      name: 'bottomnav',
+      component: bottomnav
     },
     {
       path: '/orderall',
@@ -259,6 +282,11 @@ export default new Router({
       path: '/recommending',
       name: 'recommending',
       component: recommending
+    },
+    {
+      path: '../components/bottomnav',
+      name: 'bottomnav',
+      component: bottomnav
     }
   ]
 })

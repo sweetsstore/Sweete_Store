@@ -46,13 +46,16 @@
         <orderall></orderall>
         <!-- <div class="empty"></div> -->
     </div>
+    <bottomnav></bottomnav>
 </div>
 </template>
 <script>
 import orderall from '../orderall/orderall.vue'
+import bottomnav from '../../components/bottomnav/bottomnav.vue'
 export default {
   components: {
-    orderall
+    orderall,
+    bottomnav
   },
   methods: {
     goTo (path) {
