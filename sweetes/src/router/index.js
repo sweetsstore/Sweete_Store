@@ -1,14 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
-=======
 import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
 import orders from '../Pages/orders/orders.vue'
 import comment from '../Pages/comment/comment.vue'
 import merchandise from '../Pages/merchandise/merchandise.vue'
 import review from '../Pages/review/review.vue'
 import recommend from '../Pages/recommend/recommend.vue'
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
 import regist from '../Pages/regist/regist.vue'
 import person from '../Pages/person/person.vue'
 import zhuce from '../Pages/zhuce/zhuce.vue'
@@ -19,7 +16,6 @@ import orderall from '../Pages/orderall/orderall.vue'
 import attention from '../Pages/attention/attention.vue'
 import redmoney from '../Pages/redmoney/redmoney.vue'
 import personmoney from '../Pages/personmoney/personmoney.vue'
-<<<<<<< HEAD
 import personattention from '../Pages/personattention/personattention.vue'
 import personcollect from '../Pages/personcollect/personcollect.vue'
 import collect from '../Pages/collect/collect.vue'
@@ -51,20 +47,11 @@ import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
 import orders from '../Pages/orders/orders.vue'
 import bottomnav from '../components/bottomnav/bottomnav.vue'
 import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
-=======
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-<<<<<<< HEAD
-=======
-      name: 'goodsdetails',
-      component: goodsdetails
-    },
     {
       path: '/goodsdetails',
       name: 'goodsdetails',
@@ -105,18 +92,12 @@ export default new Router({
       component: review
     },
     {
-      path: '/',
-      name: 'recommend',
-      component: recommend
-    },
-    {
       path: '/recommend',
       name: 'recommend',
       component: recommend
     },
     {
       path: '/',
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
       name: 'regist',
       component: regist
     },
@@ -166,7 +147,6 @@ export default new Router({
       path: '/set',
       name: 'set',
       component: set
-<<<<<<< HEAD
     },
     {
       path: '/shoppingcart',
@@ -186,8 +166,6 @@ export default new Router({
       path: '/bottomnav',
       name: 'bottomnav',
       component: bottomnav
-=======
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
     },
     {
       path: '/orderall',
@@ -208,7 +186,6 @@ export default new Router({
       path: '/personmoney',
       name: 'personmoney',
       component: personmoney
-<<<<<<< HEAD
     },
     {
       path: '/personattention',
@@ -360,8 +337,6 @@ export default new Router({
       path: '../components/bottomnav',
       name: 'bottomnav',
       component: bottomnav
-=======
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
     }
   ]
 })
