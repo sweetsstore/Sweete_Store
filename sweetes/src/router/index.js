@@ -38,13 +38,7 @@ import teaclass from '@/Pages/goodsshow/teaclass/teaclass.vue'
 import thingclass from '@/Pages/goodsshow/thingclass/thingclass.vue'
 import wineclass from '@/Pages/goodsshow/wineclass/wineclass.vue'
 import snackclass from '@/Pages/goodsshow/snackclass/snackclass.vue'
-import comment from '../Pages/comment/comment.vue'
-import merchandise from '../Pages/merchandise/merchandise.vue'
-import review from '../Pages/review/review.vue'
-import recommend from '../Pages/recommend/recommend.vue'
 import recommending from '../Pages/recommending/recommending.vue'
-import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
-import orders from '../Pages/orders/orders.vue'
 import bottomnav from '../components/bottomnav/bottomnav.vue'
 import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 
@@ -62,29 +56,14 @@ export default new Router({
       component: orders
     },
     {
-      path: '/',
-      name: 'comment',
-      component: comment
-    },
-    {
       path: '/comment',
       name: 'comment',
       component: comment
     },
     {
-      path: '/',
-      name: 'merchandise',
-      component: merchandise
-    },
-    {
       path: '/merchandise',
       name: 'merchandise',
       component: merchandise
-    },
-    {
-      path: '/',
-      name: 'review',
-      component: review
     },
     {
       path: '/review',
@@ -317,11 +296,6 @@ export default new Router({
       path: '/review',
       name: 'review',
       component: review
-    },
-    {
-      path: '/',
-      name: 'recommend',
-      component: recommend
     },
     {
       path: '/recommend',

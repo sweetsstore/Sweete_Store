@@ -29,15 +29,9 @@
         <div class="suojin"></div>
         <div id="shopbottomnav">
         <ul class="nav">
-<<<<<<< HEAD
-            <li class="nav1" id="linav1"  ><a href=""><img src="./img/dianpu.png" alt="" width="27px" height="27px;"></a></li>
-            <li class="nav1" id="linav2"><a href=""><img src="./img/shoucang.png" alt="" width="30px" height="30px;" color="black"></a></li>
-            <li class="nav2" id="shopcart"><a href="">加入购物车</a></li>
-=======
             <li class="nav1" id="linav1"  ><a href=""><img src="img/dianpu.png" alt="">店铺</a></li>
             <li class="nav1" id="linav2"><a href=""><img src="img/shoucang.png" alt="">收藏</a></li>
             <li class="nav2"><a href="">加入购物车</a></li>
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
             <li class="nav2"><a href="">立即购买</a></li>
         </ul></div>
     </div>
@@ -76,33 +70,14 @@ export default {
             font-size:23px;
             color: red;
             display:block;
-<<<<<<< HEAD
-            margin: 2% 0 0 5% ;
-            text-align: left;
-            display: inline-block;
-        }
-        #inventorynum{
-            width:47%;
-            height:8%;
-            color: #aaa;
-            font-size: 13px;
-            margin: 0 3% 0 0;
-            display: inline-block;
-            vertical-align: bottom;
-=======
             margin: 0 0 0 8% ;
             text-align: left;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
         }
         #goodsname{
             width:85%;
             height:auto;
             color:black;
-<<<<<<< HEAD
-            font-size:16px;
-=======
             font-size:20px;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
             margin: 0% 5% 0 7%;
             line-height:21px;
             text-align: left;
@@ -134,7 +109,7 @@ export default {
             background-repeat: no-repeat;
             background-size: cover;
             display: inline-block;
-            float: left;
+            /* float: left; */
             padding: 1.5% 0 0 0;
             margin: 1% 0 0 5%;
         }
@@ -205,16 +180,6 @@ export default {
             list-style: none;
             margin: 0;
             padding: 0;
-<<<<<<< HEAD
-        }
-        .nav .nav1{
-            width: 18%;
-            float: left;
-            background-color: white;
-            color: black;
-            text-align: center;
-            bottom: 0;
-=======
         }
         img{
             background-size: 100% auto;
@@ -224,23 +189,14 @@ export default {
             float: left;
             background-color: white;
             color: black;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
         }
         .nav .nav2{
             width: 32%;
             float: left;
-<<<<<<< HEAD
-            background-color: #fecf37;
-            display: block;
-            border-radius: 10%;
-            bottom: 0;
-            color: black;
-=======
             background-color: red;
             display: block;
             border-radius: 10%;
             color: white;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
         }
         .nav a{
             display:block;

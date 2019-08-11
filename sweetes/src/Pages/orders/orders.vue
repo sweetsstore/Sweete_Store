@@ -1,16 +1,5 @@
 <template>
     <div id="app">
-<<<<<<< HEAD
-        <div id="return-1"><span class="iconfont" id="return">&#xe622;</span><span id="sureorder">确认订单</span></div>
-            <div id="personmsg">
-                <div class="addchara"><span class="iconfont" id="addchara">&#xe641;</span></div>
-                <div class="spanchara">
-                    <span id="name">鱼鱼</span>
-                    <span id="accounttel">13633234491</span>
-                    <p id="accountadd">陕西省西安市长安区郭杜街道西安邮电大学长安校区西区</p>
-                    <div id="seladd"></div
-                ></div>
-=======
         <div id="return-1"><span id="sureorder">确认订单</span><br></div>
         <div id="bodyblock">
             <div id="personmsg">
@@ -28,7 +17,6 @@
                 <span id="price">￥:35.5</span>
             </div>
                 <div id="buynum"></div>
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
             </div>
         <ul class="shopping">
             <li class="everyshop" v-for="item in carts" :key="item">
@@ -105,29 +93,16 @@ export default {
             margin: 0;
             padding: 0;
             background: -webkit-linear-gradient(#ddd,#fff);
-<<<<<<< HEAD
             font-family:sans-serif;
-    }
-    *{
-        margin:0;
-        width: 100%;
-        padding: 0;
-=======
-        font-family:sans-serif;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
     }
     #return-1{
         color: black;
         font-size:18px;
-<<<<<<< HEAD
-=======
         background-color: white;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
         width: 100%;
         height:auto;
         vertical-align: middle;
         text-align: left;
-<<<<<<< HEAD
         background-color: white;
         z-index: 0;
     }
@@ -175,8 +150,8 @@ export default {
     #accountadd{
         font-size: 14px;
         display: inline;
-        width: 70%;
-        float: left;
+        /* width: 70%;
+        float: left; */
     }
     #seladd{
         width: 13%;
@@ -227,7 +202,7 @@ export default {
     #shopchara{
       width: 65%;
       display: inline-block;
-      float: right;
+      /* float: right; */
       margin: 1% 0 0 0%;
     }
     .producttitle{
@@ -238,7 +213,6 @@ export default {
     .price{
       display: inline-block;
       width: 60%;
-      float: left;
       position: absolute;
       font-size: 15px;
       color: red;
@@ -294,7 +268,6 @@ export default {
         padding: 0;
         color: white;
         text-align: center;
-=======
         padding:3% 0 2% 0;
     }
     #sureorder{
@@ -352,6 +325,5 @@ export default {
     #shopgoodsdetails #price{
         width: 8%;
         float:right;
->>>>>>> 7136d07c1de9a8e6e94fa889a4c6aa46ca5aaa68
     }
 </style>
