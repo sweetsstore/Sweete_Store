@@ -10,7 +10,7 @@
 <script>
 export default {}
 </script>
-<style>
+<style scoped="scoped">
 header{
     width:100%;
     height:3.7rem;
@@ -33,7 +33,7 @@ header{
     height:1.5rem;
     width: 100%;
     border-radius: 2rem;
-    background-color:white;
+    background-color: whitesmoke;
     border:.2px black solid;
     margin-top:1rem;
 }

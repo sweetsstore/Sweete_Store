@@ -1,14 +1,9 @@
 <template>
 <div class="home_nav">
-    <div class="dot">
-        <a href="#"><img src="../../assets/homeimg/cha.png" alt=""></a>
-        <a href="#"><img src="../../assets/homeimg/meijiu.png" alt=""></a>
-        <a href="#"><img src="../../assets/homeimg/meishi.png" alt=""></a>
-        <a href="#"><img src="../../assets/homeimg/miaosha.png" alt=""></a>
-    </div>
     <ul class="dots">
         <li v-for="item in items" :key="item.id">
-            <span @click="changediv">{{item}}</span>
+            <img :src="item.url" alt="">
+            <span @click="changediv">{{item.name}}</span>
             <div></div>
         </li>
     </ul>
@@ -18,17 +13,27 @@
 export default {
   data () {
     return {
-      items: ['品好茶', '挑美酒', '尝美食', '去秒杀']
+      items:
+      [
+        {name: '品好茶', url: require('../../assets/homeimg/cha.png')},
+        {name: '挑美酒', url: require('../../assets/homeimg/meijiu.png')},
+        {name: '尝美食', url: require('../../assets/homeimg/meishi.png')},
+        {name: '去秒杀', url: require('../../assets/homeimg/miaosha.png')}
+      ]
+    }
+  },
+  methods: {
+    changediv: function () {
     }
   }
 }
 </script>
-<style>
+<style scoped="scoped">
 .home_nav{
     width:100%;
     margin-top:1rem;
 }
-.dot{
+/* .dot{
     display:flex;
     align-items:center;
     justify-content:space-around;
@@ -43,7 +48,7 @@ export default {
 .dot a img{
     height:2rem;
     width: 2rem;
-}
+} */
 .dots{
     display:flex;
     align-items:center;
@@ -51,8 +56,11 @@ export default {
     margin-top:.1rem;
     list-style:none;
 }
+.dots li img{
+  padding-left:.5rem;
+}
 .dots li span{
-    display:inline-block;
+    display:block;
 }
 .dots li div{
     background-color: #fecf37;

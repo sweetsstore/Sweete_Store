@@ -8,16 +8,16 @@
     </header>
     <div class="classes">
     <ul :default-active="active" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <router-link  tag="li" to="/goodsshow/westclass">西餐</router-link>
-    <router-link  tag="li" to="/goodsshow/eastclass">中餐</router-link>
-    <router-link  tag="li" to="/goodsshow/cafeclass">咖啡</router-link>
-    <router-link  tag="li" to="/goodsshow/wineclass">酒</router-link>
-    <router-link  tag="li" to="/goodsshow/snackclass">零食</router-link>
-    <router-link  tag="li" to="/goodsshow/fishclass">生鲜</router-link>
-    <router-link  tag="li" to="/goodsshow/fruitclass">水果</router-link>
-    <router-link  tag="li" to="/goodsshow/teaclass">茗茶</router-link>
-    <router-link  tag="li" to="/goodsshow/thingclass">保健品</router-link>
-    <router-link  tag="li" to="/goodsshow/cakeclass">蛋糕</router-link>
+    <router-link index="westclass" tag="li" to="/goodsshow/westclass">西餐</router-link>
+    <router-link index="eastclass" tag="li" to="/goodsshow/eastclass">中餐</router-link>
+    <router-link index="cafeclass" tag="li" to="/goodsshow/cafeclass">咖啡</router-link>
+    <router-link index="wineclass" tag="li" to="/goodsshow/wineclass">酒</router-link>
+    <router-link index="snackclass" tag="li" to="/goodsshow/snackclass">零食</router-link>
+    <router-link index="fishclass" tag="li" to="/goodsshow/fishclass">生鲜</router-link>
+    <router-link index="fruitclass" tag="li" to="/goodsshow/fruitclass">水果</router-link>
+    <router-link index="teaclass" tag="li" to="/goodsshow/teaclass">茗茶</router-link>
+    <router-link index="thingclass" tag="li" to="/goodsshow/thingclass">保健品</router-link>
+    <router-link index="cakeclass" tag="li" to="/goodsshow/cakeclass">蛋糕</router-link>
     </ul>
     </div>
   </div>
@@ -47,7 +47,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped="scoped">
 *{
     margin:0;
     padding:0;
@@ -85,7 +85,7 @@ header span{
     overflow-x:scroll;
 }
 .classes ul{
-    width:400%;
+    width:300%;
     list-style:none;
 }
 .classes ul li{
