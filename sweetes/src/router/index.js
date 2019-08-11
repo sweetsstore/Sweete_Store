@@ -1,5 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
+import orders from '../Pages/orders/orders.vue'
+import comment from '../Pages/comment/comment.vue'
+import merchandise from '../Pages/merchandise/merchandise.vue'
+import review from '../Pages/review/review.vue'
+import recommend from '../Pages/recommend/recommend.vue'
 import regist from '../Pages/regist/regist.vue'
 import person from '../Pages/person/person.vue'
 import zhuce from '../Pages/zhuce/zhuce.vue'
@@ -32,13 +38,7 @@ import teaclass from '@/Pages/goodsshow/teaclass/teaclass.vue'
 import thingclass from '@/Pages/goodsshow/thingclass/thingclass.vue'
 import wineclass from '@/Pages/goodsshow/wineclass/wineclass.vue'
 import snackclass from '@/Pages/goodsshow/snackclass/snackclass.vue'
-import comment from '../Pages/comment/comment.vue'
-import merchandise from '../Pages/merchandise/merchandise.vue'
-import review from '../Pages/review/review.vue'
-import recommend from '../Pages/recommend/recommend.vue'
 import recommending from '../Pages/recommending/recommending.vue'
-import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
-import orders from '../Pages/orders/orders.vue'
 import bottomnav from '../components/bottomnav/bottomnav.vue'
 import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 
@@ -46,6 +46,35 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/goodsdetails',
+      name: 'goodsdetails',
+      component: goodsdetails
+    }, {
+      path: '/orders',
+      name: 'orders',
+      component: orders
+    },
+    {
+      path: '/comment',
+      name: 'comment',
+      component: comment
+    },
+    {
+      path: '/merchandise',
+      name: 'merchandise',
+      component: merchandise
+    },
+    {
+      path: '/review',
+      name: 'review',
+      component: review
+    },
+    {
+      path: '/recommend',
+      name: 'recommend',
+      component: recommend
+    },
     {
       path: '/',
       name: 'regist',
@@ -252,11 +281,6 @@ export default new Router({
       path: '/review',
       name: 'review',
       component: review
-    },
-    {
-      path: '/',
-      name: 'recommend',
-      component: recommend
     },
     {
       path: '/recommend',

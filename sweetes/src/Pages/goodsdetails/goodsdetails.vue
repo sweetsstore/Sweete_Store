@@ -29,9 +29,9 @@
         <div class="suojin"></div>
         <div id="shopbottomnav">
         <ul class="nav">
-            <li class="nav1" id="linav1"  ><a href=""><img src="./img/dianpu.png" alt="" width="27px" height="27px;"></a></li>
-            <li class="nav1" id="linav2"><a href=""><img src="./img/shoucang.png" alt="" width="30px" height="30px;" color="black"></a></li>
-            <li class="nav2" id="shopcart"><a href="">加入购物车</a></li>
+            <li class="nav1" id="linav1"  ><a href=""><img src="img/dianpu.png" alt="">店铺</a></li>
+            <li class="nav1" id="linav2"><a href=""><img src="img/shoucang.png" alt="">收藏</a></li>
+            <li class="nav2"><a href="">加入购物车</a></li>
             <li class="nav2"><a href="">立即购买</a></li>
         </ul></div>
     </div>
@@ -70,24 +70,14 @@ export default {
             font-size:23px;
             color: red;
             display:block;
-            margin: 2% 0 0 5% ;
+            margin: 0 0 0 8% ;
             text-align: left;
-            display: inline-block;
-        }
-        #inventorynum{
-            width:47%;
-            height:8%;
-            color: #aaa;
-            font-size: 13px;
-            margin: 0 3% 0 0;
-            display: inline-block;
-            vertical-align: bottom;
         }
         #goodsname{
             width:85%;
             height:auto;
             color:black;
-            font-size:16px;
+            font-size:20px;
             margin: 0% 5% 0 7%;
             line-height:21px;
             text-align: left;
@@ -119,7 +109,7 @@ export default {
             background-repeat: no-repeat;
             background-size: cover;
             display: inline-block;
-            float: left;
+            /* float: left; */
             padding: 1.5% 0 0 0;
             margin: 1% 0 0 5%;
         }
@@ -191,22 +181,22 @@ export default {
             margin: 0;
             padding: 0;
         }
+        img{
+            background-size: 100% auto;
+        }
         .nav .nav1{
-            width: 18%;
+            width: 20%;
             float: left;
             background-color: white;
             color: black;
-            text-align: center;
-            bottom: 0;
         }
         .nav .nav2{
             width: 32%;
             float: left;
-            background-color: #fecf37;
+            background-color: red;
             display: block;
             border-radius: 10%;
-            bottom: 0;
-            color: black;
+            color: white;
         }
         .nav a{
             display:block;
