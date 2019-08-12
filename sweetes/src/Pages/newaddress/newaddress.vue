@@ -8,9 +8,12 @@
             <div class="save" @click="goTo('/personaddress')">保存</div>
         </div>
         <input type="text" placeholder="  收货人">
+        <!-- user_Addr_Name -->
         <input type="text" placeholder="  手机号码">
+        <!-- user_Addr_Num -->
         <select class="se1">
             <option>湖北省</option>
+            <!-- user_Addr_Pro -->
             <option>陕西省</option>
             <option>山西省</option>
             <option>山东省</option>
@@ -36,14 +39,17 @@
             <option>咸阳市</option>
             <option>渭南市</option>
             <option>汉中市</option>
+            <!-- user_Addr_City -->
         </select>
         <select class="se3">
             <option>新城区</option>
             <option>碑林区</option>
             <option>莲湖区</option>
             <option>灞桥区</option>
+            <!-- user_Addr_County -->
         </select>
         <textarea placeholder="详细地址:如街道，社区等"></textarea>
+        <!-- user_Address -->
         <div class="empty"></div>
         <div class="addressfoot">
             <div>设为默认地址</div>

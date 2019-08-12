@@ -1,18 +1,31 @@
 <template>
     <div class="myaddress">
         <div class="body1">
-            <div class="name">张金蕊</div>
-            <div class="phone">18009240559</div>
-            <div class="flag">默认</div>
+            <div class="name">{{user_Addr_Name}}</div>
+            <!-- user_Addr_Name -->
+            <div class="phone">{{user_Addr_Num}}</div>
+            <!-- user_Addr_Num -->
+            <div class="flag" v-show="flag">{{user_Addr_Defaddr}}}</div>
+            <!-- user_Addr_Defaddr -->
         </div>
         <div class="body2">
-            <div class="area">陕西省西安市长安区西安邮电大学西区</div>
+            <div class="area">{{user_Address}}</div>
+            <!-- user_Address -->
             <div class="delete">删除</div>
         </div>
     </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      user_Addr_Name: '张金蕊',
+      user_Addr_Num: '18009240559',
+      user_Addr_Defaddr: '默认',
+      user_Address: '陕西省西安市长安区西安邮电大学西区',
+      flag: true
+    }
+  }
 }
 </script>
 <style scoped>

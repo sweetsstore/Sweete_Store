@@ -3,13 +3,18 @@
         <div class="store_sign">
             <img src="./attentionimg/dianpu.png" alt="">
         </div>
-        <div class="storename">拉夏贝尔官方旗舰店
+        <div class="storename">{{shop_Name}}
             <span>取消关注</span>
         </div>
     </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      shop_Name: '拉夏贝尔官方旗舰店'
+    }
+  }
 }
 </script>
 <style scoped>

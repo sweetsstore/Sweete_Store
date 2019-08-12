@@ -21,11 +21,31 @@
 </div>
 </template>
 <script>
+// import axios from 'axios'
 export default {
+  data () {
+    return {}
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)
     }
+    // logincheck: function(){
+    //     fetch({
+    //         url: "",
+    //         method: "post",
+    //         header:new Header({
+
+    //         }),
+    //         body: 'username=${this.username}&userpass=${this.userpass}'
+    //     })
+    //     .then((res)=>{
+    //         return res.text();
+    //     })
+    //     .then((data)=>{
+    //         if(this.data){}
+    //     })
+    // }
   }
 }
 </script>

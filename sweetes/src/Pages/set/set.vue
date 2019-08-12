@@ -9,6 +9,7 @@
         <div class="setBody">
             <div class="sethead">
                 <img src="./img/head.png" alt="" class="setpic">
+                <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
                 <a href="#">
                     <img src="./img/youjiantou.png" alt="">
@@ -17,14 +18,17 @@
             <div class="setempty"></div>
             <div class="setuser">
                 <div class="setuser1">用户名</div>
-                <input type="text" class="setuser2" value="张金蕊">
+                <!-- user_Name -->
+                <input type="text" class="setuser2"  value="张金蕊">
             </div>
             <div class="setuser">
                 <div class="setuser1">电子邮件</div>
+                <!-- user_Email -->
                 <input type="text" class="setuser2" value="1365351516@qq.com">
             </div>
             <div class="setuser">
                 <div class="setuser1">手机号码</div>
+                <!-- user_Tel -->
                 <input type="text" class="setuser2" value="18009240559">
             </div>
         </div>
@@ -33,6 +37,11 @@
 </template>
 <script>
 export default {
+  data () {
+    return {
+      user_Name: '用户名'
+    }
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)

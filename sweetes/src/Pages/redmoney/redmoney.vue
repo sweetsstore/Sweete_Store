@@ -3,15 +3,23 @@
         <img src="./img/hongbao1.png" alt="">
         <div class="redbag">
             <div class="redbagbody">
-                <span>20</span>
+                <span>{{coupon}}</span>
                 <p>元</p>
+                <!-- coupon -->
             </div>
-            <span class="redstore">米旗蛋糕店</span>
+            <span class="redstore">{{shop_Name}}</span>
+            <!-- shop_Name -->
         </div>
     </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      coupon: 20,
+      shop_Name: '米旗蛋糕店'
+    }
+  }
 }
 </script>
 <style scoped>
