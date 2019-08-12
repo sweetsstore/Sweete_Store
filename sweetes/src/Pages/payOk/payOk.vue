@@ -9,7 +9,6 @@
         <div class="okJump" @click="goTo('/person')">返回</div>
     </div>
 </template>
-
 <script>
 export default {
   methods: {
