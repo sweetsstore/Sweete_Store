@@ -1,82 +1,67 @@
 <template>
     <div id="app">
-        <div id="return-1"><span class="iconfont" id="return">&#xe622;</span><span id="sureorder">确认订单</span></div>
+        <div id="return-1"><span class="iconfont" id="return">&#xe622;</span><span id="sureorder">订单详情</span></div>
+        <div class="success"></div>
             <div id="personmsg">
                 <div class="addchara"><span class="iconfont" id="addchara">&#xe641;</span></div>
                 <div class="spanchara">
-                    <span id="name">{{name}}</span>
+                    <span id="name">收货人：{{name}}</span>
                     <span id="accounttel">13633234491</span>
                     <p id="accountadd">{{accountadd}}</p>
-                    <div id="seladd"></div
-                ></div>
+                </div>
             </div>
-        <ul class="shopping">
-            <li class="everyshop" v-for="item in carts" :key="item">
+        <div class="shopping">
                 <span class="iconfont" id="shoppic">&#xe608;</span>
-                <div class="shoptitle">{{item.shopTitle}}</div>
-                <hr class="shophr">
+                <span class="shoptitle">{{shopTitle}}</span>
                 <ul class="productlist">
-                    <li v-for="pros in item.productLists" :key="pros">
+                    <li v-for="item in productLists" :key="item">
                         <div class="product">
-                            <img class="productpic" v-bind:src="pros.images">
+                            <img class="productpic" v-bind:src="item.images">
                             <div id="shopchara">
-                                <div class="producttitle">{{pros.productTitle}}</div>
+                                <div class="producttitle">{{item.productTitle}}</div>
                                 <div class="price"><!--使用过滤器对总价改变-->
-                                    <span>￥{{pros.price | totalprice(pros.count)}}</span>
-                                    <div class="count">数量：{{pros.count}}</div>
+                                    <span>￥{{item.price}}</span>
+                                    <div class="count">数量：{{item.count}}</div>
+                                    <button class="goodafter">申请售后</button>
                                 </div>
                             </div>
                         </div>
                     </li>
                 </ul>
-            </li>
-        </ul>
+        </div>
+        <div class="pricechara"><span class="allcount">商品总价</span><span class="trueprice">￥{{allcount}}</span></div>
         <div class="navblock"></div>
         <div class="paybox">
-            <span class="goodsnum">共{{goodsnum}}件</span>
-            <span class="allprice">合计：{{allPrice}}</span>
-            <button class="allcount">提交订单</button>
+            <button class="deleteorder">删除订单</button>
+            <button  class="classorder">查看订单</button>
+            <button class="commit">评价</button>
         </div>
     </div>
 </template>
 <script>
 export default {
-  name: 'orders',
+  name: 'ordermete',
   data () {
     return {
       name: '鱼鱼',
       accounttel: '13633234491',
       accountadd: '陕西省西安市长安区郭杜街道西安邮电大学长安校区西区',
-      carts: [
+      shopTitle: '味·KING',
+      productLists: [
         {
-          shopTitle: 'TIMMY的店', // 商店名
-          productLists: [
-            {
-              images: require('./img/12.jpg'),
-              productTitle: '少女心Q萌榴莲千层蛋糕', // 产品名
-              price: 58, // 价格
-              count: 1 // 数量
-            }
-          ]
+          images: require('./img/8.jpg'),
+          productTitle: '意式黑椒培根牛肉面',
+          price: 36,
+          count: 1
         },
         {
-          shopTitle: '味·KING',
-          productLists: [
-            {
-              images: require('./img/8.jpg'),
-              productTitle: '意式黑椒培根牛肉面',
-              price: 36,
-              count: 1
-            },
-            {
-              images: require('./img/12.jpg'),
-              productTitle: '法国乔士麦春天精品比诺白葡萄',
-              price: 1790,
-              count: 1
-            }
-          ]
+          images: require('./img/12.jpg'),
+          productTitle: '法国乔士麦春天精品比诺白葡萄',
+          price: 1790,
+          count: 1
         }
-      ]
+      ],
+      allcount: '337'
     }
   }
 }
@@ -86,7 +71,7 @@ export default {
             width: 100%;
             margin: 0;
             padding: 0;
-            background: -webkit-linear-gradient(#ddd,#fff);
+            background-color: white;
             font-family:sans-serif;
     }
     *{
@@ -103,6 +88,7 @@ export default {
         text-align: left;
         background-color: white;
         z-index: 0;
+        margin: 2% 0 2% 0;
     }
     #return{
         font-size: 30px;
@@ -110,66 +96,65 @@ export default {
     #sureorder{
         width: 30%;
         height: 25px;
-        font-size: 20px;
+        font-size: 15px;
         margin:1.5% 0 1.5% 2%;
         display: inline-block;
         vertical-align: bottom;
     }
+    .success{
+        background: url(img/success.jpg) no-repeat;
+        width: 100%;
+        height: 80px;
+        margin: 0px auto;
+        background-size:100% 100%;
+    }
     #personmsg{
-        width: 92%;
+        width: 94%;
         background-color: white;
-        padding: 1% 0 2% 0;
+        /* padding: 3% 0 3% 0; */
         margin: 3% 0% 3% 3%;
         text-align:left;
-        height: 103px;
-    }
-    .addchara{
-        width: 30%;
-        float: left;
+        height: 70px;
         position: relative;
     }
+    .addchara{
+        width: 10%;
+        float: left;
+    }
     #addchara{
-        font-size: 60px;
-        margin: 18% 0 0 20%;
-        display: inline-block;
+        font-size: 25px;
+        margin: 5% 5% 3% 1%;
         position: absolute;
     }
     .spanchara{
-        width: 68%;
+        width: 90%;
         float: right;
-        margin: 3% 0 0 0;
+        margin: 1% 0 0 0%;
+        position: relative;
     }
     #name{
-        font-size: 20px;
+        font-size: 15px;
+        display: inline-block;
     }
     #accounttel{
-        width:50%;
+        width:10%;
         height: auto;
         font-size:10px;
         color: #aaa;
         display: inline-block;
+        position: absolute;
+        right: 55px;
+        top: 2px;
     }
     #accountadd{
         font-size: 14px;
-        display: inline;
-        width: 70%;
-        float: left;
-    }
-    #seladd{
-        width: 13%;
-        height: 30px;
-        background-image: url(./img/seladd.png);
-        float: right;
+        display: block;
+        margin: 1% 0 0 1%;
     }
     .shopping{
         width: 96%;
         margin: 2% 2% 2% 2%;
         position: relative;
-    }
-    .everyshop{
-      width: 100%;
-      margin: 2% 0 2% 0;
-      background-color: white;
     }
     li{
       list-style: none;
@@ -204,8 +189,8 @@ export default {
     #shopchara{
       width: 65%;
       display: inline-block;
-      float: right;
-      margin: 1% 0 0 0%;
+      margin: 0% 0 0 2%;
+      position: absolute;
     }
     .producttitle{
       width: 100%;
@@ -215,7 +200,6 @@ export default {
     .price{
       display: inline-block;
       width: 60%;
-      float: left;
       position: absolute;
       font-size: 15px;
       color: red;
@@ -226,50 +210,54 @@ export default {
       height: 20px;
       right: 0;
     }
+    .goodafter{
+        width: 70px;
+        height: 20px;
+        font-size: 15px;
+        float: right;
+    }
+    .pricechara{
+        width: 96%;
+        margin: 3% auto;
+        position: relative;
+    }
+    .allcount{
+        float: left;
+    }
+    .trueprice{
+        display: inline-block;
+        position: absolute;
+        left: 80%;
+    }
     .navblock{
         width: 100%;
         height: 46.69px;
     }
     .paybox{
-        width: 100%;
-        height: 7%;
+        width: 360px;
+        height: 25px;
         position: fixed;
         bottom: 0;
         background-color: white;
         vertical-align: middle;
     }
-    .goodsnum{
-        color: black;
-        font-size: 15px;
-        right: 53%;
-        position: fixed;
-        bottom: 2.0%;
-        width: 10%;
-    }
-    .allprice{
-        color: black;
-        font-size: 17px;
+    .deleteorder{
         float: right;
-        position: fixed;
-        right: 33%;
-        vertical-align: middle;
-        padding: 2% 0 0 0;
-        color: red;
+        display: flex;
         width: 20%;
-        bottom: 2.0%;
-    }
-    .allcount{
-        float: right;
-        width: 30%;
-        height:40px;
+        height:25px;
         font-size: 16px;
-        background-color: red;
-        border-radius: 20px;
-        position: absolute;
-        right: 0%;
-        margin:0;
-        padding: 0;
-        color: white;
-        text-align: center;
+    }
+    .classorder{
+        float: right;
+        width: 20%;
+        height:25px;
+        font-size: 16px;
+    }
+    .commit{
+        float: right;
+        width: 20%;
+        height:25px;
+        font-size: 16px;
     }
 </style>

@@ -2,19 +2,19 @@
     <div id="app">
         <div id="pic"></div><!-- 头部轮播图 -->
         <div>
-        <span id="price"><strong>￥: 58 </strong></span><div id="inventorynum">剩余库存3366件</div><!-- {{price}} -->
+        <span id="price"><strong>￥: {{price}} </strong></span><div id="inventorynum">剩余库存{{inventorynum}}件</div><!-- {{price}} -->
         </div>
         <hr width="90%" text-align="center">
-        <P id="goodsname">绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶</P><!-- {{goodsname}} -->
+        <P id="goodsname">{{goodsname}}</P><!-- {{goodsname}} -->
         <div class="greyblock"></div>
         <div id="discount"></div>
         <div class="greyblock"></div>
         <div id="comment">
-            <div><span id="shopcommit"><strong>商品评价</strong></span></div>
+            <div><span id="shopcommit"><strong>商品评价</strong></span><span class="iconfont" id="morecommit">&#xe62b;</span></div>
             <div><div id="accountpic"></div>
-            <span id="accountname">猫儿</span>
-            <span id="committime">2019-07-24</span></div><br>
-            <div id="truecommit">挺！</div>
+            <span id="accountname">{{accountname}}</span>
+            <span id="committime">{{committime}}</span></div><br>
+            <div id="truecommit"></div>
         </div>
         <div class="greyblock"></div>
         <div class="tanggreyblock">图文详情</div><hr>
@@ -24,16 +24,8 @@
         </div>
         </div>
         <span class="line"></span>
-        <span class="txt">已经到最低了</span>
+        <div class="wantnav"><hr id="hrleft"><span class="iconfont" font-size="18px">&#xe62d;</span><span font-size="18px"> 已经到最低了</span><hr id="hrright"></div>
         <span class="line"></span>
-        <div class="suojin"></div>
-        <div id="shopbottomnav">
-        <ul class="nav">
-            <li class="nav1" id="linav1"  ><a href=""><img src="./img/dianpu.png" alt="" width="27px" height="27px;"></a></li>
-            <li class="nav1" id="linav2"><a href=""><img src="./img/shoucang.png" alt="" width="30px" height="30px;" color="black"></a></li>
-            <li class="nav2" id="shopcart"><a href="">加入购物车</a></li>
-            <li class="nav2"><a href="">立即购买</a></li>
-        </ul></div>
     </div>
 </template>
 <script>
@@ -41,6 +33,12 @@ export default {
   name: 'goodsdetails',
   data () {
     return {
+      price: '58',
+      goodsname: '绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶',
+      inventorynum: '55688',
+      accountname: '猫儿',
+      committime: '2019-07-24',
+      truecommit: '挺！',
       lists: [
         {img: require('./img/4.jpg')},
         {img: require('./img/5.jpg')},
@@ -112,6 +110,11 @@ export default {
             font-size: 20px;
             margin:0% 0 0 0;
         }
+        #morecommit{
+            float: right;
+            font-size: 30px;
+            margin: 0 2% 0 0;
+        }
         #accountpic{
             width: 30px;
             height:25px;
@@ -132,7 +135,7 @@ export default {
         #committime{
             width: 30%;
             float: right;
-            font-size: 17px;
+            font-size: 14px;
             color: grey;
         }
         #truecommit{
@@ -170,54 +173,17 @@ export default {
             width: 35%;
             border-top: 1px solid #ccc ;
         }
-        .goods-title .txt {
-            color: #985f0d;
-            height: 30px;
-            width: 30%;
-            line-height: 30px;
-            vertical-align: -15%;
-        }
-        .suojin{
-            width: 100%;
-            height: 50px;
-            background-color: white;
-        }
-        .nav{
-            width: 100%;
-            position:fixed;
-            bottom: 0;
-            left: 0;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .nav .nav1{
-            width: 18%;
-            float: left;
-            background-color: white;
-            color: black;
-            text-align: center;
-            bottom: 0;
-        }
-        .nav .nav2{
+        #hrleft{
             width: 32%;
+            height: 1%;
             float: left;
-            background-color: #fecf37;
-            display: block;
-            border-radius: 10%;
-            bottom: 0;
-            color: black;
+            margin: 3% 0 0 0;
         }
-        .nav a{
-            display:block;
-            height: 50px;
-            color: black;
-           /*  background-color:white; */
-            font-size: 16px;
-            text-align: center;
-            line-height: 50px;
-        }
-        .nav a:hover{
-            background:lightgoldenrodyellow;
+        #hrright{
+            width:32%;
+            right: 0;
+            float: right;
+            margin: 0;
+            margin: 3% 0 0 0;
         }
 </style>

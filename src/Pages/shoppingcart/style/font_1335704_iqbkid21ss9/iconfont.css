@@ -1,14 +1,15 @@
 @font-face {font-family: "iconfont";
-  src: url('/iconfont/iconfont.eot?t=1565423188113'); /* IE9 */
-  src: url('/iconfonticonfont.eot?t=1565423188113#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  src: url('iconfont.eot?t=1565423188113'); /* IE9 */
+  src: url('iconfont.eot?t=1565423188113#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANAAAsAAAAAB3wAAALzAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCYIItATYCJAMMCwgABCAFhG0HOht3BhHVmyfIfh4YN81j5bxK/nGZE30JP5HecxDw++t/Di60D2L6pBulyGgmCBsADRAwR3dzM9QvoyIUS3Ie/C/fkW4Il4YfPnHv9NcWnM+yHNdatvFTF2AcUEBjbeoiKZACDIAbxi5oibshAJd0pUS9Bs3aYaMxBwlADBs8sDd2xoxuKBTYCMyKmRqxBANbzpWXgMXB+8UbymSDxFCYI1sNqN+PWs/zn69RU8JTunkEkumcAJsHCigFGkSPSncnVJQupXBVpdYqwUQjkFPFwuFArGnNjf7xJAgTM98HoBBmJDzPd4QQ8HzNHUgAFAAmYAHDgfGQEfs1AxkE8W6qGTVy3r54tXr//L3IKXvc1ElDXbHpRgX/xLVU3Hl7puyNi1q9f+q+EVP3JwQrQSH+YP/UjfSOeXu9YP5+ofzMhmtD269NbNd3wKr1q3fH9V85Jbbfil2r1iV0HbEsiAp6BJEpkaEeoajLaK33qZtrWfWn1BzV3qq1ORSVEnWt6jVvncE1g6izNa8Jv9akjQ9PT2lvPw4qHKHHIYd9OlA/yrR4ZLen6JOebt8Gn3rw55foxrn/y6z4kfMz99eP7JVl/uc2XhNNLwDCt9QV1QpAJcnz/+Mz/P6XXugZUe2b7WkA7o9b3S4Ih29pumvts/UIePuSjlVak5kWpRWxIzZyig4Y92bC1XyEMf3RngzXxnXOB4FNXAKJRRoUNrkUzSiFgUc5mNjUhEuJhvM9YoxBIbQDFJsJIIh0GJIQZ6CIdJmiGY9hEO8dTCJTcOkgYlb0yI+Nt7qMStCC/kM0tDnbJrew8I7+KIrTsoDzRq4xBkPb53MLbshTjKkfP4o4cEwrzGA/LIVgZ0popA0i+9R1rupBraG1uanLqAQt6D9EQ5vz6sut8Po7+qMobiBVRd/INTYPQ9t3oCzqrRPpVu6pHz+KOHBMK8zAicVKE+zV3RIaacOA5D51qJbrqm6X167vtwFwmZurpFBCYy2ozYTj1JcOrtg0AA==') format('woff2'),
-  url('/iconfont/iconfonticonfont.woff?t=1565423188113') format('woff'),
-  url('/iconfont/iconfont.ttf?t=1565423188113') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('/iconfont/iconfont.svg?t=1565423188113#iconfont') format('svg'); /* iOS 4.1- */
+  url('iconfont.woff?t=1565423188113') format('woff'),
+  url('iconfont.ttf?t=1565423188113') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1565423188113#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
   font-family: "iconfont" !important;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

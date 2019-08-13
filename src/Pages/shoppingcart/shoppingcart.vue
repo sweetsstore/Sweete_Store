@@ -14,13 +14,14 @@
                             <div id="shopchara">
                             <div class="producttitle">{{pros.productTitle}}</div>
                             <div class="price"><!--使用过滤器对总价改变-->
-                                <span>￥{{pros.price | totalprice(pros.count)}}</span>
+                                <span class="proprice">￥{{pros.price | totalprice(pros.count)}}</span>
                                 <div class="count">
                                     <!--商品数量控制-->
                                     <a herf="javascript:void(0)" class="btn-minus" @click="changeCount(pros,-1)">-</a>
                                     <input class="productnum" type="number" v-model="pros.count">
                                     <a herf="javascript:void(0)" class="btn-plus"  @click="changeCount(pros,1)">+</a>
                                 </div>
+                                <span class="iconfont" id="delete">&#xe626;</span>
                             </div></div>
                         </div>
                     </li>
@@ -29,24 +30,10 @@
         </ul>
         <div class="fenge"></div>
         <div class="wantnav"><hr id="hrleft"><span class="iconfont">&#xe698; </span><span font-size="18px"> 按你所需</span><hr id="hrright"></div>
-        <div class="main_box">
-          <ul>
-              <li v-for="index in todos" :key='index'  @click='goDetail(todo.id)'>
-                  <router-link :to="{ name: 'goodsdetails', query: { id: todo.id }}">
-                      <div class="list" v-if="todo.sy_zs==1">
-                          <div class="image">
-                              <img :src="todo.fm_img" alt="图片">
-                          </div>
-                          <p class="name">{{todo.name}}</p>
-                          <p class="Price">￥:{{todo.price}}</p>
-                      </div>
-                  </router-link>
-              </li>
-          </ul>
-        </div>
+        <div class="fenge"></div>
         <div class="paybox">
             <span class="allprice">总计：{{allPrice}}</span>
-            <button class="allcount">结算</button><hr id="hr">
+            <button class="settlement">结算({{allCount}})</button><hr id="hr">
         </div>
     </div>
 </template>
@@ -90,13 +77,6 @@ export default {
           ]
         }
       ],
-      /* todos: [
-        {
-          fm_img: require('./img/1.jpg'),
-          name: '绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶',
-          price: '58'
-        }
-      ], */
       allPrice: 0, // 所有价格
       allShops: 0, // 被选中的商店数量
       allCount: 0 // 被选中的产品数量
@@ -119,6 +99,23 @@ export default {
     _checkFalse (item, pro) {
       pro.isChecked = false // 改变状态为false
       this.isCheckAll = false // 全选状态为false
+    },
+    _totalPeice () { // 每次调用此方法，将初始值为0，遍历价格并累加
+      this.allPrice = 0
+      this.carts.forEach(item => {
+        let products = item.productList
+        products.forEach(pros => {
+          if (pros.isChecked) {
+            this.allPrice += pros.price * pros.count
+          }
+        })
+      })
+    },
+    _totalCount () { // 同上
+      this.allCount = 0
+      this.carts.forEach(item => {
+        this.allCount += item.checkedCount
+      })
     }
   },
   filters: { // 单件商品的价格 × 数量
@@ -126,8 +123,14 @@ export default {
       return val * count
     }
   },
-  mounted: {
-
+  watch: { // 深度监听所有数据，每次改变重新计算总价和总数
+    carts: {
+      deep: true,
+      handler (val, oldval) {
+        this._totalPeice()
+        this._totalCount()
+      }
+    }
   }
 }
 </script>
@@ -210,26 +213,44 @@ export default {
       width: 100%;
       font-size: 15px;
       margin: 3% 2%;
-    };
+    }
     .price{
       display: inline-block;
       width: 60%;
       float: left;
-      position: absolute;
+      position: relative;
       font-size: 15px;
-      color: red;
-      margin: 4% 2%;
+      color: #000;
+      margin: 0% 2% 0% 2%;
     }
-    a{
+    .proprice{
+      color: rgb(255,0,0);
+    }
+    a.btn-minus{
       width: 20px;
+      font-size: 25px;
       height: 20px;
       right: 0;
       text-align: center;
+      color: black;
+      margin: 2%;
+      display: inline;
+      position:absolute;
+      bottom: -10px;
+      left: 0;
     }
     .productnum{
       width: 20px;
       height: 20px;
       right: 0;
+      display: inline;
+    }
+    #delete{
+      display: inline-block;
+      font-size: 20px;
+      position: absolute;
+      margin: 0 0 0 55%;
+      color: black;
     }
     .fenge{
       width: 100%;
@@ -240,61 +261,6 @@ export default {
         width: 100%;
         height: 20px;
         position: relative;
-    }
-    .main_box {
-    /* height: 339px; */
-      height: auto;
-    }
-    .list {
-    height: auto;
-    background: white;
-    float: left;
-    width: 50%;
-    border-right: 1px solid #f4f4f4;
-    border-top: 1px solid #f4f4f4;
-    padding-bottom: 0.25rem
-    }
-    .main_box ul {
-    overflow: hidden;
-    /* margin-bottom: 1.5rem; */
-    }
-    ul li {
-      list-style: none;
-    }
-    .Price {
-        margin: auto;
-        text-align: center;
-        font-size: 0.38rem;
-        color: #f81200;
-        font-weight: 500;
-        padding-top: 0.8rem;
-        padding-bottom: 0.2rem;
-    }
-    .name {
-      width: 80%;
-      height: 0.64rem;
-      line-height: 0.5rem;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin: auto;
-      font-size: 0.38rem;
-      font-weight: 800;
-      text-align: center;
-    }
-    .image {
-        width: 100%;
-        background: white;
-        padding-top: 0.2rem;
-        padding-bottom: 0.3rem;
-    }
-    .image img {
-      width: 2.48rem;
-      height: 2.6rem;
-      display: block;
-      margin: auto;
-      margin-top: .4rem;
-      margin-bottom: .2rem;
     }
     #hrleft{
       width: 35%;
@@ -319,18 +285,14 @@ export default {
     }
     .allprice{
         color: black;
-        font-size: 15px;
-        float: right;
+        font-size: 16px;
         position: fixed;
-        right: 33%;
-        vertical-align: middle;
-        padding: 2% 0 0 0;
+        left: 46%;
         color: red;
-        width: 20%;
         bottom: 10%;
     }
-    .allcount{
-        float: right;
+    .settlement{
+      float: right;
         width: 30%;
         height:40px;
         font-size: 16px;

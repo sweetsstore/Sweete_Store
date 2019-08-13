@@ -4,14 +4,16 @@ import goodsdetails from '../Pages/goodsdetails/goodsdetails.vue'
 import orders from '../Pages/orders/orders.vue'
 import bottomnav from '../components/bottomnav/bottomnav.vue'
 import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
+import carnav from '../components/carnav/carnav.vue'
+import ordermete from '../Pages/ordermete/ordermete.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'goodsdetails',
-      component: goodsdetails
+      name: 'ordermete',
+      component: ordermete
     }, {
       path: '/shoppingcart',
       name: 'shoppingcart',
@@ -30,6 +32,16 @@ export default new Router({
       path: '/bottomnav',
       name: 'bottomnav',
       component: bottomnav
+    },
+    {
+      path: '/carnav',
+      name: 'carnav',
+      component: carnav
+    },
+    {
+      path: '/ordermete',
+      name: 'ordermete',
+      component: ordermete
     }
   ]
 })
