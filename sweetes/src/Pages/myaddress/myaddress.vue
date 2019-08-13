@@ -5,7 +5,7 @@
             <!-- user_Addr_Name -->
             <div class="phone">{{user_Addr_Num}}</div>
             <!-- user_Addr_Num -->
-            <div class="flag" v-show="flag">{{user_Addr_Defaddr}}}</div>
+            <div class="flag" v-show="flag">{{user_Addr_Defaddr}}</div>
             <!-- user_Addr_Defaddr -->
         </div>
         <div class="body2">
