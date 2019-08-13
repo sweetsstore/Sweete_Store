@@ -11,15 +11,13 @@
         <input type="text" placeholder=" 请输入手机号码">
         <div class="send">
             <input type="text" placeholder=" 请输入验证码" class="send1">
-            <button class="send2" @click="send">{{time}}
-            </button>
+            <button class="send2" @click="send"  ref="send">{{time}}</button>
         </div>
         <input type="text" placeholder=" 请输入你的密码">
         <div class="bottom" @click="goTo('/zhuceOk')">注册</div>
     </div>
 </template>
 <script>
-import { setInterval } from 'timers'
 export default {
   data () {
     return {
@@ -31,9 +29,18 @@ export default {
       this.$router.replace(path)
     },
     send: function () {
-      this.time = 60
-      setInterval(function (t) {
-        console.log(t)
+      var t = 59
+      var this1 = this
+      this1.time = t
+      var timer = window.setInterval(function () {
+        this1.$refs.send.disabled = true
+        this1.time = --t
+        console.log(this1.time)
+        if (this1.time === 1) {
+          this1.time = '发送'
+          window.clearTimeout(timer)
+          this1.$refs.send.disabled = false
+        }
       }, 1000)
     }
   }

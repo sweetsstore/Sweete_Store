@@ -11,7 +11,7 @@
             <input type="text" placeholder=" 请输入手机号码">
             <div class="forgetsend">
                 <input type="text" placeholder=" 请输入验证码" class="Fsend1">
-                <button class="Fsend2">发送</button>
+                <button class="Fsend2" ref="Fsend2" @click="send">{{time2}}</button>
             </div>
             <input type="text" placeholder=" 请输入你的新密码">
             <input type="text" placeholder=" 请再次输入密码">
@@ -22,9 +22,29 @@
 
 <script>
 export default {
+  data () {
+    return {
+      time2: '发送'
+    }
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    send: function () {
+      var t = 59
+      var this2 = this
+      this2.time2 = t
+      this2.$refs.Fsend2.disabled = true
+      var timer = window.setInterval(function () {
+        this2.time2 = --t
+        console.log(this2.time2)
+        if (this2.time2 === 1) {
+          this2.time2 = '发送'
+          window.clearTimeout(timer)
+          this2.$refs.Fsend2.disabled = false
+        }
+      }, 1000)
     }
   }
 }
