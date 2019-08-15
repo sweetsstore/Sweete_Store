@@ -13,8 +13,8 @@
                 <input type="text" placeholder=" 请输入验证码" class="Fsend1">
                 <button class="Fsend2" ref="Fsend2" @click="send">{{time2}}</button>
             </div>
-            <input type="text" placeholder=" 请输入你的新密码">
-            <input type="text" placeholder=" 请再次输入密码">
+            <input type="password" placeholder=" 请输入你的新密码">
+            <input type="password" placeholder=" 请再次输入密码">
             <div class="Forgetbottom" @click="goTo('/regist')">确认</div>
         </div>
     </div>
@@ -38,11 +38,10 @@ export default {
       this2.$refs.Fsend2.disabled = true
       var timer = window.setInterval(function () {
         this2.time2 = --t
-        console.log(this2.time2)
         if (this2.time2 === 1) {
           this2.time2 = '发送'
           window.clearTimeout(timer)
-          this2.$refs.Fsend2.disabled = false
+          this2.$refs.Fsend2.disabled = ''
         }
       }, 1000)
     }

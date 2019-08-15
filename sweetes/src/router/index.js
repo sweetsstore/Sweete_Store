@@ -18,6 +18,7 @@ import myaddress from '../Pages/myaddress/myaddress.vue'
 import personaddress from '../Pages/personaddress/personaddress.vue'
 import payOk from '../Pages/payOk/payOk.vue'
 import shop from '../Pages/person/shop/shop.vue'
+// import wheel from '@/components/wheel/wheel.vue'
 
 Vue.use(Router)
 
@@ -48,11 +49,6 @@ export default new Router({
           name: 'shop',
           component: shop,
           children: [
-            {
-              path: '/orderall',
-              name: 'orderall',
-              component: orderall
-            },
             {
               path: '/',
               name: 'orderall',
@@ -132,5 +128,10 @@ export default new Router({
       name: 'payOk',
       component: payOk
     }
+    // {
+    //   path: '/wheel',
+    //   name: 'wheel',
+    //   component: wheel
+    // }
   ]
 })

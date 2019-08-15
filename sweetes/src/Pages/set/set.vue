@@ -11,6 +11,7 @@
                 <img src="./img/head.png" alt="" class="setpic">
                 <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
+                <input type="file" class="file">
                 <a href="#">
                     <img src="./img/youjiantou.png" alt="">
                 </a>
@@ -50,6 +51,15 @@ export default {
 }
 </script>
 <style scoped>
+.file{
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 2rem;
+    top: 1.2rem;
+    left: 84%;
+    opacity: 0;
+}
 .setBack{
     width: 100%;
     height: 2rem;
@@ -93,6 +103,7 @@ img{
     width: 100%;
     height: 4rem;
     position: relative;
+    overflow: hidden;
 }
 .setpic{
     width: 2.666667rem;
@@ -116,7 +127,7 @@ img{
     height: 1.333333rem;
     position: absolute;
     top: 1.333333rem;
-    right: .666667rem;
+    right: 0.6rem;
 }
 a img{
     width: 100%;
