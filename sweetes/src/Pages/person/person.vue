@@ -70,8 +70,6 @@
             </li>
             <li v-show="flag3">
                 <shop></shop>
-                <shop></shop>
-                <shop></shop>
                 <div class="moneyall">
                     <div class="orderpay">评价</div>
                 </div>
