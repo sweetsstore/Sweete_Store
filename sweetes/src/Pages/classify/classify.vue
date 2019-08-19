@@ -1,18 +1,8 @@
 <template slot-scope>
 <div class="main">
-    <ul class="list">
-        <li class="xican"><a href="#">西餐</a></li>
-        <li class="zhongcan"><a href="#">中餐</a></li>
-        <li class="kafe"><a href="#">咖啡</a></li>
-        <li class="jiu"><a href="#">酒</a></li>
-        <li class="lingshi"><a href="#">零食</a></li>
-        <li class="shengxian"><a href="#">生鲜</a></li>
-        <li class="shuiguo"><a href="#">水果</a></li>
-        <li class="cha"><a href="#">茗茶</a></li>
-        <li class="baojianpin"><a href="#">保健品</a></li>
-        <li class="dangao"><a href="#">蛋糕</a></li>
-    </ul>
-    <section>
+    <classify-head></classify-head>
+    <classify-menu></classify-menu>
+    <!-- <section>
         <div>
             <p>西餐</p>
             <ul>
@@ -153,11 +143,17 @@
                 </li>
             </ul>
         </div>
-    </section>
+    </section> -->
 </div>
 </template>
 <script>
+import classifyhead from '../../components/classifyhead/classifyhead'
+import classifymenu from '../../components/classifymenu/classifymenu'
 export default {
+  components: {
+    'classify-menu': classifymenu,
+    'classify-head': classifyhead
+  }
 }
 </script>
 <style scoped="scoped">
@@ -167,29 +163,6 @@ export default {
 }
 .main{
     position:relative;
-}
-.list{
-    width:26%;
-    height:43rem;
-    list-style:none;
-    background-color:#f2f2f2;
-}
-.list li{
-    width:100%;
-    height:10%;
-    float:left;
-    text-align:center;
-    line-height:4.3rem;
-}
-.list li a{
-    display:block;
-    width:100%;
-    height:100%;
-    text-decoration:none;
-    color:black;
-}
-.list li:hover{
-    background-color:white;
 }
 section{
     width:74%;

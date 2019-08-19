@@ -1,10 +1,9 @@
 <template>
 <div class="home_nav">
     <ul class="dots">
-        <li v-for="item in items" :key="item.id">
+        <li v-for="(item, index) in items" :key="index" :class="{active: Index==index}" @click="change(index)" >
             <img :src="item.url" alt="">
-            <span @click="changediv">{{item.name}}</span>
-            <div></div>
+            <span>{{item.name}}</span>
         </li>
     </ul>
 </div>
@@ -13,6 +12,7 @@
 export default {
   data () {
     return {
+      Index: 5,
       items:
       [
         {name: '品好茶', url: require('../../assets/homeimg/cha.png')},
@@ -23,7 +23,8 @@ export default {
     }
   },
   methods: {
-    changediv: function () {
+    change: function (index) {
+      this.Index = index
     }
   }
 }
@@ -62,10 +63,9 @@ export default {
 .dots li span{
     display:block;
 }
-.dots li div{
-    background-color: #fecf37;
+.active{
+    height:4rem;
     width:3rem;
-    height:.2rem;
-    margin-top:0.2rem;
+    border-bottom:#fecf37 .1rem solid;
 }
 </style>

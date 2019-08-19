@@ -15,14 +15,6 @@
 export default {}
 </script>
 <style>
-/* .line{
-        height: .4rem;
-        width: 0;
-        position: absolute;
-        left: 0;
-        top: 2.6rem;
-        background-color:#ffcd3a;
-    } */
 .cake{
     width:100%;
     list-style:none;

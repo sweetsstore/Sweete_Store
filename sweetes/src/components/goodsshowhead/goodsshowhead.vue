@@ -8,16 +8,7 @@
     </header>
     <div class="classes">
     <ul :default-active="active" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <router-link index="westclass" tag="li" to="/goodsshow/westclass">西餐</router-link>
-    <router-link index="eastclass" tag="li" to="/goodsshow/eastclass">中餐</router-link>
-    <router-link index="cafeclass" tag="li" to="/goodsshow/cafeclass">咖啡</router-link>
-    <router-link index="wineclass" tag="li" to="/goodsshow/wineclass">酒</router-link>
-    <router-link index="snackclass" tag="li" to="/goodsshow/snackclass">零食</router-link>
-    <router-link index="fishclass" tag="li" to="/goodsshow/fishclass">生鲜</router-link>
-    <router-link index="fruitclass" tag="li" to="/goodsshow/fruitclass">水果</router-link>
-    <router-link index="teaclass" tag="li" to="/goodsshow/teaclass">茗茶</router-link>
-    <router-link index="thingclass" tag="li" to="/goodsshow/thingclass">保健品</router-link>
-    <router-link index="cakeclass" tag="li" to="/goodsshow/cakeclass">蛋糕</router-link>
+    <router-link v-for="(item,index) in items" :key="index" tag="li" :to="item.url" :class="{active: Index==index}" @click.native="change(index)">{{item.name}}</router-link>
     </ul>
     </div>
   </div>
@@ -32,7 +23,21 @@ export default {
   },
   data () {
     return {
-      title: '热销榜单'
+      title: '热销榜单',
+      Index: 0,
+      items:
+      [
+        {url: '/goodsshow/westclass', name: '西餐'},
+        {url: '/goodsshow/eastclass', name: '中餐'},
+        {url: '/goodsshow/cafeclass', name: '咖啡'},
+        {url: '/goodsshow/wineclass', name: '酒'},
+        {url: '/goodsshow/snackclass', name: '零食'},
+        {url: '/goodsshow/fishclass', name: '生鲜'},
+        {url: '/goodsshow/fruitclass', name: '水果'},
+        {url: '/goodsshow/teaclass', name: '茗茶'},
+        {url: '/goodsshow/thingclass', name: '保健品'},
+        {url: '/goodsshow/cakeclass', name: '蛋糕'}
+      ]
     }
   },
   methods: {
@@ -43,6 +48,9 @@ export default {
     },
     handleSelect: function (key, keyPath) {
       this.$emit('update:active', key)
+    },
+    change: function (index) {
+      this.Index = index
     }
   }
 }
@@ -82,10 +90,12 @@ header span{
     height:2.5rem;
     margin-top:2.5rem;
     position:relative;
-    overflow-x:scroll;
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
 }
 .classes ul{
-    width:300%;
+    width:140%;
     list-style:none;
 }
 .classes ul li{
@@ -94,7 +104,8 @@ header span{
     color:#ccc;
     font-size:120%;
 }
-.changecolor{
-  color:#fecf37;
+.active{
+    height: 1.8rem;
+    border-bottom:#fecf37 .1rem solid;
 }
 </style>

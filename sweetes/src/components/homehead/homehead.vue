@@ -1,10 +1,10 @@
 <template>
     <header>
     <img src="../../assets/homeimg/默认头像.png" id="pic">
-    <form id="search" action="#" method="GET">
+    <div id="search">
         <input type="text" >
         <button><img src="../../assets/homeimg/search.png" alt="图片走丢了"></button>
-    </form>
+    </div>
   </header>
 </template>
 <script>
