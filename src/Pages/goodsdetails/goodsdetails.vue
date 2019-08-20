@@ -11,10 +11,10 @@
         <div class="greyblock"></div>
         <div id="comment">
             <div><span id="shopcommit"><strong>商品评价</strong></span><span class="iconfont" id="morecommit">&#xe62b;</span></div>
-            <div><div id="accountpic"></div>
+            <div><div id="accountpic"><img v-bind:src="accountpic" width="30px" height="30px"></div>
             <span id="accountname">{{accountname}}</span>
             <span id="committime">{{committime}}</span></div><br>
-            <div id="truecommit"></div>
+            <div id="truecommit">{{truecommit}}</div>
         </div>
         <div class="greyblock"></div>
         <div class="tanggreyblock">图文详情</div><hr>
@@ -33,9 +33,11 @@ export default {
   name: 'goodsdetails',
   data () {
     return {
+    /* pic 轮播图 */
       price: '58',
       goodsname: '绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶',
       inventorynum: '55688',
+      accountpic: require('./img/touxiang.png'),
       accountname: '猫儿',
       committime: '2019-07-24',
       truecommit: '挺！',
@@ -103,7 +105,6 @@ export default {
         }
         #comment{
             width: 95%;
-            height: auto;
             margin: 0 0 0 5%;
         }
         #shopcommit{
@@ -114,36 +115,37 @@ export default {
             float: right;
             font-size: 30px;
             margin: 0 2% 0 0;
+            padding: 0;
         }
         #accountpic{
             width: 30px;
             height:25px;
-            background:url(img/touxiang.png);
             background-repeat: no-repeat;
             background-size: cover;
             display: inline-block;
-            float: left;
             padding: 1.5% 0 0 0;
             margin: 1% 0 0 5%;
         }
         #accountname{
-            width: 30%;
+            width: 40%;
             font-size:20px;
             color: grey;
             margin: 0% 0 0 3%;
+            display: inline-block;
         }
         #committime{
-            width: 30%;
-            float: right;
+            width: 25%;
             font-size: 14px;
             color: grey;
+            display: inline-block;
+            float: right;
         }
         #truecommit{
             width: 80%;
             height: auto;
             color: black;
             font-size: 17px;
-            margin: 2px 10% 10px 10%;
+            margin: -3% 3% 5px 7%;
             text-align: left;
         }
         .tanggreyblock{

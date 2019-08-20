@@ -68,7 +68,7 @@ nav {
   height:100%;
   display: flex;
   justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+ /*  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
   margin: 3%;
   text-align: center;
 }

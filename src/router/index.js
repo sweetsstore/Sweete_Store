@@ -6,6 +6,7 @@ import bottomnav from '../components/bottomnav/bottomnav.vue'
 import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 import carnav from '../components/carnav/carnav.vue'
 import ordermete from '../Pages/ordermete/ordermete.vue'
+import buyinggoods from '../Pages/buyinggoods/buyinggoods.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +43,11 @@ export default new Router({
       path: '/ordermete',
       name: 'ordermete',
       component: ordermete
+    },
+    {
+      path: '/buyinggoods',
+      name: 'buyinggoods',
+      component: buyinggoods
     }
   ]
 })

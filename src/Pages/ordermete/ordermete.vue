@@ -6,7 +6,7 @@
                 <div class="addchara"><span class="iconfont" id="addchara">&#xe641;</span></div>
                 <div class="spanchara">
                     <span id="name">收货人：{{name}}</span>
-                    <span id="accounttel">13633234491</span>
+                    <span id="accounttel">{{accounttel}}</span>
                     <p id="accountadd">{{accountadd}}</p>
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <span class="iconfont" id="shoppic">&#xe608;</span>
                 <span class="shoptitle">{{shopTitle}}</span>
                 <ul class="productlist">
-                    <li v-for="item in productLists" :key="item">
+                    <li class="productli" v-for="item in productLists" :key="item">
                         <div class="product">
                             <img class="productpic" v-bind:src="item.images">
                             <div id="shopchara">
@@ -22,7 +22,6 @@
                                 <div class="price"><!--使用过滤器对总价改变-->
                                     <span>￥{{item.price}}</span>
                                     <div class="count">数量：{{item.count}}</div>
-                                    <button class="goodafter">申请售后</button>
                                 </div>
                             </div>
                         </div>
@@ -30,12 +29,7 @@
                 </ul>
         </div>
         <div class="pricechara"><span class="allcount">商品总价</span><span class="trueprice">￥{{allcount}}</span></div>
-        <div class="navblock"></div>
-        <div class="paybox">
-            <button class="deleteorder">删除订单</button>
-            <button  class="classorder">查看订单</button>
-            <button class="commit">评价</button>
-        </div>
+        <button class="deleteorder">删除订单</button>
     </div>
 </template>
 <script>
@@ -71,13 +65,6 @@ export default {
             width: 100%;
             margin: 0;
             padding: 0;
-            background-color: white;
-            font-family:sans-serif;
-    }
-    *{
-        margin:0;
-        width: 100%;
-        padding: 0;
     }
     #return-1{
         color: black;
@@ -127,9 +114,9 @@ export default {
         position: absolute;
     }
     .spanchara{
-        width: 90%;
+        width: 88%;
         float: right;
-        margin: 1% 0 0 0%;
+        margin: 1% 0 0 2%;
         position: relative;
     }
     #name{
@@ -160,11 +147,12 @@ export default {
       list-style: none;
     }
     #shoppic{
-        width: 5%;
+        width: 7%;
         font-size: 25px;
+        float: left;
     }
     .shoptitle{
-        width: 91%;
+        width: 85%;
         font-size: 17px;
         color: black;
         height: 25px;
@@ -180,17 +168,21 @@ export default {
     .productlist{
       width: 100%;
       position: relative;
+      padding: 0;
+    }
+    .product{
+        display: flex;
+        left: 0;
     }
     .productpic{
       width: 25%;
-      margin: 2% 0 2% 2%;
+      margin: 2% 0 2% 0%;
       display: inline-block;
     }
     #shopchara{
-      width: 65%;
+      width: 58%;
       display: inline-block;
-      margin: 0% 0 0 2%;
-      position: absolute;
+      margin: 1% 0 0 2%;
     }
     .producttitle{
       width: 100%;
@@ -200,6 +192,7 @@ export default {
     .price{
       display: inline-block;
       width: 60%;
+      float: left;
       position: absolute;
       font-size: 15px;
       color: red;
@@ -209,12 +202,6 @@ export default {
       width: 20px;
       height: 20px;
       right: 0;
-    }
-    .goodafter{
-        width: 70px;
-        height: 20px;
-        font-size: 15px;
-        float: right;
     }
     .pricechara{
         width: 96%;
@@ -233,31 +220,15 @@ export default {
         width: 100%;
         height: 46.69px;
     }
-    .paybox{
-        width: 360px;
-        height: 25px;
-        position: fixed;
-        bottom: 0;
-        background-color: white;
-        vertical-align: middle;
-    }
     .deleteorder{
-        float: right;
-        display: flex;
-        width: 20%;
-        height:25px;
+        height: 30px;
+        width: 100px;
+        position: fixed;
         font-size: 16px;
-    }
-    .classorder{
+        bottom: 0;
+        right: 0;
         float: right;
-        width: 20%;
-        height:25px;
-        font-size: 16px;
-    }
-    .commit{
-        float: right;
-        width: 20%;
-        height:25px;
-        font-size: 16px;
+        border: red 1px solid;
+        background-color: white;
     }
 </style>
