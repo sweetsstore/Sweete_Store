@@ -1,11 +1,12 @@
 <template>
     <div class="main">
-        <ul class="list">
+        <ul class="list menu-wrapper" ref="menuwrapper">
         <router-link v-for="(item, index) in items"  :key="index" tag="li" :to="item.url" >{{item.name}}</router-link>
         </ul>
     </div>
 </template>
 <script>
+import BScroll from 'better-scroll'
 export default {
   data () {
     return {
@@ -22,6 +23,11 @@ export default {
         {url: '/goodsshow/thingclass', name: '保健品'},
         {url: '/goodsshow/cakeclass', name: '蛋糕'}
       ]
+    }
+  },
+  methods: {
+    _initScroll () {
+      this.meunScroll = new BScroll(this.$refs.menuwrapper, {})
     }
   }
 }
@@ -46,5 +52,6 @@ export default {
     line-height:4rem;
     color:black;
     background-color:#f2f2f2;
+    border-bottom:white 1px solid;
 }
 </style>
