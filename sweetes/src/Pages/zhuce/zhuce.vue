@@ -45,7 +45,9 @@ export default {
             user_Tel: this.user_Tel
           })
         ).then(res => {
-          console.log(res)
+          if (res.data === 'YES') {
+            this.$router.push('/zhuceOk')
+          }
         })
       }
     },
