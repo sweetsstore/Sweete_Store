@@ -6,15 +6,15 @@
     <div class="body">
         <div class="phone">
             <span>用户昵称 :</span>
-            <input type="text" name="username" placeholder="  请输入用户名">
+            <input type="text" name="username" placeholder="  请输入用户名" ref="name">
         </div>
         <div class="password">
             <span>登录密码 :</span>
-            <input type="password" password="password" placeholder="  请输入登录密码">
+            <input type="password" password="password" placeholder="  请输入登录密码" ref="password">
         </div>
         <a href="#" class="yemian1" @click="goTo('/password')">忘记密码？</a>
     </div>
-    <div class="denglu" @click="goTo('/person')">登录</div>
+    <div class="denglu" @click="regist()">登录</div>
     <div class="zhuce">
         <p>还不是我们的会员？<a href="#" class="yemian2" @click="goTo('/zhuce')">去注册</a></p>
     </div>
@@ -24,27 +24,45 @@
 // import axios from 'axios'
 export default {
   data () {
-    return {}
+    return {
+      user_Name: '',
+      user_Password: ''
+    }
   },
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    regist () {
+      this.user_Name = this.$refs.name.value
+      this.user_Password = this.$refs.password.value
+      this.$http.post('/api/login.action', {
+        params: {
+          user_Name: this.user_Name,
+          user_Password: this.user_Password
+        },
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).then(res => {
+        console.log(res)
+      })
     }
-    // logincheck: function(){
-    //     fetch({
-    //         url: "",
-    //         method: "post",
-    //         header:new Header({
+    // logincheck: function () {
+    //   axios({
+    //   })
+    // fetch({
+    //     url: "",
+    //     method: "post",
+    //     header:new Header({
 
-    //         }),
-    //         body: 'username=${this.username}&userpass=${this.userpass}'
-    //     })
-    //     .then((res)=>{
-    //         return res.text();
-    //     })
-    //     .then((data)=>{
-    //         if(this.data){}
-    //     })
+    //     }),
+    //     body: 'username=${this.username}&userpass=${this.userpass}'
+    // })
+    // .then((res)=>{
+    //     return res.text();
+    // })
+    // .then((data)=>{
+    //     if(this.data){}
+    // })
     // }
   }
 }

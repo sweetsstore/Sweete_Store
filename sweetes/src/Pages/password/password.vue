@@ -8,23 +8,24 @@
         </div>
         <div class="forgetAll">
             <div class="forgetEmpty"></div>
-            <input type="text" placeholder=" 请输入手机号码">
+            <input type="text" placeholder=" 请输入手机号码" ref="phone">
+            <p v-show="set">手机号格式错误</p>
             <div class="forgetsend">
                 <input type="text" placeholder=" 请输入验证码" class="Fsend1">
                 <button class="Fsend2" ref="Fsend2" @click="send">{{time2}}</button>
             </div>
             <input type="password" placeholder=" 请输入你的新密码">
             <input type="password" placeholder=" 请再次输入密码">
-            <div class="Forgetbottom" @click="goTo('/regist')">确认</div>
+            <div class="Forgetbottom">确认</div>
         </div>
     </div>
 </template>
-
 <script>
 export default {
   data () {
     return {
-      time2: '发送'
+      time2: '发送',
+      set: false
     }
   },
   methods: {
@@ -32,18 +33,24 @@ export default {
       this.$router.replace(path)
     },
     send: function () {
-      var t = 59
-      var this2 = this
-      this2.time2 = t
-      this2.$refs.Fsend2.disabled = true
-      var timer = window.setInterval(function () {
-        this2.time2 = --t
-        if (this2.time2 === 1) {
-          this2.time2 = '发送'
-          window.clearTimeout(timer)
-          this2.$refs.Fsend2.disabled = ''
-        }
-      }, 1000)
+      var myreg = /^[1][3,4,5,7,8][0-9]{9}$/
+      if (!myreg.test(this.$refs.phone.value)) {
+        this.set = true
+      } else {
+        this.set = false
+        var t = 59
+        var this2 = this
+        this2.time2 = t
+        this2.$refs.Fsend2.disabled = true
+        var timer = window.setInterval(function () {
+          this2.time2 = --t
+          if (this2.time2 === 1) {
+            this2.time2 = '发送'
+            window.clearTimeout(timer)
+            this2.$refs.Fsend2.disabled = ''
+          }
+        }, 1000)
+      }
     }
   }
 }
@@ -133,5 +140,13 @@ input,.Fsend1{
     line-height: 1.333333rem;
     text-align: center;
     background-color: rgb(200, 200, 200);
+}
+p{
+  margin: 0;
+  display: block;
+  position: absolute;
+  left: 22%;
+  font-size: .8rem;
+  color: red;
 }
 </style>
