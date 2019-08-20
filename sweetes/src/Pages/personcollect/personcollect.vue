@@ -2,7 +2,7 @@
     <div class="personcollect">
         <div class="collectBack">
             <div class="collectjiantou">
-                <img src="./personcollectimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
+                <img src="../../assets/img/personcollectimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
             </div>
             <div class="collectWord">收藏</div>
         </div>

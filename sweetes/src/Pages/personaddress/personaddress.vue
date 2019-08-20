@@ -2,7 +2,7 @@
     <div class="personaddress">
       <div class="addressBack">
           <div class="addressjiantou">
-              <img src="./personaddressimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
+              <img src="../../assets/img/personaddressimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
           </div>
           <div class="addressWord">收货地址</div>
           <div class="newaddress" @click="goTo('/newaddress')">添加收货地址</div>

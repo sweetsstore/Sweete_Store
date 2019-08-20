@@ -2,7 +2,7 @@
     <div class="newaddress">
         <div class="addressBack">
             <div class="addressjiantou">
-                <img src="./newaddressimg/tou.png" alt="" class="jiantou" @click="goTo('/personaddress')">
+                <img src="../../assets/img/newaddressimg/tou.png" alt="" class="jiantou" @click="goTo('/personaddress')">
             </div>
             <div class="addressWord">添加收货地址</div>
             <div class="save" @click="goTo('/personaddress')">保存</div>
@@ -53,14 +53,25 @@
         <div class="empty"></div>
         <div class="addressfoot">
             <div>设为默认地址</div>
+            <div>
+                <input type="checkbox" ref="flag">
+            </div>
         </div>
     </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      flag: true
+    }
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    choose () {
+      console.log(this.$refs)
     }
   }
 }
@@ -101,7 +112,7 @@ export default {
     text-align: right;
     color: #fd6924;
 }
-input{
+.newaddress>input{
     display: block;
     width: 100%;
     height: 3rem;
@@ -135,13 +146,22 @@ textarea{
     width: 100%;
     height: 2rem;
     position: relative;
+    border-bottom: 1px solid #e6e7eb;
 }
-.addressfoot div{
+.addressfoot div:nth-child(1){
     width: 42%;
     height: 2rem;
     font-size: .8rem;
     position: absolute;
-    left: 8%;
+    left: 2%;
     line-height: 2rem;
+}
+.addressfoot div:nth-child(2)>input{
+    width: 10%;
+    height: 1.4rem;
+    position: absolute;
+    top: .3rem;
+    right: 2%;
+    margin: 0;
 }
 </style>

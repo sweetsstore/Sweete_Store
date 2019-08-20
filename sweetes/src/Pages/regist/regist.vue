@@ -1,7 +1,7 @@
 <template>
 <div class="regist">
     <div class="head">
-        <img src="./img/registerHead.png" alt="图片丢了">
+        <img src="../../assets/img/registimg/registerHead.png" alt="图片丢了">
     </div>
     <div class="body">
         <div class="phone">

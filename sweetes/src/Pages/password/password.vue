@@ -2,7 +2,7 @@
     <div class="password">
         <div class="forget">
             <div>
-                <img src="./img/tou.png" alt="" class="jiantou"  @click="goTo('/regist')">
+                <img src="../../assets/img/passwordimg/tou.png" alt="" class="jiantou"  @click="goTo('/regist')">
             </div>
             <div class="forgetWord">忘记密码</div>
         </div>
@@ -54,7 +54,7 @@ export default {
     height: 100%;
     position: fixed;
     /* background-color: #c7b9b0; */
-    background: url("img/passwordBG.png") no-repeat;
+    background: url("../../assets/img/passwordimg/passwordBG.png") no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
 }

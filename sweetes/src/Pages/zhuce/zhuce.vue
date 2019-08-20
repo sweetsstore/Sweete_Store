@@ -2,17 +2,17 @@
     <div class="zhuce">
         <div class="zhuceBack">
             <div class="zhucejiantou">
-                <img src="./img/tou.png" alt="" class="jiantou" @click="goTo('/regist')">
+                <img src="../../assets/img/zhuceimg/tou.png" alt="" class="jiantou" @click="goTo('/regist')">
             </div>
             <div class="zhuceWord">注册</div>
         </div>
-        <img src="./img/zhucebody.png" alt="">
+        <img src="../../assets/img/zhuceimg/zhucebody.png" alt="">
         <input type="text" placeholder=" 请输入用户名">
         <input type="text" placeholder=" 请输入手机号码">
-        <div class="send">
+        <!-- <div class="send">
             <input type="text" placeholder=" 请输入验证码" class="send1">
             <button class="send2" @click="send"  ref="send">{{time}}</button>
-        </div>
+        </div> -->
         <input type="password" placeholder=" 请输入你的密码">
         <div class="bottom" @click="goTo('/zhuceOk')">注册</div>
     </div>

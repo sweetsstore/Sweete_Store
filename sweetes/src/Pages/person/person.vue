@@ -1,10 +1,10 @@
 <template>
 <div class="person">
-    <a href="#"><img src="./img/setting.png" alt="setting" class="setting" @click="goTo('/set')" title="写种草"></a>
-    <a href="#"><img src="./img/write.png" alt="write" class="write"></a>
+    <a href="#"><img src="../../assets/img/personimg/setting.png" alt="setting" class="setting" @click="goTo('/set')" title="写种草"></a>
+    <a href="#"><img src="../../assets/img/personimg/write.png" alt="write" class="write"></a>
     <div class="head">
-        <img src="./img/personHead.png" alt="" class="background">
-        <img src="./img/head.png" alt="" class="picture">
+        <img src="../../assets/img/personimg/personHead.png" alt="" class="background">
+        <img src="../../assets/img/personimg/head.png" alt="" class="picture">
     </div>
     <div class="user">用户</div>
     <div class="box">

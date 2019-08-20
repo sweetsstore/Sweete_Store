@@ -2,7 +2,7 @@
     <div class="shop">
         <div class="shop-name">
             <div>Timmy的店</div>
-            <img src="./shopimg/youjiantou.png" alt="图片走丢了">
+            <img src="../../../assets/img/shopimg/youjiantou.png" alt="图片走丢了">
         </div>
         <div class="shop-goods">
             <orderall></orderall>

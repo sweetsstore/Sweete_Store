@@ -1,6 +1,6 @@
 <template>
     <div class="orderall">
-        <img src="./img/2.jpg" alt="">
+        <img src="../../../../assets/img/orderallimg/2.jpg" alt="">
         <div class="order-body">
             <div class="goodsname">草莓夹心蛋糕草莓夹心蛋糕草莓夹心蛋糕</div>
             <div class="goodsnum">数量：{{goodsNum}}</div>
@@ -72,24 +72,4 @@ export default {
     left: 4%;
     color: red;
 }
-/*span{
-    display: block;
-    height: 2rem;
-    font-size: .746667rem;
-    line-height: 2rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.order-money{
-    height: 2rem;
-    font-size:.746667rem;
-    line-height: 2rem;
-    color: red;
-    margin: 0;
-}
-p{
-    display: inline;
-    margin: 0;
-} */
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="attention">
         <div class="store_sign">
-            <img src="./attentionimg/dianpu.png" alt="">
+            <img src="../../assets/img/attentionimg/dianpu.png" alt="">
         </div>
         <div class="storename">{{shop_Name}}
             <span>取消关注</span>

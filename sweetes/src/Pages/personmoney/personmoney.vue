@@ -2,7 +2,7 @@
   <div class="personmoney">
     <div class="redBack">
         <div class="redjiantou">
-            <img src="./personmoneyimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
+            <img src="../../assets/img/personmoneyimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
         </div>
         <div class="redWord">红包</div>
     </div>

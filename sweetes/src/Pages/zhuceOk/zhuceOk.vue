@@ -1,7 +1,7 @@
 <template>
     <div class="zhuceOk">
         <div class="ok">
-            <img src="./img/zhuceHead.png" alt="">
+            <img src="../../assets/img/zhuceOkimg/zhuceHead.png" alt="">
         </div>
         <div class="okWord">
             <b>注册成功</b>

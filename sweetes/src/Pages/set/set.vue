@@ -2,18 +2,18 @@
     <div class="set">
         <div class="setBack">
             <div class="setjiantou">
-                <img src="./img/tou.png" alt="jiantou" @click="goTo('/person')">
+                <img src="../../assets/img/setimg/tou.png" alt="jiantou" @click="goTo('/person')">
             </div>
             <div class="setWord">设置</div>
         </div>
         <div class="setBody">
             <div class="sethead">
-                <img src="./img/head.png" alt="" class="setpic">
+                <img src="../../assets/img/setimg/head.png" alt="" class="setpic">
                 <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
                 <input type="file" class="file">
                 <a href="#">
-                    <img src="./img/youjiantou.png" alt="">
+                    <img src="../../assets/img/setimg/youjiantou.png" alt="">
                 </a>
             </div>
             <div class="setempty"></div>

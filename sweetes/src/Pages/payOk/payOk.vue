@@ -1,7 +1,7 @@
 <template>
     <div class="payOk">
         <div class="ok">
-            <img src="./payOkimg/zhuceHead.png" alt="">
+            <img src="../../assets/img/payOkimg/zhuceHead.png" alt="">
         </div>
         <div class="okWord">
             <b>付款成功</b>

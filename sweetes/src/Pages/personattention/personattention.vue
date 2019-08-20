@@ -2,7 +2,7 @@
     <div class="personattention">
         <div class="attentionBack">
             <div class="attentionjiantou">
-                <img src="./personattentionimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
+                <img src="../../assets/img/personattentionimg/tou.png" alt="" class="jiantou" @click="goTo('/person')">
             </div>
             <div class="attentionWord">关注</div>
         </div>
