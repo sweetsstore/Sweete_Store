@@ -1,17 +1,24 @@
 <template>
-  <section class="foods-wrapper" ref="foodswrapper">
-        <div v-for="(item, index) in  items" :key="index">
+<div id="main">
+    <div class="left" ref="left">
+        <ul class="list" >
+          <li v-for= "(arr, index) in arrs" :key= "index" :class= "{current:currentIndex === index}" @click= "change(index, $event)">{{arr}}</li>
+        </ul>
+    </div>
+  <section class="right" ref="right">
+        <div v-for= "(item, i) in items" :key= "i" class= "right-item right-item-hook">
             <p>{{item.name}}</p>
             <ul>
-                <li v-for="(good,id) in item.goods" :key="id">
+                <li v-for= "(good,id) in item.goods" :key= "id">
                     <a href="#">
-                    <img :src="good.src" alt="图片走丢了">
+                    <img :src= "good.src" alt="图片走丢了">
                     <span>{{good.goodname}}</span>
                     </a>
                 </li>
             </ul>
         </div>
   </section>
+</div>
 </template>
 <script>
 import BScroll from 'better-scroll'
@@ -140,29 +147,100 @@ export default {
                       }
                     ]
               }
-            ]
+            ],
+      arrs:
+      [
+        '西餐', '中餐', '咖啡', '酒', '零食', '生鲜', '水果', '茗茶', '保健品', '蛋糕'
+      ],
+      listHeight: [],
+      scrollY: 0,
+      clickEvent: false
     }
   },
-  // computed: {
-  //   created () {
-  //     this.$nextTick(() => {
-  //       this._initScroll()
-  //     })
-  //   }
-  // },
+  computed: {
+    currentIndex () {
+      for (let i = 0; i < this.listHeight.length; i++) {
+        let height1 = this.listHeight[i]
+        let height2 = this.listHeight[i + 1]
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+          return i
+        }
+      }
+      return 0
+    }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this._initScroll()
+      this._getHeight()
+    })
+  },
   methods: {
+    change (index, event) {
+      this.clickEvent = true
+      if (!event._constructed) {
+        return 0
+      } else {
+        let rightItems = this.$refs.right.getElementsByClassName('right-item-hook')
+        let el = rightItems[index]
+        this.rights.scrollToElement(el, 300)
+      }
+    },
     _initScroll () {
-      this.foodScroll = new BScroll(this.$refs.foodswrapper, {})
+      this.lefts = new BScroll(this.$refs.left, {
+        click: true
+      })
+      this.rights = new BScroll(this.$refs.right, {
+        click: true,
+        probeType: 3
+      })
+      this.rights.on('scroll', (pos) => {
+        this.scrollY = Math.abs(Math.round(pos.y))
+      })
+    },
+    _getHeight () {
+      let rightItems = this.$refs.right.getElementsByClassName('right-item-hook')
+      let height = 0
+      this.listHeight.push(height)
+      for (let i = 0; i < Math.ceil(rightItems.length / 3); i++) {
+        let item = rightItems[i]
+        height += item.clientHeight
+        this.listHeight.push(height)
+      }
     }
   }
 }
 </script>
 <style scoped="scoped">
+.left{
+    position:relative;
+    top:1.8rem;
+    left:0;
+}
+.list{
+    width:26%;
+    height:35rem;
+    list-style:none;
+    overflow:hidden;
+}
+.current{
+    background-color:white;
+}
+.list li{
+    width:100%;
+    height:4rem;
+    float:left;
+    text-align:center;
+    line-height:4rem;
+    color:black;
+    background-color:#f2f2f2;
+    border-bottom:white 1px solid;
+}
 section{
     width:74%;
     height:35rem;
     position:absolute;
-    top:3.3rem;
+    top:3.6rem;
     right:0;
     overflow:hidden;
 }

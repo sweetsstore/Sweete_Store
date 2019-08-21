@@ -1,28 +1,36 @@
 <template>
     <div>
         <ul class="cake">
-            <li>
-                <a href=""><img src="../../../assets/goodsshowimg/xican1.jpg" alt=""></a>
-                <p class="name">这是一个披萨</p>
-                <button><a href="">购买</a></button>
-                <p class="money">￥88</p>
-                <p class="number">已售：1234</p>
+            <li v-for="(item, index) in items" :key="index">
+                <router-link :to="item.url"><img :src="item.src" alt="图片走丢咯~"></router-link>
+                <p class="name">{{item.name}}</p>
+                <router-link :to="item.url" tag="button">购买</router-link>
+                <p class="money">￥{{item.money}}</p>
+                <p class="number">已售：{{item.number}}</p>
             </li>
         </ul>
     </div>
 </template>
 <script>
-export default {}
+export default
+{
+  data () {
+    return {
+      items:
+            [
+              {
+                src: require('../../../assets/goodsshowimg/1.jpg'),
+                url: '/goodsdetail',
+                name: '这是一个蛋糕',
+                money: 30,
+                number: 67
+              }
+            ]
+    }
+  }
+}
 </script>
 <style>
-/* .line{
-        height: .4rem;
-        width: 0;
-        position: absolute;
-        left: 0;
-        top: 2.6rem;
-        background-color:#ffcd3a;
-    } */
 .cake{
     width:100%;
     list-style:none;

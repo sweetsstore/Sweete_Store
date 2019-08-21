@@ -8,7 +8,7 @@
     </header>
     <div class="classes">
     <ul :default-active="active" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <router-link v-for="(item,index) in items" :key="index" tag="li" :to="item.url" :class="{active: Index==index}" @click.native="change(index)">{{item.name}}</router-link>
+    <router-link v-for="(item,index) in items" :key="index" tag="li" :to="url" :class="{active: Index==index}" @click.native="change(index)">{{item}}</router-link>
     </ul>
     </div>
   </div>
@@ -25,19 +25,8 @@ export default {
     return {
       title: '热销榜单',
       Index: 0,
-      items:
-      [
-        {url: '/goodsshow/westclass', name: '西餐'},
-        {url: '/goodsshow/eastclass', name: '中餐'},
-        {url: '/goodsshow/cafeclass', name: '咖啡'},
-        {url: '/goodsshow/wineclass', name: '酒'},
-        {url: '/goodsshow/snackclass', name: '零食'},
-        {url: '/goodsshow/fishclass', name: '生鲜'},
-        {url: '/goodsshow/fruitclass', name: '水果'},
-        {url: '/goodsshow/teaclass', name: '茗茶'},
-        {url: '/goodsshow/thingclass', name: '保健品'},
-        {url: '/goodsshow/cakeclass', name: '蛋糕'}
-      ]
+      items: ['西餐', '中餐', '咖啡', '酒', '零食', '生鲜', '水果', '茗茶', '保健品', '蛋糕'],
+      url: '/goodsshow/goods'
     }
   },
   methods: {
