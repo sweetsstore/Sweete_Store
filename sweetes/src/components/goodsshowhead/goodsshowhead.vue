@@ -25,7 +25,7 @@ export default {
     return {
       title: '热销榜单',
       Index: 0,
-      items: ['西餐', '中餐', '咖啡', '酒', '零食', '生鲜', '水果', '茗茶', '保健品', '蛋糕'],
+      items: ['全部', '西餐', '中餐', '咖啡', '酒', '零食', '生鲜', '水果', '茗茶', '保健品', '蛋糕'],
       url: '/goodsshow/goods'
     }
   },
@@ -84,7 +84,7 @@ header span{
     overflow-y:hidden;
 }
 .classes ul{
-    width:140%;
+    width:150%;
     list-style:none;
 }
 .classes ul li{

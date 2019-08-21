@@ -2,7 +2,7 @@
 <div class="chart">
     <swiper :options="swiperOption" ref="mySwiper" id="f">
       <swiper-slide v-for="(item,id) in items" :key="id">
-          <img id="imgs" :src="item.src" alt="图片走丢咯~" @click="go()">
+          <img id="imgs" :src="'/static/'+item.goods_Picture" alt="图片走丢咯~" @click="go()">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -11,6 +11,7 @@
 <script>
 import '../../../node_modules/swiper/dist/css/swiper.min.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+// import qs from 'qs'
 export default {
   components: {
     swiper,
@@ -23,20 +24,7 @@ export default {
   },
   data () {
     return {
-      items: [
-        {
-          src: require('../../assets/homeimg/1small.jpg')
-        },
-        {
-          src: require('../../assets/homeimg/2small.jpg')
-        },
-        {
-          src: require('../../assets/homeimg/8small.jpg')
-        },
-        {
-          src: require('../../assets/homeimg/13small.jpg')
-        }
-      ],
+      items: [],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
@@ -55,7 +43,9 @@ export default {
     }
   },
   mounted () {
-    this.swiper.slideTo(3, 1000, false)
+    this.$nextTick(() => {
+      this.swiper.slideTo(3, 1000, false)
+    })
   }
 }
 </script>
