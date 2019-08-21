@@ -8,8 +8,12 @@ import './Pages/shoppingcart/style/iconfont.css'
 import './Pages/orders/style/iconfont.css'
 import './Pages/goodsdetails/style/iconfont.css'
 import './Pages/ordermete/ordermete.vue'
+import axios from 'axios'
+import Vuex from 'vuex'
+Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
+Vue.use(Vuex)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

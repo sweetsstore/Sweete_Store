@@ -7,22 +7,22 @@
                     <span id="name">{{name}}</span>
                     <span id="accounttel">13633234491</span>
                     <p id="accountadd">{{accountadd}}</p>
-                    <div id="seladd"></div
-                ></div>
+                    <router-link to="myaddress"><div id="seladd"></div></router-link>
+                </div>
             </div>
         <ul class="shopping">
-            <li class="everyshop" v-for="item in carts" :key="item">
+            <li class="everyshop" v-for="item in carts" :key="item.id">
                 <span class="iconfont" id="shoppic">&#xe608;</span>
                 <div class="shoptitle">{{item.shopTitle}}</div>
                 <hr class="shophr">
                 <ul class="productlist">
-                    <li v-for="pros in item.productLists" :key="pros">
+                    <li v-for="pros in item.productLists" :key="pros.id">
                         <div class="product">
                             <img class="productpic" v-bind:src="pros.images">
                             <div id="shopchara">
                                 <div class="producttitle">{{pros.productTitle}}</div>
                                 <div class="price"><!--使用过滤器对总价改变-->
-                                    <span>￥{{pros.price | totalprice(pros.count)}}</span>
+                                    <span>￥{{pros.price}}</span>
                                     <div class="count">数量：{{pros.count}}</div>
                                 </div>
                             </div>
@@ -33,9 +33,8 @@
         </ul>
         <div class="navblock"></div>
         <div class="paybox">
-            <span class="goodsnum">共{{goodsnum}}件</span>
             <span class="allprice">合计：{{allPrice}}</span>
-            <button class="allcount">提交订单</button>
+            <button class="allcount" @click="gopay">提交订单({{goodsnum}})</button>
         </div>
     </div>
 </template>
@@ -76,7 +75,14 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      goodsnum: '3',
+      allPrice: '553'
+    }
+  },
+  methods: {
+    gopay () {
+      this.$router.push('./payment')
     }
   }
 }
@@ -228,23 +234,15 @@ export default {
     }
     .navblock{
         width: 100%;
-        height: 46.69px;
+        height: 40px;
     }
     .paybox{
         width: 100%;
-        height: 7%;
+        height: 40px;
         position: fixed;
         bottom: 0;
         background-color: white;
         vertical-align: middle;
-    }
-    .goodsnum{
-        color: black;
-        font-size: 15px;
-        right: 53%;
-        position: fixed;
-        bottom: 2.0%;
-        width: 10%;
     }
     .allprice{
         color: black;
@@ -255,12 +253,12 @@ export default {
         vertical-align: middle;
         padding: 2% 0 0 0;
         color: red;
-        width: 20%;
-        bottom: 2.0%;
+        width: 30%;
+        bottom: 1%;
     }
     .allcount{
         float: right;
-        width: 30%;
+        width: 32%;
         height:40px;
         font-size: 16px;
         background-color: red;

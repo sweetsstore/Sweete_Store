@@ -1,7 +1,7 @@
 <template>
 <div class="chart">
     <swiper :options="swiperOption" ref="mySwiper" id="f">
-      <swiper-slide v-for="(item,id) in items" :key="id">
+      <swiper-slide v-for="(item,id) in goods_PicturePath" :key="id">
           <img id="imgs" :src="item.src" alt="图片走丢咯~" @click="go()">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -23,18 +23,18 @@ export default {
   },
   data () {
     return {
-      items: [
+      goods_PicturePath: [
         {
-          src: require('../../assets/homeimg/1small.jpg')
+          src: require('../../assets/img/1.jpg')
         },
         {
-          src: require('../../assets/homeimg/2small.jpg')
+          src: require('../../assets/img/3.jpg')
         },
         {
-          src: require('../../assets/homeimg/8small.jpg')
+          src: require('../../assets/img/8.jpg')
         },
         {
-          src: require('../../assets/homeimg/13small.jpg')
+          src: require('../../assets/img/6.jpg')
         }
       ],
       swiperOption: {
@@ -62,7 +62,7 @@ export default {
 <style scoped="scoped">
 .chart{
     width: 100%;
-    margin-top:2rem;
+    margin-top:5px;
 }
 #f{
     border-radius:1rem;

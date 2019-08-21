@@ -2,7 +2,7 @@
     <div id="app">
         <div id="return-1"><span class="iconfont" id="return">&#xe622;</span><span id="sureorder">限时抢杀</span></div>
         <ul class="goodslists">
-            <li class="everyshop" v-for="item in lists" :key="item"><hr>
+            <li class="everyshop" v-for="item in lists" :key="item.id"><hr>
                 <div class="product">
                     <img class="productpic" v-bind:src="item.images">
                     <div class="shopchara">
@@ -11,7 +11,7 @@
                             <span>￥{{item.price}}</span>
                         </div>
                     </div>
-                    <button class="buying">立即购买</button>
+                    <router-link to="orders"><button class="buying">立即购买</button></router-link>
                 </div>
             </li>
         </ul>

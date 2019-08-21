@@ -14,7 +14,7 @@
                 <span class="iconfont" id="shoppic">&#xe608;</span>
                 <span class="shoptitle">{{shopTitle}}</span>
                 <ul class="productlist">
-                    <li class="productli" v-for="item in productLists" :key="item">
+                    <li class="productli" v-for="item in productLists" :key="item.id">
                         <div class="product">
                             <img class="productpic" v-bind:src="item.images">
                             <div id="shopchara">

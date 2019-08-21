@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <div id="pic"></div><!-- 头部轮播图 -->
+        <span class="iconfont" id="return">&#xe601;</span><home-chart></home-chart><!-- 头部轮播图 -->
         <div>
-        <span id="price"><strong>￥: {{price}} </strong></span><div id="inventorynum">剩余库存{{inventorynum}}件</div><!-- {{price}} -->
+        <span id="price"><strong>￥: {{goods_Picture}} </strong></span><div id="inventorynum">剩余库存{{inventorynum}}件</div><!-- {{price}} -->
         </div>
         <hr width="90%" text-align="center">
         <P id="goodsname">{{goodsname}}</P><!-- {{goodsname}} -->
@@ -10,8 +10,8 @@
         <div id="discount"></div>
         <div class="greyblock"></div>
         <div id="comment">
-            <div><span id="shopcommit"><strong>商品评价</strong></span><span class="iconfont" id="morecommit">&#xe62b;</span></div>
-            <div><div id="accountpic"><img v-bind:src="accountpic" width="30px" height="30px"></div>
+            <div><span id="shopcommit"><strong>商品评价</strong></span><router-link to="commit"><span class="iconfont" id="morecommit">&#xe62b;</span></router-link></div>
+            <div><div id="accountpic" v-if="account=flase" @click="alertredbag"><img v-bind:src="accountpic" width="30px" height="30px"></div>
             <span id="accountname">{{accountname}}</span>
             <span id="committime">{{committime}}</span></div><br>
             <div id="truecommit">{{truecommit}}</div>
@@ -19,22 +19,30 @@
         <div class="greyblock"></div>
         <div class="tanggreyblock">图文详情</div><hr>
         <div id="shopdetails">
-        <div class="imgdata" v-for="item in lists" :key="item">
+        <div class="imgdata" v-for="item in lists" :key="item.img">
             <img v-bind:src="item.img" width="100%" height="auto">
         </div>
         </div>
         <span class="line"></span>
         <div class="wantnav"><hr id="hrleft"><span class="iconfont" font-size="18px">&#xe62d;</span><span font-size="18px"> 已经到最低了</span><hr id="hrright"></div>
         <span class="line"></span>
+        <div class="block"></div>
+        <bottom-nav></bottom-nav>
     </div>
 </template>
 <script>
+import bottomnav from '../../components/bottomnav/bottomnav'
+import homechart from '../../components/homechart/homechart'
 export default {
   name: 'goodsdetails',
+  components: {
+    'bottom-nav': bottomnav,
+    'home-chart': homechart
+  },
   data () {
     return {
     /* pic 轮播图 */
-      price: '58',
+      goods_Picture: '58',
       goodsname: '绿色森林：甜美爱恋茶抹草莓芒果夹心蛋糕180g下午茶',
       inventorynum: '55688',
       accountpic: require('./img/touxiang.png'),
@@ -56,13 +64,9 @@ export default {
             margin: 0;
             padding: 0;
         }
-        #pic{
-            width: 100%;
-            height: 300px;
-            background: url(img/1.jpg) no-repeat;/* {{shoppic}} */
-            margin:0;
-            padding:0;
-            background-size: cover;
+        #return{
+            font-size: 30px;
+            margin: 10px 0 2px 5px;
         }
         #price{
             width:42%;
@@ -187,5 +191,9 @@ export default {
             float: right;
             margin: 0;
             margin: 3% 0 0 0;
+        }
+        .block{
+            width: 100%;
+            height: 50px;
         }
 </style>

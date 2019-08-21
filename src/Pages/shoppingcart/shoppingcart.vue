@@ -3,25 +3,25 @@
         <div id="gouwuche">购物车</div>
         <div class="greyblock"></div>
         <ul class="shopping">
-            <li class="everyshop" v-for="item in carts" :key="item">
+            <li class="everyshop" v-for="item in carts" :key="item.id">
                 <div class="shoptitle">{{item.shopTitle}}</div>
                 <hr class="shophr">
                 <ul class="productlist">
-                    <li v-for="pros in item.productLists" :key="pros">
+                    <li v-for="pros in item.productLists" :key="pros.id">
                         <input type='checkbox' :checked="{'checked':pros.isChecked}" class='input-checkbox' @click='ischeck(item,pros)'>
                         <div class="product">
                             <img class="productpic" v-bind:src="pros.images">
                             <div id="shopchara">
                             <div class="producttitle">{{pros.productTitle}}</div>
                             <div class="price"><!--使用过滤器对总价改变-->
-                                <span class="proprice">￥{{pros.price | totalprice(pros.count)}}</span>
                                 <div class="count">
                                     <!--商品数量控制-->
                                     <a herf="javascript:void(0)" class="btn-minus" @click="changeCount(pros,-1)">-</a>
                                     <input class="productnum" type="number" v-model="pros.count">
                                     <a herf="javascript:void(0)" class="btn-plus"  @click="changeCount(pros,1)">+</a>
                                 </div>
-                                <span class="iconfont" id="delete">&#xe626;</span>
+                                <div class="goodsbottom"><span class="proprice">￥{{pros.price | totalprice(pros.count)}}</span>
+                                <span class="iconfont" id="delete">&#xe626;</span></div>
                             </div></div>
                         </div>
                     </li>
@@ -33,13 +33,18 @@
         <div class="fenge"></div>
         <div class="paybox">
             <span class="allprice">总计：{{allPrice}}</span>
-            <button class="settlement">结算({{allCount}})</button><hr id="hr">
+            <router-link to="orders"><button class="settlement">结算({{allCount}})</button></router-link><hr id="hr">
         </div>
+        <car-nav></car-nav>
     </div>
 </template>
 <script>
+import carnav from '../../components/carnav/carnav'
 export default {
   name: 'shoppingcart',
+  components: {
+    'car-nav': carnav
+  },
   data () {
     return {
       carts: [
@@ -95,10 +100,6 @@ export default {
     },
     ischeck (item, pro) { // 为未选中的时候改变为true，反之为true
       !pro.isChecked ? this._checkTrue(item, pro) : this._checkFalse(item, pro)
-    },
-    _checkFalse (item, pro) {
-      pro.isChecked = false // 改变状态为false
-      this.isCheckAll = false // 全选状态为false
     },
     _totalPeice () { // 每次调用此方法，将初始值为0，遍历价格并累加
       this.allPrice = 0
@@ -225,19 +226,12 @@ export default {
     }
     .proprice{
       color: rgb(255,0,0);
+      display: inline-block;
+      width: 90%;
     }
-    a.btn-minus{
-      width: 20px;
-      font-size: 25px;
-      height: 20px;
-      right: 0;
-      text-align: center;
-      color: black;
-      margin: 2%;
-      display: inline;
-      position:absolute;
-      bottom: -10px;
-      left: 0;
+    .goodsbottom{
+      position: absolute;
+      top: 45px;
     }
     .productnum{
       width: 20px;
@@ -246,11 +240,12 @@ export default {
       display: inline;
     }
     #delete{
-      display: inline-block;
       font-size: 20px;
+      width: 23px;
       position: absolute;
-      margin: 0 0 0 55%;
+      float: right;
       color: black;
+      margin: 0 0 0 50%;
     }
     .fenge{
       width: 100%;
@@ -279,7 +274,7 @@ export default {
         width: 100%;
         height: 7%;
         position: fixed;
-        bottom: 8%;
+        bottom: 50px;
         background-color: white;
         vertical-align: middle;
     }
