@@ -6,7 +6,7 @@
         <img src="../../assets/img/personimg/personHead.png" alt="" class="background">
         <img src="../../assets/img/personimg/head.png" alt="" class="picture">
     </div>
-    <div class="user">用户</div>
+    <div class="user">{{user}}</div>
     <div class="box">
         <div class="box1" @click="goTo('/personcollect')">
             <span>{{gCount}}</span>
@@ -84,15 +84,29 @@ import shop from './shop/shop.vue'
 export default {
   data () {
     return {
-      gCount: 3,
-      sCount: 3,
-      cCount: 2,
-      aCount: 3,
-      moneyall: 23,
+      gCount: 0,
+      sCount: 0,
+      cCount: 0,
+      aCount: 0,
+      moneyall: 0,
       flag1: true,
       flag2: false,
-      flag3: false
+      flag3: false,
+      user: ''
     }
+  },
+  beforeMount () {
+    this.$http.post('/api/mypage/getUser.action').then(res => {
+    // if (res.data === 'YES') {
+    //   this.$router.push('/zhuceOk')
+    // }
+      console.log(res.data)
+      this.gCount = res.data.goodsCount
+      this.sCount = res.data.shopCount
+      this.cCount = res.data.couponCount
+      this.aCount = res.data.addrCount
+      this.user = res.data.user.user_Name
+    })
   },
   components: {
     shop

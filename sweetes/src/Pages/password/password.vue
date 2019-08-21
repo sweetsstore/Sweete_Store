@@ -8,36 +8,77 @@
         </div>
         <div class="forgetAll">
             <div class="forgetEmpty"></div>
-            <input type="text" placeholder=" 请输入手机号码" ref="phone">
+            <input type="text" placeholder=" 请输入手机号码" ref="phone" @click="input">
             <p v-show="set">手机号格式错误</p>
             <div class="forgetsend">
-                <input type="text" placeholder=" 请输入验证码" class="Fsend1">
+                <input type="text" placeholder=" 请输入验证码" class="Fsend1" ref="message" @click="input1">
                 <button class="Fsend2" ref="Fsend2" @click="send">{{time2}}</button>
             </div>
-            <input type="password" placeholder=" 请输入你的新密码">
-            <input type="password" placeholder=" 请再次输入密码">
-            <div class="Forgetbottom">确认</div>
+            <p v-show="show">验证码出错，请重新输入或获取验证码</p>
+            <input type="password" placeholder=" 请输入你的新密码" @click="pass" ref="pass1">
+            <!-- <input type="password" placeholder=" 请再次输入密码" ref="pass2"> -->
+            <div class="Forgetbottom" @click="yes">确认</div>
         </div>
     </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
   data () {
     return {
       time2: '发送',
-      set: false
+      set: false,
+      phone: '',
+      message: '',
+      respon: 'NO',
+      user_Password: '',
+      show: false
     }
   },
   methods: {
     goTo (path) {
       this.$router.replace(path)
     },
+    input: function () {
+      this.set = false
+      this.show = false
+    },
+    input1: function () {
+      this.show = false
+    },
+    pass: function () {
+      if (this.$refs.message.value) {
+        this.phone = this.$refs.phone.value
+        this.message = this.$refs.message.value
+        this.$http.post('/api/acceptcode.action',
+          qs.stringify({
+            message: this.message,
+            phone: this.phone
+          })
+        ).then(res => {
+          // if (res.data === 'YES') {
+          //   this.$router.push('/zhuceOk')
+          // }
+          this.respon = res.data
+        })
+      }
+    },
     send: function () {
+      this.phone = this.$refs.phone.value
       var myreg = /^[1][3,4,5,7,8][0-9]{9}$/
-      if (!myreg.test(this.$refs.phone.value)) {
+      if (!myreg.test(this.phone)) {
         this.set = true
       } else {
         this.set = false
+        this.$http.post('/api/accept.action',
+          qs.stringify({
+            phone: this.phone
+          })
+        ).then(res => {
+          // if (res.data === 'YES') {
+          //   this.$router.push('/zhuceOk')
+          // }
+        })
         var t = 59
         var this2 = this
         this2.time2 = t
@@ -47,9 +88,26 @@ export default {
           if (this2.time2 === 1) {
             this2.time2 = '发送'
             window.clearTimeout(timer)
-            this2.$refs.Fsend2.disabled = ''
+            this2.$refs.Fsend2.disabled = 'disabled'
           }
         }, 1000)
+      }
+    },
+    yes: function () {
+      this.$refs.Fsend2.disabled = true
+      if (this.respon === 'YES') {
+        this.$http.post('/api/forgetuser_Password.action',
+          qs.stringify({
+            user_Tel: this.phone,
+            user_Password: this.$refs.pass1.value
+          })
+        ).then(res => {
+          if (res.data === 'updateuser_Password success') {
+            this.$router.push('/')
+          }
+        })
+      } else {
+        this.show = true
       }
     }
   }
@@ -60,7 +118,6 @@ export default {
     width: 100%;
     height: 100%;
     position: fixed;
-    /* background-color: #c7b9b0; */
     background: url("../../assets/img/passwordimg/passwordBG.png") no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
