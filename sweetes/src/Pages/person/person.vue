@@ -210,6 +210,7 @@ li{
     position: absolute;
     top: 55%;
     left: 42%;
+    border-radius: 50%;
 }
 .user{
     width: 100%;

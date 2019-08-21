@@ -11,7 +11,7 @@
                 <img :src="Pic" alt="" class="setpic" ref="headshow">
                 <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
-                <input type="file" class="file" @change="head" ref="sethead">
+                <input type="file" class="file" @change="head" ref="sethead" multiple>
                 <a href="#">
                     <img src="../../assets/img/setimg/youjiantou.png" alt="">
                 </a>
@@ -42,7 +42,10 @@ export default {
   data () {
     return {
       user_Name: '',
-      Pic: ''
+      Pic: '',
+      user_Email: '',
+      user_Tel: '',
+      file: ''
     }
   },
   created () {
@@ -59,19 +62,23 @@ export default {
       this.$router.replace(path)
     },
     sure: function () {
-      this.$http.post('/api//mypage/setUser.action',
+      console.log(this.file)
+      this.$http.post('/api/mypage/setUser.action',
         qs.stringify({
           user_Name: this.$refs.name.value,
           user_Email: this.$refs.email.value,
           user_Tel: this.$refs.phone.value,
-          user_Pic: this.Pic
+          user_Pic: this.file.name
         })
       ).then(res => {
+        console.log(res)
       })
     },
     head: function () {
       let file = this.$refs.sethead.files[0]
+      this.file = file
       this.$refs.headshow.src = URL.createObjectURL(file)
+    //   console.log(this.file)
     }
   }
 }

@@ -11,12 +11,13 @@
         <div class="body2">
             <div class="area">{{user_Address}}</div>
             <!-- user_Address -->
-            <div class="delete">删除</div>
+            <div class="delete" @click="del">删除</div>
         </div>
     </div>
 </template>
 <script>
 export default {
+  props: ['key'],
   data () {
     return {
       user_Addr_Name: '张金蕊',
@@ -26,6 +27,9 @@ export default {
       flag: true
     }
   }
+//   del () {
+//     console.log('key')
+//   }
 }
 </script>
 <style scoped>

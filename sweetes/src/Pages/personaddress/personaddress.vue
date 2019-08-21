@@ -7,13 +7,11 @@
           <div class="addressWord">收货地址</div>
           <div class="newaddress" @click="goTo('/newaddress')">添加收货地址</div>
       </div>
-      <!-- <div class="addshow" v-for="add in adds">
-        <myaddress></myaddress>
-      </div> -->
+        <myaddress class="addshow" v-for="(add,index) in adds" :key="index"></myaddress>
     </div>
 </template>
 <script>
-import myaddress from '../myaddress/myaddress.vue'
+import myaddress from './myaddress/myaddress.vue'
 export default {
   data () {
     return {
@@ -33,9 +31,8 @@ export default {
     // if (res.data === 'YES') {
     //   this.$router.push('/zhuceOk')
     // }
-      console.log(res)
-      if (res.data == null) {
-      }
+      this.adds = res.data
+      console.log(res.data)
     })
   }
 }

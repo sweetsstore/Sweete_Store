@@ -14,7 +14,7 @@ import personattention from '../Pages/personattention/personattention.vue'
 import personcollect from '../Pages/personcollect/personcollect.vue'
 import collect from '../Pages/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
-import myaddress from '../Pages/myaddress/myaddress.vue'
+import myaddress from '../Pages/personaddress/myaddress/myaddress.vue'
 import personaddress from '../Pages/personaddress/personaddress.vue'
 import payOk from '../Pages/payOk/payOk.vue'
 import shop from '../Pages/person/shop/shop.vue'
@@ -115,14 +115,16 @@ export default new Router({
       component: newaddress
     },
     {
-      path: '/myaddress',
-      name: 'myaddress',
-      component: myaddress
-    },
-    {
       path: '/personaddress',
       name: 'personaddress',
-      component: personaddress
+      component: personaddress,
+      children: [
+        {
+          path: '/myaddress',
+          name: 'myaddress',
+          component: myaddress
+        }
+      ]
     },
     {
       path: '/payOk',
