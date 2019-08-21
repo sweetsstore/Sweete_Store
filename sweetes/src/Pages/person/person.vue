@@ -4,7 +4,7 @@
     <a href="#"><img src="../../assets/img/personimg/write.png" alt="write" class="write"></a>
     <div class="head">
         <img src="../../assets/img/personimg/personHead.png" alt="" class="background">
-        <img src="../../assets/img/personimg/head.png" alt="" class="picture">
+        <img :src="pic" alt="" class="picture">
     </div>
     <div class="user">{{user}}</div>
     <div class="box">
@@ -92,10 +92,11 @@ export default {
       flag1: true,
       flag2: false,
       flag3: false,
-      user: ''
+      user: '',
+      pic: ''
     }
   },
-  beforeMount () {
+  created () {
     this.$http.post('/api/mypage/getUser.action').then(res => {
     // if (res.data === 'YES') {
     //   this.$router.push('/zhuceOk')
@@ -106,6 +107,7 @@ export default {
       this.cCount = res.data.couponCount
       this.aCount = res.data.addrCount
       this.user = res.data.user.user_Name
+      this.pic = res.data.user.user_Pic
     })
   },
   components: {

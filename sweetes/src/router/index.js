@@ -8,7 +8,7 @@ import zhuceOk from '../Pages/zhuceOk/zhuceOk.vue'
 import set from '../Pages/set/set.vue'
 import orderall from '../Pages/person/shop/orderall/orderall.vue'
 import attention from '../Pages/attention/attention.vue'
-import redmoney from '../Pages/redmoney/redmoney.vue'
+import redmoney from '../Pages/personmoney/redmoney/redmoney.vue'
 import personmoney from '../Pages/personmoney/personmoney.vue'
 import personattention from '../Pages/personattention/personattention.vue'
 import personcollect from '../Pages/personcollect/personcollect.vue'
@@ -83,14 +83,16 @@ export default new Router({
       component: attention
     },
     {
-      path: '/redmoney',
-      name: 'redmoney',
-      component: redmoney
-    },
-    {
       path: '/personmoney',
       name: 'personmoney',
-      component: personmoney
+      component: personmoney,
+      children: [
+        {
+          path: '/',
+          name: 'redmoney',
+          component: redmoney
+        }
+      ]
     },
     {
       path: '/personattention',

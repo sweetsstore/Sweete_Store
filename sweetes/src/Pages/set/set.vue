@@ -8,10 +8,10 @@
         </div>
         <div class="setBody">
             <div class="sethead">
-                <img src="../../assets/img/setimg/head.png" alt="" class="setpic">
+                <img :src="Pic" alt="" class="setpic" ref="headshow">
                 <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
-                <input type="file" class="file">
+                <input type="file" class="file" @change="head" ref="sethead">
                 <a href="#">
                     <img src="../../assets/img/setimg/youjiantou.png" alt="">
                 </a>
@@ -20,32 +20,58 @@
             <div class="setuser">
                 <div class="setuser1">用户名</div>
                 <!-- user_Name -->
-                <input type="text" class="setuser2"  value="张金蕊">
+                <input type="text" class="setuser2" ref="name">
             </div>
             <div class="setuser">
                 <div class="setuser1">电子邮件</div>
                 <!-- user_Email -->
-                <input type="text" class="setuser2" value="1365351516@qq.com">
+                <input type="text" class="setuser2" ref="email">
             </div>
             <div class="setuser">
                 <div class="setuser1">手机号码</div>
                 <!-- user_Tel -->
-                <input type="text" class="setuser2" value="18009240559">
+                <input type="text" class="setuser2" ref="phone">
             </div>
         </div>
-        <div class="setOk" @click="goTo('/person')">确认并返回</div>
+        <div class="setOk" @click="sure">确认并返回</div>
     </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
   data () {
     return {
-      user_Name: '用户名'
+      user_Name: '',
+      Pic: ''
     }
+  },
+  created () {
+    this.$http.post('/api/mypage/showUser.action').then(res => {
+      this.Pic = res.data.user_Pic
+      this.$refs.name.value = res.data.user_Name
+      this.$refs.email.value = res.data.user_Email
+      this.$refs.phone.value = res.data.user_Tel
+      console.log(res.data)
+    })
   },
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    sure: function () {
+      this.$http.post('/api//mypage/setUser.action',
+        qs.stringify({
+          user_Name: this.$refs.name.value,
+          user_Email: this.$refs.email.value,
+          user_Tel: this.$refs.phone.value,
+          user_Pic: this.Pic
+        })
+      ).then(res => {
+      })
+    },
+    head: function () {
+      let file = this.$refs.sethead.files[0]
+      this.$refs.headshow.src = URL.createObjectURL(file)
     }
   }
 }
@@ -111,6 +137,7 @@ img{
     position: absolute;
     top: .666667rem;
     left: .666667rem;
+    border-radius: 50%;
 }
 .setheadWord{
     width: 8rem;

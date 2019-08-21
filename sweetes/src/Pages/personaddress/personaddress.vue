@@ -7,14 +7,19 @@
           <div class="addressWord">收货地址</div>
           <div class="newaddress" @click="goTo('/newaddress')">添加收货地址</div>
       </div>
-      <myaddress></myaddress>
-      <myaddress></myaddress>
-      <myaddress></myaddress>
+      <!-- <div class="addshow" v-for="add in adds">
+        <myaddress></myaddress>
+      </div> -->
     </div>
 </template>
 <script>
 import myaddress from '../myaddress/myaddress.vue'
 export default {
+  data () {
+    return {
+      adds: []
+    }
+  },
   components: {
     myaddress
   },
@@ -22,6 +27,16 @@ export default {
     goTo (path) {
       this.$router.replace(path)
     }
+  },
+  created () {
+    this.$http.post('/api/mypage/getAllAddr.action').then(res => {
+    // if (res.data === 'YES') {
+    //   this.$router.push('/zhuceOk')
+    // }
+      console.log(res)
+      if (res.data == null) {
+      }
+    })
   }
 }
 </script>

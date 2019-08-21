@@ -12,8 +12,8 @@
         <input type="text" placeholder="  手机号码">
         <!-- user_Addr_Num -->
         <select class="se1">
-            <option>湖北省</option>
             <!-- user_Addr_Pro -->
+            <!-- <option>湖北省</option>
             <option>陕西省</option>
             <option>山西省</option>
             <option>山东省</option>
@@ -32,20 +32,20 @@
             <option>湖北省</option>
             <option>陕西省</option>
             <option>山西省</option>
-            <option>山东省</option>
+            <option>山东省</option> -->
         </select>
         <select class="se2">
-            <option>西安市</option>
+            <!-- <option>西安市</option>
             <option>咸阳市</option>
             <option>渭南市</option>
-            <option>汉中市</option>
+            <option>汉中市</option> -->
             <!-- user_Addr_City -->
         </select>
         <select class="se3">
-            <option>新城区</option>
+            <!-- <option>新城区</option>
             <option>碑林区</option>
             <option>莲湖区</option>
-            <option>灞桥区</option>
+            <option>灞桥区</option> -->
             <!-- user_Addr_County -->
         </select>
         <textarea placeholder="详细地址:如街道，社区等"></textarea>
@@ -54,7 +54,7 @@
         <div class="addressfoot">
             <div>设为默认地址</div>
             <div>
-                <input type="checkbox" ref="flag">
+                <input type="checkbox" @click="choose">
             </div>
         </div>
     </div>
@@ -63,15 +63,23 @@
 export default {
   data () {
     return {
-      flag: true
+      def: false
     }
+  },
+  created () {
+    this.$http.post('/api/area/provinceQuery.action').then(res => {
+    // if (res.data === 'YES') {
+    //   this.$router.push('/zhuceOk')
+    // }
+      console.log(res)
+    })
   },
   methods: {
     goTo (path) {
       this.$router.replace(path)
     },
     choose () {
-      console.log(this.$refs)
+      this.def = !this.def
     }
   }
 }
@@ -121,7 +129,13 @@ export default {
     border-bottom: 1px solid #e6e7eb;
     outline: none;
 }
-select,option{
+select{
+    width: 30%;
+    height: 2rem;
+    border: 0;
+    padding: 0;
+}
+option{
     width: 30%;
     height: 2rem;
     border: 0;

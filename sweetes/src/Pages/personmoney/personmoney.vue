@@ -14,9 +14,21 @@
   </div>
 </template>
 <script>
-import redmoney from '../redmoney/redmoney.vue'
+import redmoney from './redmoney/redmoney.vue'
 export default {
-  components: {redmoney},
+  data () {
+    return {
+    }
+  },
+  props: [],
+  components: {
+    redmoney
+  },
+  created () {
+    this.$http.post('/api/mypage/getCoupon.action').then(res => {
+      console.log(res)
+    })
+  },
   methods: {
     goTo (path) {
       this.$router.replace(path)

@@ -1,6 +1,6 @@
 <template>
     <div class="redmoney">
-        <img src="../../assets/img/redmoneyimg/hongbao1.png" alt="">
+        <img src="../../../assets/img/redmoneyimg/hongbao1.png" alt="">
         <div class="redbag">
             <div class="redbagbody">
                 <span>{{coupon}}</span>
