@@ -1,15 +1,14 @@
 <template>
-    <div class="zhuceOk">
+    <div class="payOk">
         <div class="ok">
-            <img src="../../assets/img/zhuceOkimg/zhuceHead.png" alt="">
+            <img src="../../assets/img/payOkimg/zhuceHead.png" alt="">
         </div>
         <div class="okWord">
-            <b>注册成功</b>
+            <b>付款成功</b>
         </div>
-        <div class="okJump" @click="goTo('/regist')">返回</div>
+        <div class="okJump" @click="goTo('/person')">返回</div>
     </div>
 </template>
-
 <script>
 export default {
   methods: {
@@ -20,7 +19,7 @@ export default {
 }
 </script>
 <style scoped>
-.zhuceOk{
+.payOk{
     width: 100%;
     height: 100%;
 }

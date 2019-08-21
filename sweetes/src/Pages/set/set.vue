@@ -2,38 +2,90 @@
     <div class="set">
         <div class="setBack">
             <div class="setjiantou">
-                <img src="./img/tou.png" alt="jiantou">
+                <img src="../../assets/img/setimg/tou.png" alt="jiantou" @click="goTo('/person')">
             </div>
             <div class="setWord">设置</div>
         </div>
         <div class="setBody">
             <div class="sethead">
-                <img src="./img/head.png" alt="" class="setpic">
+                <img :src="Pic" alt="" class="setpic" ref="headshow">
+                <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
-                <a href="#"><img src="./img/youjiantou.png" alt=""></a>
+                <input type="file" class="file" @change="head" ref="sethead">
+                <a href="#">
+                    <img src="../../assets/img/setimg/youjiantou.png" alt="">
+                </a>
             </div>
             <div class="setempty"></div>
             <div class="setuser">
                 <div class="setuser1">用户名</div>
-                <input type="text" class="setuser2" value="张金蕊">
+                <!-- user_Name -->
+                <input type="text" class="setuser2" ref="name">
             </div>
             <div class="setuser">
                 <div class="setuser1">电子邮件</div>
-                <input type="text" class="setuser2" value="1365351516@qq.com">
+                <!-- user_Email -->
+                <input type="text" class="setuser2" ref="email">
             </div>
             <div class="setuser">
                 <div class="setuser1">手机号码</div>
-                <input type="text" class="setuser2" value="18009240559">
+                <!-- user_Tel -->
+                <input type="text" class="setuser2" ref="phone">
             </div>
         </div>
-        <div class="setOk">确认并返回</div>
+        <div class="setOk" @click="sure">确认并返回</div>
     </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
+  data () {
+    return {
+      user_Name: '',
+      Pic: ''
+    }
+  },
+  created () {
+    this.$http.post('/api/mypage/showUser.action').then(res => {
+      this.Pic = res.data.user_Pic
+      this.$refs.name.value = res.data.user_Name
+      this.$refs.email.value = res.data.user_Email
+      this.$refs.phone.value = res.data.user_Tel
+      console.log(res.data)
+    })
+  },
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    },
+    sure: function () {
+      this.$http.post('/api//mypage/setUser.action',
+        qs.stringify({
+          user_Name: this.$refs.name.value,
+          user_Email: this.$refs.email.value,
+          user_Tel: this.$refs.phone.value,
+          user_Pic: this.Pic
+        })
+      ).then(res => {
+      })
+    },
+    head: function () {
+      let file = this.$refs.sethead.files[0]
+      this.$refs.headshow.src = URL.createObjectURL(file)
+    }
+  }
 }
 </script>
 <style scoped>
+.file{
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 2rem;
+    top: 1.2rem;
+    left: 84%;
+    opacity: 0;
+}
 .setBack{
     width: 100%;
     height: 2rem;
@@ -77,6 +129,7 @@ img{
     width: 100%;
     height: 4rem;
     position: relative;
+    overflow: hidden;
 }
 .setpic{
     width: 2.666667rem;
@@ -84,6 +137,7 @@ img{
     position: absolute;
     top: .666667rem;
     left: .666667rem;
+    border-radius: 50%;
 }
 .setheadWord{
     width: 8rem;
@@ -100,7 +154,7 @@ img{
     height: 1.333333rem;
     position: absolute;
     top: 1.333333rem;
-    right: .666667rem;
+    right: 0.6rem;
 }
 a img{
     width: 100%;
@@ -127,7 +181,7 @@ a img{
     text-align: center;
 }
 .setuser2{
-    width: 40%;
+    width: 46%;
     height: 2.4rem;
     display: block;
     border: 0;
@@ -136,18 +190,18 @@ a img{
     right: .4rem;
     outline: none;
     line-height: 2.4rem;
-    text-align: center;
+    text-align: right;
     overflow: hidden;
 }
 .setOk{
     width: 60%;
-    height: 4rem;
+    height: 3.2rem;
     position: fixed;
     bottom: 15%;
     left: 20%;
-    border-radius: 2rem;
+    border-radius: 1.6rem;
     background-color: #fbcc02;
-    line-height: 4rem;
+    line-height: 3.2rem;
     text-align: center;
 }
 </style>

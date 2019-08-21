@@ -2,25 +2,62 @@
     <div class="zhuce">
         <div class="zhuceBack">
             <div class="zhucejiantou">
-                <img src="./img/tou.png" alt="" class="jiantou">
+                <img src="../../assets/img/zhuceimg/tou.png" alt="" class="jiantou" @click="goTo('/regist')">
             </div>
             <div class="zhuceWord">注册</div>
         </div>
-        <img src="./img/zhucebody.png" alt="">
-        <input type="text" placeholder=" 请输入用户名">
-        <input type="text" placeholder=" 请输入手机号码">
-        <div class="send">
-            <input type="text" placeholder=" 请输入验证码" class="send1">
-            <button class="send2">发送
-            </button>
-        </div>
-        <input type="text" placeholder=" 请输入你的密码">
-        <div class="bottom">注册</div>
+        <img src="../../assets/img/zhuceimg/zhucebody.png" alt="">
+        <input type="text" placeholder=" 请输入用户名" ref="name">
+        <input type="text" placeholder=" 请输入手机号码" ref="phone" @click="hide">
+        <p v-show="set">手机号格式错误</p>
+        <input type="password" placeholder=" 请输入你的密码" ref="password">
+        <div class="bottom" @click="isphone">注册</div>
     </div>
 </template>
-
 <script>
+import qs from 'qs'
 export default {
+  data () {
+    return {
+      set: false,
+      user_Name: '',
+      user_Email: '',
+      user_Password: '',
+      user_Tel: ''
+    }
+  },
+  methods: {
+    isphone () {
+      var myreg = /^[1][3,4,5,7,8][0-9]{9}$/
+      if (!myreg.test(this.$refs.phone.value)) {
+        this.set = true
+      } else {
+        this.set = false
+        this.user_Name = this.$refs.name.value
+        this.user_Password = this.$refs.password.value
+        this.user_Tel = this.$refs.phone.value
+        // this.$router.push('/')
+        this.$http.post('/api/register.action',
+          qs.stringify({
+            user_Name: this.user_Name,
+            user_Email: this.user_Email,
+            user_Password: this.user_Password,
+            user_Tel: this.user_Tel
+          })
+        ).then(res => {
+          if (res.data === 'YES') {
+            this.$router.push('/zhuceOk')
+          }
+        })
+      }
+    },
+    hide () {
+      this.set = false
+    },
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style scoped>
@@ -101,5 +138,13 @@ input,.send1{
     border: 0;
     padding:.4rem;
     background-color: rgba(200, 200, 200, 0.5);
+}
+p{
+  margin: 0;
+  display: block;
+  position: absolute;
+  left: 15%;
+  font-size: .8rem;
+  color: red;
 }
 </style>

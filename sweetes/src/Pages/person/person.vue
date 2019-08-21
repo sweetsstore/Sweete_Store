@@ -1,30 +1,30 @@
 <template>
 <div class="person">
-    <a href="#"><img src="./img/setting.png" alt="setting" class="setting"></a>
-    <a href="#"><img src="./img/write.png" alt="write" class="write"></a>
+    <a href="#"><img src="../../assets/img/personimg/setting.png" alt="setting" class="setting" @click="goTo('/set')" title="写种草"></a>
+    <a href="#"><img src="../../assets/img/personimg/write.png" alt="write" class="write"></a>
     <div class="head">
-        <img src="./img/personHead.png" alt="" class="background">
-        <img src="./img/head.png" alt="" class="picture">
+        <img src="../../assets/img/personimg/personHead.png" alt="" class="background">
+        <img :src="pic" alt="" class="picture">
     </div>
-    <div class="user">用户</div>
+    <div class="user">{{user}}</div>
     <div class="box">
-        <div class="box1">
-            <span>0</span>
+        <div class="box1" @click="goTo('/personcollect')">
+            <span>{{gCount}}</span>
             <div class="box11">收藏</div>
             <div class="border1"></div>
         </div>
-        <div class="box2">
-            <span>0</span>
+        <div class="box2" @click="goTo('/personattention')">
+            <span>{{sCount}}</span>
             <div class="box22">关注</div>
             <div class="border2"></div>
         </div>
-        <div class="box3">
-            <span>0</span>
-            <div class="box33">红包</div>
+        <div class="box3" @click="goTo('/personmoney')">
+            <span>{{cCount}}</span>
+            <div class="box33" @click="goTo('/personmoney')">红包</div>
             <div class="border3"></div>
         </div>
-        <div class="box4">
-            <span>0</span>
+        <div class="box4" @click="goTo('/personaddress')">
+            <span>{{aCount}}</span>
             <div class="box44">地址</div>
         </div>
     </div>
@@ -33,25 +33,111 @@
         <b>我的订单</b>
     </div>
     <div class="PersonOrder2">
-        <div>全部</div>
-        <div>待付款</div>
-        <div>待评价</div>
+        <div @click="orderall">全部</div>
+        <div @click="orderpay">待付款</div>
+        <div @click="orderevaluate">待评价</div>
     </div>
-    <div class="PersonActive"></div>
+    <div class="PersonActive" ref="active"></div>
+    <div class="empty"></div>
     <div class="PersonFoot">
-        <div class="Foot1"></div>
-        <div class="Foot2"></div>
-        <div class="Foot3"></div>
-        <div class="Foot4"></div>
+        <!-- <shop></shop> -->
+        <ul>
+            <li v-show="flag1">
+                <shop></shop>
+                <shop></shop>
+                <div class="moneyall">
+                    <p>共计 : {{moneyall}}元</p>
+                </div>
+            </li>
+            <li v-show="flag1">
+                <shop></shop>
+                <div class="moneyall">
+                    <p>共计 : {{moneyall}}元</p>
+                </div>
+            </li>
+            <li v-show="flag2">
+                <shop></shop>
+                <shop></shop>
+                <div class="moneyall">
+                    <div class="orderpay">支付</div>
+                </div>
+            </li>
+            <li v-show="flag3">
+                <shop></shop>
+                <div class="moneyall">
+                    <div class="orderpay">评价</div>
+                </div>
+            </li>
+            <li v-show="flag3">
+                <shop></shop>
+                <div class="moneyall">
+                    <div class="orderpay">评价</div>
+                </div>
+            </li>
+        </ul>
+        <div class="empty"></div>
     </div>
 </div>
 </template>
-
 <script>
+import shop from './shop/shop.vue'
 export default {
+  data () {
+    return {
+      gCount: 0,
+      sCount: 0,
+      cCount: 0,
+      aCount: 0,
+      moneyall: 0,
+      flag1: true,
+      flag2: false,
+      flag3: false,
+      user: '',
+      pic: ''
+    }
+  },
+  created () {
+    this.$http.post('/api/mypage/getUser.action').then(res => {
+    // if (res.data === 'YES') {
+    //   this.$router.push('/zhuceOk')
+    // }
+      console.log(res.data)
+      this.gCount = res.data.goodsCount
+      this.sCount = res.data.shopCount
+      this.cCount = res.data.couponCount
+      this.aCount = res.data.addrCount
+      this.user = res.data.user.user_Name
+      this.pic = res.data.user.user_Pic
+    })
+  },
+  components: {
+    shop
+  },
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    },
+    orderall () {
+      this.$refs.active.style.left = '8%'
+      this.flag1 = true
+      this.flag2 = false
+      this.flag3 = false
+    },
+    orderpay (e) {
+      this.$refs.active.style.left = '30%'
+      this.flag1 = false
+      this.flag2 = true
+      this.flag3 = false
+    },
+    orderevaluate (e) {
+      this.$refs.active.style.left = '51%'
+      this.flag1 = false
+      this.flag2 = false
+      this.flag3 = true
+    }
+  }
 }
 </script>
-
 <style scoped>
 .person{
     width: 100%;
@@ -62,6 +148,48 @@ export default {
     position: absolute;
     top: .533333rem;
     z-index: 5;
+}
+ul{
+    width: 90%;
+    padding: 0;
+    margin: 0;
+    margin-left: 5%;
+}
+li{
+    width: 100%;
+    display: block;
+    margin-bottom: 10%;
+}
+.moneyall{
+    width: 100%;
+    height: 2rem;
+    background-color: white;
+    position: relative;
+}
+.moneyall p{
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 4%;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: right;
+}
+.moneyall .orderpay{
+    width: 20%;
+    height: 1.6rem;
+    position: absolute;
+    top: .2rem;
+    right: 4%;
+    color: white;
+    font-size: .8rem;
+    line-height: 1.6rem;
+    text-align: center;
+    border-radius: 0.7rem;
+    background-color: #ffce39;
 }
 .setting{
     right: .533333rem;
@@ -152,40 +280,22 @@ export default {
     display: flex;
 }
 .PersonOrder2 div{
+    display: block;
     width: 26%;
     justify-items: center;
     align-items: flex-start;
+    /* text-decoration: none;
+    color: black; */
 }
 .PersonActive{
     width: 10%;
     height: .133333rem;
     background-color:#fecf37;
     position: relative;
-    left: 10%;
+    left: 8%;
 }
 .PersonFoot{
     width: 100%;
-    height: 20.8rem;
-    position: relative;
     background-color: #f5f5f5;
-}
-.PersonFoot div{
-    width: 80%;
-    height: 4rem;
-    position: absolute;
-    left: 10%;
-    border: 1px solid black;
-}
-.Foot1{
-    top: .8rem;
-}
-.Foot2{
-    top: 5.6rem;
-}
-.Foot3{
-    top: 10.4rem;
-}
-.Foot4{
-    top: 15.2rem;
 }
 </style>
