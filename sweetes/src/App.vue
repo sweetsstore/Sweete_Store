@@ -1,9 +1,16 @@
 <template>
+<<<<<<< HEAD
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
+=======
+<div id="app">
+>>>>>>> bca1815ec5357dc502e270e15465023a65a72611
     <router-view/>
+<<<<<<< HEAD
     <bottom-nav></bottom-nav>
   </div>
+=======
+</div>
+>>>>>>> zhangjinrui
 </template>
 <script>
 import bottomnav from '../src/components/bottomnav/bottomnav'
@@ -15,8 +22,13 @@ export default {
 }
 </script>
 <style>
-*{
-  margin:0;
-  padding:0;
+<<<<<<< HEAD
+#app {
+margin:0;
+padding:0;
+=======
+body{
+    margin: 0;
+>>>>>>> bca1815ec5357dc502e270e15465023a65a72611
 }
 </style>
