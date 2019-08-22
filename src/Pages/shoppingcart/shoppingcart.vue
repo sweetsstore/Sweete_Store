@@ -4,23 +4,23 @@
         <div class="greyblock"></div>
         <ul class="shopping">
             <li class="everyshop" v-for="item in carts" :key="item.id">
-                <div class="shoptitle">{{item.shopTitle}}</div>
+                <div class="shoptitle">{{item.shop_Name}}</div>
                 <hr class="shophr">
                 <ul class="productlist">
                     <li v-for="pros in item.productLists" :key="pros.id">
                         <input type='checkbox' :checked="{'checked':pros.isChecked}" class='input-checkbox' @click='ischeck(item,pros)'>
                         <div class="product">
-                            <img class="productpic" v-bind:src="pros.images">
+                            <img class="productpic" v-bind:src="pros.goods_Picture">
                             <div id="shopchara">
                             <div class="producttitle">{{pros.productTitle}}</div>
                             <div class="price"><!--使用过滤器对总价改变-->
                                 <div class="count">
                                     <!--商品数量控制-->
                                     <a herf="javascript:void(0)" class="btn-minus" @click="changeCount(pros,-1)">-</a>
-                                    <input class="productnum" type="number" v-model="pros.count">
+                                    <input class="productnum" type="number" v-model="pros.goods_Num">
                                     <a herf="javascript:void(0)" class="btn-plus"  @click="changeCount(pros,1)">+</a>
                                 </div>
-                                <div class="goodsbottom"><span class="proprice">￥{{pros.price | totalprice(pros.count)}}</span>
+                                <div class="goodsbottom"><span class="proprice">￥{{pros.goods_Price | totalprice(pros.count)}}</span>
                                 <span class="iconfont" id="delete">&#xe626;</span></div>
                             </div></div>
                         </div>
@@ -49,41 +49,38 @@ export default {
     return {
       carts: [
         {
-          shopTitle: 'TIMMY的店', // 商店名
-          checkedCount: 0, // 此商店被选择的商品数量
+          shop_Name: 'TIMMY的店', // 商店名
           productLists: [
             {
-              images: require('./img/12.jpg'),
+              goods_Picture: require('./img/12.jpg'),
               isChecked: false, // 商品选择状态
               productTitle: '少女心Q萌榴莲千层蛋糕', // 产品名
-              price: 58, // 价格
-              count: 1 // 数量
+              goods_Price: 58, // 价格
+              goods_Num: 1 // 数量
             }
           ]
         },
         {
-          shopTitle: '味·KING',
-          checkedCount: 0,
+          shop_Name: '味·KING',
           productLists: [
             {
-              images: require('./img/8.jpg'),
+              goods_Picture: require('./img/8.jpg'),
               isChecked: false,
               productTitle: '意式黑椒培根牛肉面',
-              price: 36,
-              count: 1
+              goods_Price: 36,
+              goods_Num: 1
             },
             {
-              images: require('./img/12.jpg'),
+              goods_Picture: require('./img/12.jpg'),
               isChecked: false,
               productTitle: '法国乔士麦春天精品比诺白葡萄',
-              price: 1790,
-              count: 1
+              goods_Price: 1790,
+              goods_Num: 1
             }
           ]
         }
       ],
       allPrice: 0, // 所有价格
-      allShops: 0, // 被选中的商店数量
       allCount: 0 // 被选中的产品数量
     }
   },
@@ -208,7 +205,7 @@ export default {
     #shopchara{
       width: 65%;
       display: inline-block;
-      float: right;
+      /* float: right; */
     }
     .producttitle{
       width: 100%;
@@ -218,7 +215,7 @@ export default {
     .price{
       display: inline-block;
       width: 60%;
-      float: left;
+      /* float: left; */
       position: relative;
       font-size: 15px;
       color: #000;
@@ -234,8 +231,8 @@ export default {
       top: 45px;
     }
     .productnum{
-      width: 20px;
-      height: 20px;
+      /* width: 20px;
+      height: 20px; */
       right: 0;
       display: inline;
     }

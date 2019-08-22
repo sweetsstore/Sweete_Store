@@ -3,12 +3,42 @@
         <div class="suojin"></div>
         <ul class="nav">
             <li class="nav1"><span class="iconfont" id="bo1">&#xe606;</span></li>
-            <li class="nav1"><span class="iconfont" id="bo2">&#xe61d;</span></li>
-            <li class="nav2" id="shopcart">加入购物车</li>
+            <li class="nav1" @click="collect"><span class="iconfont" id="bo2">&#xe61d;</span></li>
+            <li class="nav2" id="shopcart" @click="create">加入购物车</li>
             <li class="nav2">立即购买</li>
         </ul>
     </div>
 </template>
+<script>
+import qs from 'qs'
+export default {
+  name: 'goodsdetails',
+  methods: {
+    collect () {
+      this.$http.post('/api/loveGood.action',
+        qs.stringify({
+          shop_Id: this.shop_Id
+        })
+      ).then(res => {
+        if (res.data === 'True') {
+          this.$router.push('/collectOk')
+        }
+      })
+    },
+    create () {
+      this.$http.post('/api/create.action',
+        qs.stringify({
+          shop_Id: this.shop_Id
+        })
+      ).then(res => {
+        if (res.data === 'True') {
+          this.$router.push('/collectOk')
+        }
+      })
+    }
+  }
+}
+</script>
 <style scoped>
     .suojin{
         width: 100%;

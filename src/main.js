@@ -9,11 +9,13 @@ import './Pages/orders/style/iconfont.css'
 import './Pages/goodsdetails/style/iconfont.css'
 import './Pages/ordermete/ordermete.vue'
 import axios from 'axios'
-import Vuex from 'vuex'
+
 Vue.prototype.$http = axios
+
+// axios.defaults.baseURL = 'http://116.62.6.6:8080/'
+
 Vue.config.productionTip = false
 
-Vue.use(Vuex)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

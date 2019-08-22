@@ -4,23 +4,23 @@
             <div id="personmsg">
                 <div class="addchara"><span class="iconfont" id="addchara">&#xe641;</span></div>
                 <div class="spanchara">
-                    <span id="name">{{name}}</span>
-                    <span id="accounttel">13633234491</span>
-                    <p id="accountadd">{{accountadd}}</p>
+                    <span id="name">{{user_Addr_Name}}</span>
+                    <span id="accounttel">{{user_Addr_Num}}</span>
+                    <p id="accountadd">{{user_Address}}</p>
                     <router-link to="myaddress"><div id="seladd"></div></router-link>
                 </div>
             </div>
         <ul class="shopping">
             <li class="everyshop" v-for="item in carts" :key="item.id">
                 <span class="iconfont" id="shoppic">&#xe608;</span>
-                <div class="shoptitle">{{item.shopTitle}}</div>
+                <div class="shoptitle">{{item.shop_Name}}</div>
                 <hr class="shophr">
                 <ul class="productlist">
                     <li v-for="pros in item.productLists" :key="pros.id">
                         <div class="product">
                             <img class="productpic" v-bind:src="pros.images">
                             <div id="shopchara">
-                                <div class="producttitle">{{pros.productTitle}}</div>
+                                <div class="producttitle">{{pros.goods_Name}}</div>
                                 <div class="price"><!--使用过滤器对总价改变-->
                                     <span>￥{{pros.price}}</span>
                                     <div class="count">数量：{{pros.count}}</div>
@@ -43,33 +43,33 @@ export default {
   name: 'orders',
   data () {
     return {
-      name: '鱼鱼',
-      accounttel: '13633234491',
-      accountadd: '陕西省西安市长安区郭杜街道西安邮电大学长安校区西区',
+      user_Addr_Name: '鱼鱼',
+      user_Addr_Num: 13633234491,
+      user_Address: '陕西省西安市长安区郭杜街道西安邮电大学长安校区西区',
       carts: [
         {
-          shopTitle: 'TIMMY的店', // 商店名
+          shop_Name: 'TIMMY的店', // 商店名
           productLists: [
             {
               images: require('./img/12.jpg'),
-              productTitle: '少女心Q萌榴莲千层蛋糕', // 产品名
+              goods_Name: '少女心Q萌榴莲千层蛋糕', // 产品名
               price: 58, // 价格
               count: 1 // 数量
             }
           ]
         },
         {
-          shopTitle: '味·KING',
+          shop_Name: '味·KING',
           productLists: [
             {
               images: require('./img/8.jpg'),
-              productTitle: '意式黑椒培根牛肉面',
+              goods_Name: '意式黑椒培根牛肉面',
               price: 36,
               count: 1
             },
             {
               images: require('./img/12.jpg'),
-              productTitle: '法国乔士麦春天精品比诺白葡萄',
+              goods_Name: '法国乔士麦春天精品比诺白葡萄',
               price: 1790,
               count: 1
             }

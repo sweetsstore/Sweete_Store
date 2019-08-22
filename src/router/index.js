@@ -7,14 +7,16 @@ import shoppingcart from '../Pages/shoppingcart/shoppingcart.vue'
 import carnav from '../components/carnav/carnav.vue'
 import ordermete from '../Pages/ordermete/ordermete.vue'
 import buyinggoods from '../Pages/buyinggoods/buyinggoods.vue'
+import collectOK from '../Pages/goodsdetails/collectOK.vue'
+import lingquOK from '../Pages/goodsdetails/lingquOK.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'ordermete',
-      component: ordermete
+      name: 'goodsdetails',
+      component: goodsdetails
     }, {
       path: '/shoppingcart',
       name: 'shoppingcart',
@@ -48,6 +50,16 @@ export default new Router({
       path: '/buyinggoods',
       name: 'buyinggoods',
       component: buyinggoods
+    },
+    {
+      path: '/collectOK',
+      name: 'collectOK',
+      component: collectOK
+    },
+    {
+      path: '/lingquOK',
+      name: 'lingquOK',
+      component: lingquOK
     }
   ]
 })
