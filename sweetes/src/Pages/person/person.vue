@@ -102,7 +102,6 @@ export default {
     // if (res.data === 'YES') {
     //   this.$router.push('/zhuceOk')
     // }
-      console.log(res.data)
       this.gCount = res.data.goodsCount
       this.sCount = res.data.shopCount
       this.cCount = res.data.couponCount
@@ -110,6 +109,7 @@ export default {
       this.user = res.data.user.user_Name
       this.pic = res.data.user.user_Pic
       this.goodslist = res.data.ordersAndGoods
+      console.log(res.data.ordersAndGoods)
     })
   },
   components: {
