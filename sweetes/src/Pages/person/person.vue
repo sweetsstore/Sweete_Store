@@ -93,7 +93,8 @@ export default {
       flag2: false,
       flag3: false,
       user: '',
-      pic: ''
+      pic: '',
+      goodslist: ''
     }
   },
   created () {
@@ -108,6 +109,7 @@ export default {
       this.aCount = res.data.addrCount
       this.user = res.data.user.user_Name
       this.pic = res.data.user.user_Pic
+      this.goodslist = res.data.ordersAndGoods
     })
   },
   components: {
