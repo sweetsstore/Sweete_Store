@@ -76,9 +76,6 @@
             </li>
         </ul>
         <div class="empty"></div>
-        <div></div>
-        <div></div>
-        <div></div>
     </div>
 </div>
 </template>
