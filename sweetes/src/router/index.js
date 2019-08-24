@@ -7,12 +7,12 @@ import password from '../Pages/password/password.vue'
 import zhuceOk from '../Pages/zhuceOk/zhuceOk.vue'
 import set from '../Pages/set/set.vue'
 import orderall from '../Pages/person/shop/orderall/orderall.vue'
-import attention from '../Pages/attention/attention.vue'
+import attention from '../Pages/personattention/attention/attention.vue'
 import redmoney from '../Pages/personmoney/redmoney/redmoney.vue'
 import personmoney from '../Pages/personmoney/personmoney.vue'
 import personattention from '../Pages/personattention/personattention.vue'
 import personcollect from '../Pages/personcollect/personcollect.vue'
-import collect from '../Pages/collect/collect.vue'
+import collect from '../Pages/personcollect/collect/collect.vue'
 import newaddress from '../Pages/newaddress/newaddress.vue'
 import myaddress from '../Pages/personaddress/myaddress/myaddress.vue'
 import personaddress from '../Pages/personaddress/personaddress.vue'
@@ -78,11 +78,6 @@ export default new Router({
       component: set
     },
     {
-      path: '/attention',
-      name: 'attention',
-      component: attention
-    },
-    {
       path: '/personmoney',
       name: 'personmoney',
       component: personmoney,
@@ -97,17 +92,26 @@ export default new Router({
     {
       path: '/personattention',
       name: 'personattention',
-      component: personattention
+      component: personattention,
+      children: [
+        {
+          path: '/attention',
+          name: 'attention',
+          component: attention
+        }
+      ]
     },
     {
       path: '/personcollect',
       name: 'personcollect',
-      component: personcollect
-    },
-    {
-      path: '/collect',
-      name: 'collect',
-      component: collect
+      component: personcollect,
+      children: [
+        {
+          path: '/collect',
+          name: 'collect',
+          component: collect
+        }
+      ]
     },
     {
       path: '/newaddress',

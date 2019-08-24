@@ -9,7 +9,6 @@
     <div class="white"></div>
     <div class="redbody">
       <redmoney></redmoney>
-      <redmoney></redmoney>
     </div>
   </div>
 </template>

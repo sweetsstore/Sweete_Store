@@ -11,7 +11,7 @@
                 <img :src="Pic" alt="" class="setpic" ref="headshow">
                 <!-- user_Pic -->
                 <div class="setheadWord">更改头像</div>
-                <input type="file" class="file" @change="head" ref="sethead" multiple>
+                <input type="file" class="file" @change="head" ref="sethead" name="file" >
                 <a href="#">
                     <img src="../../assets/img/setimg/youjiantou.png" alt="">
                 </a>
@@ -62,7 +62,6 @@ export default {
       this.$router.replace(path)
     },
     sure: function () {
-      console.log(this.file)
       this.$http.post('/api/mypage/setUser.action',
         qs.stringify({
           user_Name: this.$refs.name.value,
@@ -78,7 +77,11 @@ export default {
       let file = this.$refs.sethead.files[0]
       this.file = file
       this.$refs.headshow.src = URL.createObjectURL(file)
-    //   console.log(this.file)
+      //   var formdata = new FormData()
+      //   formdata.append('file', this.file)
+      //   console.log(formdata)
+      console.log(this.file)
+      //   this.file = formdata
     }
   }
 }

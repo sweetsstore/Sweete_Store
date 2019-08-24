@@ -1,35 +1,53 @@
 <template>
     <div class="myaddress">
         <div class="body1">
-            <div class="name">{{user_Addr_Name}}</div>
-            <!-- user_Addr_Name -->
-            <div class="phone">{{user_Addr_Num}}</div>
-            <!-- user_Addr_Num -->
-            <div class="flag" v-show="flag">{{user_Addr_Defaddr}}</div>
-            <!-- user_Addr_Defaddr -->
+            <div class="name">{{ad.user_Addr_Name}}</div>
+            <div class="phone">{{ad.user_Addr_Num}}</div>
+            <div class="flag" v-show="flag">{{Defaddr}}</div>
         </div>
         <div class="body2">
-            <div class="area">{{user_Address}}</div>
-            <!-- user_Address -->
+            <div class="area">{{ad.user_Addr_Pro}}{{ad.user_Addr_City}}{{ad.user_Addr_County}}{{ad.user_Address}}</div>
             <div class="delete" @click="del">删除</div>
         </div>
     </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
-  props: ['key'],
+  props: {
+    ad: '',
+    index: ''
+  },
   data () {
     return {
-      user_Addr_Name: '张金蕊',
-      user_Addr_Num: '18009240559',
-      user_Addr_Defaddr: '默认',
-      user_Address: '陕西省西安市长安区西安邮电大学西区',
-      flag: true
+      Defaddr: '默认',
+      user_Address: '',
+      flag: true,
+      d: ''
+    }
+  },
+  created () {
+    if (this.ad.user_Addr_Defaddr === '1') {
+      this.flag = true
+    } else {
+      this.flag = false
+    }
+  },
+  methods: {
+    del () {
+      console.log(this.ad.user_Addr_Id)
+      this.$http.post('/api/mypage/delAddr.action',
+        qs.stringify({
+          user_Addr_Id: this.ad.user_Addr_Id
+        })
+      ).then(res => {
+        if (res.data === 'ok') {
+          this.d = res.data
+          this.$emit('dele', this.d)
+        }
+      })
     }
   }
-//   del () {
-//     console.log('key')
-//   }
 }
 </script>
 <style scoped>
@@ -50,7 +68,7 @@ export default {
     height: 2rem;
     font-size: 1.2rem;
     line-height: 2rem;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

@@ -12,13 +12,22 @@
     </div>
 </template>
 <script>
-import attention from '../attention/attention.vue'
+import attention from './attention/attention.vue'
 export default {
+  data () {
+    return {
+    }
+  },
   components: {attention},
   methods: {
     goTo (path) {
       this.$router.replace(path)
     }
+  },
+  created () {
+    this.$http.post('/api/mypage/getShops.action').then(res => {
+      console.log(res)
+    })
   }
 }
 </script>

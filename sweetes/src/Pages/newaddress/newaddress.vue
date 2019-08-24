@@ -41,7 +41,10 @@ export default {
       ops3: [],
       o1: 0,
       o2: 0,
-      o3: 0
+      o3: 0,
+      ad1: '',
+      ad2: '',
+      ad3: ''
     }
   },
   created () {
@@ -58,9 +61,11 @@ export default {
       this.$router.replace(path)
     },
     option1 (event) {
-      this.o1 = parseInt(event.target.value)
+      let a = document.querySelector('.se1')
+      this.op1 = parseInt(event.target.value)
+      this.ad1 = this.ops1[a.selectedIndex].name
       this.$http.post('/api/area/CityQuery.action', qs.stringify({
-        parentid: this.o1
+        parentid: this.op1
       })
       ).then(res => {
         console.log(res.data)
@@ -70,10 +75,13 @@ export default {
     option2 (event) {
       if (this.o2) {
         this.o2 = parseInt(event.target.value)
+        this.ad2 = event.target.ad
       } else {
         this.o2 = 2
       }
-      console.log(this.o2)
+      let a = document.querySelector('.se2')
+      this.op2 = parseInt(event.target.value)
+      this.ad2 = this.ops2[a.selectedIndex].name
       this.$http.post('/api/area/countyQuery.action', qs.stringify({
         parentid: this.o2
       })
@@ -84,7 +92,9 @@ export default {
     },
     option3 (event) {
       this.o3 = parseInt(event.target.value)
-      console.log(this.o3)
+      let a = document.querySelector('.se3')
+      this.op3 = parseInt(event.target.value)
+      this.ad3 = this.ops3[a.selectedIndex].name
     },
     choose () {
       if (this.def) {
@@ -104,23 +114,26 @@ export default {
       })
     },
     save () {
-      console.log(this.$refs.person.value)
-      console.log(this.$refs.tel.value)
-      console.log(this.$refs.address.value)
-      console.log(this.def)
-      console.log(this.o1)
-      console.log(this.o2)
-      console.log(this.o3)
+      // console.log(this.$refs.person.value)
+      // console.log(this.$refs.tel.value)
+      // console.log(this.$refs.address.value)
+      // console.log(this.def)
+      // console.log(this.ad1)
+      // console.log(this.ad2)
+      // console.log(this.ad3)
       this.$http.post('/api/area/addAddr.action', qs.stringify({
         user_Addr_Name: this.$refs.person.value,
         user_Addr_Num: this.$refs.tel.value,
         user_Address: this.$refs.address.value,
         user_Addr_Defaddr: this.def,
-        phidden: this.o1,
-        chidden: this.o2,
-        dhidden: this.o3
+        phidden: this.ad1,
+        chidden: this.ad2,
+        dhidden: this.ad3
       })
       ).then(res => {
+        if (res.data === 'OK') {
+          this.$router.push('/personaddress')
+        }
         console.log(res)
       })
     }

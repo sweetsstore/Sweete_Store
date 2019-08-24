@@ -7,12 +7,10 @@
             <div class="collectWord">收藏</div>
         </div>
         <collect></collect>
-        <collect></collect>
-        <collect></collect>
     </div>
 </template>
 <script>
-import collect from '../collect/collect.vue'
+import collect from './collect/collect.vue'
 export default {
   components: {
     collect
@@ -21,6 +19,11 @@ export default {
     goTo (path) {
       this.$router.replace(path)
     }
+  },
+  create () {
+    this.$http.post('/api/mypage/getGoods.action').then(res => {
+      console.log(res.data)
+    })
   }
 }
 </script>

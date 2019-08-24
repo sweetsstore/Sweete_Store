@@ -1,6 +1,6 @@
 <template>
     <div class="collect">
-        <img src="../../assets/img/collectimg/4.jpg" alt="">
+        <img src="../../../assets/img/collectimg/4.jpg" alt="">
         <!-- goods_Picture -->
         <div class="collectbody">
             <p>{{goods_Name}}</p>
