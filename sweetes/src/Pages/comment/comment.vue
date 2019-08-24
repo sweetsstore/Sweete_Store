@@ -4,14 +4,14 @@
         <div id="return" @click="go_back">
             <img alt="" src="./img/fanhui.png">
         </div>
-        <div id="write">
+        <div id="write" @click="go_recommending">
             <img alt="" src="./img/tijiao.png">
         </div>
     </div>
     <div id="mid">
-        <textarea wrap="soft" cols="50" rows="6" required maxlength="300" placeholder="随便说点什么吧" style="width: 98%;height: 10rem"></textarea>
+        <textarea wrap="soft" cols="50" rows="6" required maxlength="300" placeholder="随便说点什么吧（不超过300字）" style="width: 98%;height: 10rem" v-model="innertext"></textarea>
         <div id="add">
-            <img alt="" src="./img/tianjia.png">
+            <!-- <img alt="" src="./img/tianjia.png"> -->
             <input id="up_image" type="file" name="file"  multiple @change="change_image"/>
         </div>
     </div>
@@ -20,9 +20,17 @@
 
 <script>
 export default {
+  data () {
+    return {
+      innertext: ''
+    }
+  },
   methods: {
     go_back () {
       this.$router.go(-1)
+    },
+    go_recommending () {
+      this.$router.push({path: '/recommending'})
     },
     changeN (i) {
       this.n = i

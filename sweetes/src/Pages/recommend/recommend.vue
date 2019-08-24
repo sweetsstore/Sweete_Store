@@ -1,5 +1,6 @@
 <template>
 <div>
+    <home-chart :items="items"></home-chart>
     <div id="top">
         <div id="return" @click="go_back">
             <img alt="" src="./img/fanhui.png">
@@ -9,63 +10,98 @@
         </div>
         <div class="module">
             <div class="picture">
-                <img alt="" src="./img/touxiang.png">
+                <img alt="" :src="pic">
             </div>
-            <div class="idname">zhangjinruileiminxiaoye</div>
+            <div class="idname">{{idname}}</div>
         </div>
     </div>
     <div id="mid">
-        <div id="pic">
+        <!-- <div id="pic">
             <img alt="" src="./img/8.jpg" @click="go_goods">
-        </div>
-        <div id="inner">甜品，也叫甜点，是一个很广的概念，大致分为甜味点心和广式的糖水。甜品，一般不会被当作正餐，通常作为下午茶的小食。
-                甜食，是治疗抑郁、放松心情的灵丹妙药，大多人在犒劳自己的时候喜欢来一点甜的，忘记减肥、忘记塑身、忘记那些好看但绷着身体的华丽衣服。一般来说，喜欢吃甜食的人，脾气都不坏，她们的坏情绪可以被巧克力、蛋糕、布丁、奶酪等一切甜美的食物代谢殆尽。即便如才女张爱玲也对冰淇凌、蛋糕等甜品“爱不释口”，尤其喜欢老上海凯司令的“栗子蛋糕”和“处女冰淇淋”。
-                广东糖水甜品的种类十分多样，豆类的有红豆沙、绿豆沙；糊类的有芝麻糊、杏仁糊、花生糊、核桃糊；药材类的有百合糖水、莲子糖水；牛奶类的有窝蛋奶、姜撞奶、双皮奶。另外，诸如银耳炖木瓜、芝麻汤圆、养颜西米露、黑糯米这样的甜食，也是糖水店里的常备之物。</div>
+        </div> -->
+        <div id="inner">{{inner}}</div>
         <div id="content">
-            <div id="date">2019-7-28</div>
+            <div id="date">{{date}}</div>
             <div id="like">
                 <img alt="" src="./img/aixin.png">
             </div>
         </div>
         <div id="comment">
-            <div class="piece">
+            <div class="piece" v-for="item in path" :key="item.seeds_Id">
                 <div class="photo">
-                    <img alt="" src="./img/touxiang.png">
+                    <img alt="" :src="item.user_Pic">
                 </div>
-                <div class="id">zhangjinruileiminxiaoye</div>
-                <div class="date">2019-7-27</div>
+                <div class="id">{{item.user_Name}}</div>
+                <div class="date">{{item.time}}</div>
                 <div class="point">
                     <img alt="" src="./img/dianzan.png">
+                    <div class="number">{{item.likes}}</div>
                 </div>
-                <div class="inner">kajfbckahcljlihoihgiyhgvjGKCJBcnlakcljabkjgkJGLJHLJHBJFJGVjvjgchgdhtutetegfchgcjhfyiug</div>
-            </div>
-            <div class="piece">
-                <div class="photo">
-                    <img alt="" src="./img/touxiang.png">
-                </div>
-                <div class="id">zhangjinruileiminxiaoye</div>
-                <div class="date">2019-7-27</div>
-                <div class="number">12345</div>
-                <div class="point">
-                    <img alt="" src="./img/dianzan.png">
-                </div>
-                <div class="inner">kajfbckahcljlihoihgiyhgvjGKCJBcnlakcljabkjgkJGLJHLJHBJFJGVjvjgchgdhtutetegfchgcjhfyiug</div>
+                <div class="inner">{{item.comment}}</div>
             </div>
         </div>
     </div>
     <div id="bottom">
-        <textarea id="writing" wrap="soft" cols="45" required maxlength="50%" placeholder="在这里发表评论" style="width: 95%;height: 1.5rem"></textarea>
+        <textarea id="writing" wrap="soft" cols="45" required maxlength="50%" placeholder="在这里发表评论" style="width: 75%;height: 1.5rem" v-model="writeinner"></textarea>
+        <button id="btn" @click="go_clear($event)">发送</button>
     </div>
 </div>
 </template>
 
 <script>
+import axios from 'axios'
+import homechart from '../../components/homechart/homechart'
 export default {
-//   data: function () {
-//     return {
-//       whether: false
-//     }
-//   },
+  data () {
+    return {
+      idname: '',
+      pic: '',
+      inner: '',
+      date: '',
+      items: [],
+      path: [],
+      writeinner: ''
+    }
+  },
+  components: {
+    'home-chart': homechart
+  },
+  created () {
+    this.seeds_Id = this.$route.query.seeds_Id
+    this.seeds_Id = parseInt(this.seeds_Id)
+    console.log(this.seeds_Id)
+    axios({
+      url: 'http://116.62.6.6:8080/up.action',
+      method: 'post',
+      params: {seeds_Id: this.seeds_Id}
+    }).then((res) => {
+      console.log(res)
+      this.idname = res.data.up.user_Name
+      this.pic = res.data.up.user_Pic
+      this.inner = res.data.up.description
+      this.date = res.data.up.time
+      this.path = res.data.list_Discuss
+      this.items = res.data.up.path
+    })
+      .catch(error => {
+        console.log(error)
+        alert('error')
+      })
+    // axios.get('http://116.62.6.6:8080/up.action?seeds_Id=1')
+    //   .then(response => {
+    //     console.log(response)
+    //     this.idname = response.data.up.user_Name
+    //     this.pic = response.data.up.user_Pic
+    //     this.inner = response.data.up.description
+    //     this.date = response.data.up.time
+    //     this.path = response.data.list_Discuss
+    //     this.items = response.data.up.path
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //     alert('error')
+    //   })
+  },
   methods: {
     go_back () {
       this.$router.go(-1)
@@ -75,6 +111,24 @@ export default {
     },
     go_goods () {
       this.$router.push({path: '/goodsdetails'})
+    },
+    go_clear (e) {
+      console.log(this.seeds_Id)
+      console.log(this.writeinner)
+      axios({
+        url: 'http://116.62.6.6:8080/writeDiscuss.action',
+        method: 'post',
+        params: {seeds_Id: this.seeds_Id,
+          comment: this.writeinner
+        }
+      }).then((res) => {
+        console.log(res)
+        this.$router.go(0)
+      })
+        .catch(error => {
+          console.log(error)
+          alert('error')
+        })
     }
   }
 }
@@ -137,7 +191,7 @@ export default {
         overflow: hidden;
         margin: 1rem;
     }
-    #pic{
+    /* #pic{
         position: absolute;
         top: 3rem;
         width: 100%;
@@ -148,7 +202,7 @@ export default {
         max-height: 14rem;
         min-width: 100%;
         min-height: 14rem;
-    }
+    } */
     #inner{
         display: block;
         position: absolute;
@@ -190,7 +244,6 @@ export default {
         height: 100%;
     }
     .piece{
-        position: absolute;
         display: flex;
         margin: calc((100% - 98%)/2);
         width: 98%;
@@ -221,17 +274,17 @@ export default {
     .date{
         display: inline-block;
         font-size: .55rem;
-        width: 3rem;
+        width: 7rem;
     }
     .number{
-        display: block;
+        display: inline-block;
         position: absolute;
         top: .85rem;
         right: 2.55rem;
         font-size: .25rem;
     }
     .point{
-        display: block;
+        display: inline-block;
         position: absolute;
         top: 0;
         right: .35rem;
@@ -252,6 +305,8 @@ export default {
         width: 100%;
     }
     #writing{
+        display: block;
+        float: left;
         margin-top: calc((3rem - 1.5rem)/2);
         margin-left: calc((100% - 95%)/2);
         overflow: scroll;
@@ -261,5 +316,11 @@ export default {
         border-color: #66afe9;
         outline: 0;
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+    #btn{
+        width: calc(17.5%);
+        /* margin-left: .5rem; */
+        margin-top: calc((3rem - 1.5rem)/2);
+        margin-left: calc((100% - 95%)/2);
     }
 </style>

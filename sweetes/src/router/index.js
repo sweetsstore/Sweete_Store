@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueLazyload from 'vue-lazyload'
 import comment from '../Pages/comment/comment.vue'
-import merchandise from '../Pages/merchandise/merchandise.vue'
-import review from '../Pages/review/review.vue'
 import recommend from '../Pages/recommend/recommend.vue'
 import recommending from '../Pages/recommending/recommending.vue'
+import recommendingtext from '../Pages/recommending/recommendingtext.vue'
 
 Vue.use(Router)
+Vue.use(VueLazyload)
 
 export default new Router({
   routes: [
@@ -22,26 +23,6 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'merchandise',
-      component: merchandise
-    },
-    {
-      path: '/merchandise',
-      name: 'merchandise',
-      component: merchandise
-    },
-    {
-      path: '/',
-      name: 'review',
-      component: review
-    },
-    {
-      path: '/review',
-      name: 'review',
-      component: review
-    },
-    {
-      path: '/',
       name: 'recommend',
       component: recommend
     },
@@ -54,6 +35,11 @@ export default new Router({
       path: '/recommending',
       name: 'recommending',
       component: recommending
+    },
+    {
+      path: '/recommendingtext',
+      name: 'recommendingtext',
+      component: recommendingtext
     }
   ]
 })
