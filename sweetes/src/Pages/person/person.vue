@@ -42,17 +42,9 @@
     <div class="PersonFoot">
         <!-- <shop></shop> -->
         <ul>
-            <li v-show="flag1">
-                <shop></shop>
-                <shop></shop>
+            <li v-show="flag1" v-for="(index,goods1) in goodslist1" :key="index">
                 <div class="moneyall">
-                    <p>共计 : {{moneyall}}元</p>
-                </div>
-            </li>
-            <li v-show="flag1">
-                <shop></shop>
-                <div class="moneyall">
-                    <p>共计 : {{moneyall}}元</p>
+                    <p>共计 : {{goods1.ordersVo.orders_Mone}}元</p>
                 </div>
             </li>
             <li v-show="flag2">
@@ -60,12 +52,6 @@
                 <shop></shop>
                 <div class="moneyall">
                     <div class="orderpay">支付</div>
-                </div>
-            </li>
-            <li v-show="flag3">
-                <shop></shop>
-                <div class="moneyall">
-                    <div class="orderpay">评价</div>
                 </div>
             </li>
             <li v-show="flag3">
@@ -94,14 +80,11 @@ export default {
       flag3: false,
       user: '',
       pic: '',
-      goodslist: ''
+      goodslist1: ''
     }
   },
   created () {
     this.$http.post('/api/mypage/getUser.action').then(res => {
-    // if (res.data === 'YES') {
-    //   this.$router.push('/zhuceOk')
-    // }
       this.gCount = res.data.goodsCount
       this.sCount = res.data.shopCount
       this.cCount = res.data.couponCount
