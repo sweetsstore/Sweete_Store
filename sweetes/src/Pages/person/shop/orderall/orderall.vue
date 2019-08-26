@@ -1,15 +1,18 @@
 <template>
     <div class="orderall">
-        <img src="../../../../assets/img/orderallimg/2.jpg" alt="">
+        <img :src=gg.goods_Picture alt="">
         <div class="order-body">
-            <div class="goodsname">草莓夹心蛋糕草莓夹心蛋糕草莓夹心蛋糕</div>
-            <div class="goodsnum">数量：{{goodsNum}}</div>
-            <div class="goodsmoney">￥{{money}}</div>
+            <div class="goodsname">{{gg.goods_Name}}</div>
+            <div class="goodsnum">数量：{{gg.goods_Num}}</div>
+            <div class="goodsmoney">￥{{gg.goods_Price}}</div>
         </div>
     </div>
 </template>
 <script>
 export default {
+  props: {
+    gg: ''
+  },
   data () {
     return {
       money: 25,

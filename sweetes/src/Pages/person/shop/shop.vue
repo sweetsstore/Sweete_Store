@@ -1,12 +1,11 @@
 <template>
     <div class="shop">
         <div class="shop-name">
-            <div>Timmy的店</div>
+            <div>{{g.shop_Name}}</div>
             <img src="../../../assets/img/shopimg/youjiantou.png" alt="图片走丢了">
         </div>
         <div class="shop-goods">
-            <orderall></orderall>
-            <orderall></orderall>
+            <orderall v-for="(g1,index111) in g.goodsVo" :gg="g1" :key="index111"></orderall>
         </div>
         <div></div>
     </div>
@@ -14,6 +13,13 @@
 <script>
 import orderall from './orderall/orderall.vue'
 export default {
+  props: {
+    g: ''
+  },
+  data () {
+    return {
+    }
+  },
   components: {orderall}
 }
 </script>

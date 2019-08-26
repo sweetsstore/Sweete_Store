@@ -42,7 +42,8 @@
     <div class="PersonFoot">
         <!-- <shop></shop> -->
         <ul>
-            <li v-show="flag1" v-for="(index,goods1) in goodslist1" :key="index">
+            <li v-show="flag1" v-for="(goods1,index1) in goodslist1" :key="index1">
+                <shop v-for="(go1,index11) in goods1.shopAndGoods" :g="go1" :key="index11"></shop>
                 <div class="moneyall">
                     <p>共计 : {{goods1.ordersVo.orders_Mone}}元</p>
                 </div>
@@ -91,7 +92,7 @@ export default {
       this.aCount = res.data.addrCount
       this.user = res.data.user.user_Name
       this.pic = res.data.user.user_Pic
-      this.goodslist = res.data.ordersAndGoods
+      this.goodslist1 = res.data.ordersAndGoods
       console.log(res.data.ordersAndGoods)
     })
   },
