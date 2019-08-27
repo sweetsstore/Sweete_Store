@@ -41,10 +41,8 @@ export default {
           user_Addr_Id: this.ad.user_Addr_Id
         })
       ).then(res => {
-        if (res.data === 'ok') {
-          this.d = res.data
-          this.$emit('dele', this.d)
-        }
+        this.d = res.data
+        this.$emit('dele', this.d)
       })
     }
   }

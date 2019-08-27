@@ -4,11 +4,12 @@
             <img src="../../../assets/img/attentionimg/dianpu.png" alt="">
         </div>
         <div class="storename">{{ad.shop_Name}}
-            <span>取消关注</span>
+            <span @click="del">取消关注</span>
         </div>
     </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
   props: {
     ad: '',
@@ -16,12 +17,26 @@ export default {
   },
   data () {
     return {
+      d: ''
     }
   },
   create () {
     console.log(this.ad)
   },
   methods: {
+    del () {
+      console.log(this.ad.shop_Id)
+      this.$http.post('/api/mypage/delShops.action',
+        qs.stringify({
+          shop_Id: this.ad.shop_Id
+        })
+      ).then(res => {
+        if (res.data === 'ok') {
+          this.d = res.data
+          this.$emit('dele', this.d)
+        }
+      })
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
             </div>
             <div class="attentionWord">关注</div>
         </div>
-        <attention v-for="(ad,index) in ads" :ad="ads[index]" :key="index"></attention>
+        <attention v-for="(ad,index) in ads" :ad="ads[index]" :key="index" v-on:dele="dele"></attention>
     </div>
 </template>
 <script>
@@ -21,6 +21,14 @@ export default {
   methods: {
     goTo (path) {
       this.$router.replace(path)
+    },
+    dele (d) {
+      if (d === 'ok') {
+        this.$http.post('/api/mypage/getShops.action').then(res => {
+          this.ads = res.data
+          console.log(res.data)
+        })
+      }
     }
   },
   created () {
