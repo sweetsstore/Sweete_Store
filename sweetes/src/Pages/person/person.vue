@@ -48,15 +48,14 @@
                     <p>共计 : {{goods1.ordersVo.orders_Mone}}元</p>
                 </div>
             </li>
-            <li v-show="flag2">
-                <shop></shop>
-                <shop></shop>
+            <li v-show="flag2" v-for="(goods2,index2) in goodslist2" :key="index2">
+                <shop v-for="(go2,index22) in goods2.shopAndGoods" :g="go2" :key="index22"></shop>
                 <div class="moneyall">
                     <div class="orderpay">支付</div>
                 </div>
             </li>
-            <li v-show="flag3">
-                <shop></shop>
+            <li v-show="flag3" v-for="(goods3,index3) in goodslist3" :key="index3">
+                <shop v-for="(go3,index33) in goods3.shopAndGoods" :g="go3" :key="index33"></shop>
                 <div class="moneyall">
                     <div class="orderpay">评价</div>
                 </div>
@@ -67,6 +66,7 @@
 </div>
 </template>
 <script>
+import qs from 'qs'
 import shop from './shop/shop.vue'
 export default {
   data () {
@@ -81,7 +81,9 @@ export default {
       flag3: false,
       user: '',
       pic: '',
-      goodslist1: ''
+      goodslist1: '',
+      goodslist2: '',
+      goodslist3: ''
     }
   },
   created () {
@@ -114,12 +116,28 @@ export default {
       this.flag1 = false
       this.flag2 = true
       this.flag3 = false
+      this.$http.post('/api/order/getAll.action',
+        qs.stringify({
+          state: 2
+        })
+      ).then(res => {
+        this.goodslist2 = res.data.ordersAndGoods
+        console.log(res)
+      })
     },
     orderevaluate (e) {
       this.$refs.active.style.left = '51%'
       this.flag1 = false
       this.flag2 = false
       this.flag3 = true
+      this.$http.post('/api/order/getAll.action',
+        qs.stringify({
+          state: 3
+        })
+      ).then(res => {
+        this.goodslist3 = res.data.ordersAndGoods
+        console.log(res)
+      })
     }
   }
 }
