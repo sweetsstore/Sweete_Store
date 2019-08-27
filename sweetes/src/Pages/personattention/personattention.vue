@@ -6,9 +6,7 @@
             </div>
             <div class="attentionWord">关注</div>
         </div>
-        <attention></attention>
-        <attention></attention>
-        <attention></attention>
+        <attention v-for="(ad,index) in ads" :ad="ads[index]" :key="index"></attention>
     </div>
 </template>
 <script>
@@ -16,6 +14,7 @@ import attention from './attention/attention.vue'
 export default {
   data () {
     return {
+      ads: ''
     }
   },
   components: {attention},
@@ -26,7 +25,8 @@ export default {
   },
   created () {
     this.$http.post('/api/mypage/getShops.action').then(res => {
-      console.log(res)
+      this.ads = res.data
+      console.log(res.data)
     })
   }
 }
