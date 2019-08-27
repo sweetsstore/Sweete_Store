@@ -48,14 +48,14 @@
                     <p>共计 : {{goods1.ordersVo.orders_Mone}}元</p>
                 </div>
             </li>
-            <li v-show="flag2" v-for="(goods2,index2) in goodslist2" :key="index2">
-                <shop v-for="(go2,index22) in goods2.shopAndGoods" :g="go2" :key="index22"></shop>
+            <li v-show="flag2" v-for="(goods2,index1) in goodslist2" :key="index1">
+                <shop v-for="(go2,index11) in goods2.shopAndGoods" :g="go2" :key="index11"></shop>
                 <div class="moneyall">
                     <div class="orderpay">支付</div>
                 </div>
             </li>
-            <li v-show="flag3" v-for="(goods3,index3) in goodslist3" :key="index3">
-                <shop v-for="(go3,index33) in goods3.shopAndGoods" :g="go3" :key="index33"></shop>
+            <li v-show="flag3" v-for="(goods3,index1) in goodslist3" :key="index1">
+                <shop v-for="(go3,index11) in goods3.shopAndGoods" :g="go3" :key="index11"></shop>
                 <div class="moneyall">
                     <div class="orderpay">评价</div>
                 </div>
