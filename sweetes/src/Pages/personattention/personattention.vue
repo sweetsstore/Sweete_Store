@@ -23,18 +23,16 @@ export default {
       this.$router.replace(path)
     },
     dele (d) {
-      if (d === 'ok') {
-        this.$http.post('/api/mypage/getShops.action').then(res => {
-          this.ads = res.data
-          console.log(res.data)
-        })
-      }
+      this.$http.post('/api/mypage/getShops.action').then(res => {
+        this.ads = res.data
+        console.log(res.data)
+      })
     }
   },
   created () {
     this.$http.post('/api/mypage/getShops.action').then(res => {
       this.ads = res.data
-      console.log(res.data)
+      console.log(res)
     })
   }
 }

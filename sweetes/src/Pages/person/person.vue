@@ -95,7 +95,7 @@ export default {
       this.user = res.data.user.user_Name
       this.pic = res.data.user.user_Pic
       this.goodslist1 = res.data.ordersAndGoods
-      console.log(res.data.ordersAndGoods)
+      console.log(res.data)
     })
   },
   components: {
