@@ -20,7 +20,7 @@ export default {
       this.$router.replace(path)
     }
   },
-  create () {
+  created () {
     this.$http.post('/api/mypage/getGoods.action').then(res => {
       console.log(res)
     })
