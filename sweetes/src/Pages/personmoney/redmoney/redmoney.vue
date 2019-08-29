@@ -3,21 +3,22 @@
         <img src="../../../assets/img/redmoneyimg/hongbao1.png" alt="">
         <div class="redbag">
             <div class="redbagbody">
-                <span>{{coupon}}</span>
+                <span>{{ad.coupon}}</span>
                 <p>元</p>
                 <!-- coupon -->
             </div>
-            <span class="redstore">{{shop_Name}}</span>
+            <span class="redstore">{{ad.shop_Name}}</span>
             <!-- shop_Name -->
         </div>
     </div>
 </template>
 <script>
 export default {
+  props: {
+    ad: ''
+  },
   data () {
     return {
-      coupon: 20,
-      shop_Name: '米旗蛋糕店'
     }
   }
 }

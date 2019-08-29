@@ -8,7 +8,7 @@
     </div>
     <div class="white"></div>
     <div class="redbody">
-      <redmoney></redmoney>
+      <redmoney v-for="(ad,index) in ads" :ad="ads[index]" :key="index" ></redmoney>
     </div>
   </div>
 </template>
@@ -17,6 +17,7 @@ import redmoney from './redmoney/redmoney.vue'
 export default {
   data () {
     return {
+      ads: ''
     }
   },
   props: [],
