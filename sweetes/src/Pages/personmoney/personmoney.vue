@@ -8,7 +8,7 @@
     </div>
     <div class="white"></div>
     <div class="redbody">
-      <redmoney v-for="(ad,index) in ads" :ad="ads[index]" :key="index" ></redmoney>
+      <redmoney v-for="(ad,index) in ads" :ad="ads[index]" :key="index"></redmoney>
     </div>
   </div>
 </template>

@@ -6,12 +6,17 @@
             </div>
             <div class="collectWord">收藏</div>
         </div>
-        <collect></collect>
+        <collect v-for="(ad,index) in ads" :ad="ads[index]" :key="index"></collect>
     </div>
 </template>
 <script>
 import collect from './collect/collect.vue'
 export default {
+  data () {
+    return {
+      ads: ''
+    }
+  },
   components: {
     collect
   },
