@@ -30,7 +30,7 @@ export default {
     position: relative;
 }
 img{
-    width:30%;
+    width:35%;
     height:6rem;
     position: absolute;
     border-radius: 0.5rem;
@@ -38,7 +38,7 @@ img{
     left: 0.5rem;
 }
 .collectbody{
-    width: 60%;
+    width: 55%;
     height: 6rem;
     position: absolute;
     right: 4%;
@@ -49,11 +49,11 @@ img{
     width: 100%;
     height: 3rem;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 1rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     line-height: 3rem;
-    text-align: center;
+    text-align: left;
 }
 .collectbody div{
     width: 100%;
