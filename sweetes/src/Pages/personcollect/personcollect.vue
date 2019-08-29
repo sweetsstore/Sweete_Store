@@ -22,7 +22,7 @@ export default {
   },
   create () {
     this.$http.post('/api/mypage/getGoods.action').then(res => {
-      console.log(res.data)
+      console.log(res)
     })
   }
 }
