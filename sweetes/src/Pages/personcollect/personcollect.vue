@@ -27,7 +27,8 @@ export default {
   },
   created () {
     this.$http.post('/api/mypage/getGoods.action').then(res => {
-      console.log(res)
+      console.log(res.data)
+      this.ads = res.data
     })
   }
 }
