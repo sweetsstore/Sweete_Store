@@ -1,12 +1,12 @@
 <template>
     <div class="collect">
-        <img src="../../../assets/img/collectimg/4.jpg" alt="">
+        <img :src="ad.goods_Picture" alt="">
         <!-- goods_Picture -->
         <div class="collectbody">
-            <p>{{goods_Name}}</p>
+            <p>{{ad.goods_Name}}</p>
             <!-- goods_Name -->
             <div>
-                <span>￥{{goods_Price}}</span>
+                <span>￥{{ad.goods_Price}}</span>
                 <!-- goods_Price -->
             </div>
         </div>
@@ -14,10 +14,11 @@
 </template>
 <script>
 export default {
+  props: {
+    ad: ''
+  },
   data () {
     return {
-      goods_Name: '艾菲勒法式马卡龙甜点24枚西式糕点心小蛋糕甜品零食品送女友礼盒',
-      goods_Price: 20
     }
   }
 }
