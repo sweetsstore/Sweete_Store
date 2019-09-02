@@ -27,6 +27,7 @@ export default {
   created () {
     this.$http.post('/api/mypage/getCoupon.action').then(res => {
       this.ads = res.data
+      console.log(res)
     })
   },
   methods: {
