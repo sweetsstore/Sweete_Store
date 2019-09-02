@@ -3,19 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-<<<<<<< HEAD
 import '../src/components/bottomnav/iconstyle/iconfont.css'
-=======
->>>>>>> zhangjinrui
 import axios from 'axios'
 
 Vue.prototype.$http = axios
 
-<<<<<<< HEAD
-=======
 // axios.defaults.baseURL = 'http://116.62.6.6:8080/'
 
->>>>>>> zhangjinrui
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

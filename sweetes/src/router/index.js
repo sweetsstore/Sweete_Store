@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import home from '@/Pages/home/home.vue'
 import classify from '@/Pages/classify/classify.vue'
 import goodsshow from '@/Pages/goodsshow/goodsshow.vue'
-import goods from '@/Pages/goodsshow/goods/goods'
 import regist from '../Pages/regist/regist.vue'
 import person from '../Pages/person/person.vue'
 import zhuce from '../Pages/zhuce/zhuce.vue'
@@ -22,6 +21,7 @@ import myaddress from '../Pages/myaddress/myaddress.vue'
 import personaddress from '../Pages/personaddress/personaddress.vue'
 import payOk from '../Pages/payOk/payOk.vue'
 import shop from '../Pages/person/shop/shop.vue'
+import goodsdetailtest from '@/Pages/goodsdetailtest/goodsdetailtest.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -54,15 +54,7 @@ export default new Router({
     {
       path: '/goodsshow',
       name: 'goodsshow',
-      component: goodsshow,
-      children:
-      [
-        {
-          path: '/goodsshow/goods',
-          name: 'goods',
-          component: goods
-        }
-      ]
+      component: goodsshow
     },
     {
       path: '/person',
@@ -169,6 +161,11 @@ export default new Router({
       path: '/payOk',
       name: 'payOk',
       component: payOk
+    },
+    {
+      path: '/goodsdetailtest',
+      name: 'goodsdetailtest',
+      component: goodsdetailtest
     }
   ]
 })

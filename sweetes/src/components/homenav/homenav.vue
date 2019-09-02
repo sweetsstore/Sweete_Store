@@ -1,7 +1,7 @@
 <template>
 <div class="home_nav">
     <ul class="dots">
-        <li v-for="(item, index) in items" :key="index" :class="{active: Index==index}" @click="change(index)" >
+        <li v-for="(item, index) in items" :key="index" :class="{active: Index==index}" @click="change(index)" :keybig="item.big">
             <img :src="item.url" alt="">
             <span>{{item.name}}</span>
         </li>
@@ -15,10 +15,10 @@ export default {
       Index: 5,
       items:
       [
-        {name: '品好茶', url: require('../../assets/homeimg/cha.png')},
-        {name: '挑美酒', url: require('../../assets/homeimg/meijiu.png')},
-        {name: '尝美食', url: require('../../assets/homeimg/meishi.png')},
-        {name: '去秒杀', url: require('../../assets/homeimg/miaosha.png')}
+        {name: '品好茶', url: require('../../assets/homeimg/cha.png'), big: 7},
+        {name: '挑美酒', url: require('../../assets/homeimg/meijiu.png'), big: 4},
+        {name: '尝美食', url: require('../../assets/homeimg/meishi.png'), big: 2},
+        {name: '寻好物', url: require('../../assets/homeimg/liwu.png'), big: 5}
       ]
     }
   },
@@ -30,27 +30,16 @@ export default {
 }
 </script>
 <style scoped="scoped">
+ul{
+  margin:0;
+  padding:0;
+}
 .home_nav{
     width:100%;
     margin-top:1rem;
 }
-/* .dot{
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-    height:2rem;
-    margin-top:2rem;
-}
-.dot a{
-    display:inline-block;
-    height:2rem;
-    width: 2rem;
-}
-.dot a img{
-    height:2rem;
-    width: 2rem;
-} */
 .dots{
+    width:100%;
     display:flex;
     align-items:center;
     justify-content:space-around;

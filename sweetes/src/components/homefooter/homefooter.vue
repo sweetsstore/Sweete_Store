@@ -1,40 +1,46 @@
 <template>
      <footer>
       <ul >
-          <li v-for="item in items" :key='item.index'>
-              <a href="#">
-                  <img :src="item.imgsrc" alt="">
-                  <p class="newname">{{item.name}}</p>
-                  <p class="newmoney">￥{{item.money}}/份</p>
-              </a>
+          <li v-for="(item, index) in arrs" :key='item.index' @click="go(index)">
+              <div>
+                  <img :src="item.goods_Picture" alt="图片走丢咯~">
+                  <p class="newname">{{item.goods_Name}}</p>
+                  <p class="newmoney">￥{{item.goods_Price}}/份</p>
+              </div>
           </li>
       </ul>
   </footer>
 </template>
 <script>
 export default {
-  data () {
-    return {
-      items:
-            [
-              {imgsrc: require('../../assets/homeimg/1small.jpg'), name: '草莓味红丝绒蛋糕', money: 20},
-              {imgsrc: require('../../assets/homeimg/2small.jpg'), name: '橙味流心蛋糕', money: 30},
-              {imgsrc: require('../../assets/homeimg/8small.jpg'), name: '荔枝味夹心蛋糕', money: 40},
-              {imgsrc: require('../../assets/homeimg/13small.jpg'), name: '草莓味软蛋糕', money: 45}
-            ]
+  props: ['arrs'],
+  methods: {
+    go (id) {
+      this.$router.push({
+        path: 'goodsdetailtest',
+        query: {id: this.arrs[id].goods_Id}
+      })
     }
   }
 }
 </script>
 <style scoped="scoped">
+ul{
+  margin:0;
+  padding:0;
+}
+p{
+   margin:0;
+   padding: 0;
+}
 footer{
     width:100%;
-    height:8.5rem;
+    height:8rem;
     margin-top:1.2rem;
 }
 footer ul{
     width:100%;
-    height:8.5rem;
+    height:8rem;
     list-style:none;
     white-space:nowrap;
     overflow-x:auto;
@@ -45,25 +51,26 @@ footer li {
     margin-left:.5rem;
     display:inline-block;
 }
-footer a{
+footer div{
     display:block;
     width:100%;
     height:100%;
     text-decoration:none;
 }
-footer li a img{
+footer li div img{
+    display:block;
     width:100%;
     height:5.5rem;
     border-radius:.5rem;
 }
-footer li a .newname{
-    margin-top:.2rem;
+footer li div .newname{
+    /* margin-top:.2rem; */
     margin-bottom:.2rem;
     font-size:90%;
     text-decoration:none;
     color:black;
 }
-footer li a .newmoney{
+footer li div .newmoney{
     font-size:90%;
     text-decoration:none;
     color:#f5a9a9;

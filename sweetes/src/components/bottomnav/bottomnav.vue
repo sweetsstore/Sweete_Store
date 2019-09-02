@@ -20,7 +20,7 @@ export default {
       this.$router.push('./classify')
     },
     go3 () {
-      this.$router.push('./recommeding')
+      this.$router.push('./recommending')
     },
     go4 () {
       this.$router.push('./shoppingcart')
@@ -38,7 +38,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-body {
+div {
   display: flex;
   justify-content: center;
   align-items: center;

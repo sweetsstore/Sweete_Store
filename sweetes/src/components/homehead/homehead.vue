@@ -2,19 +2,42 @@
     <header>
     <img src="../../assets/homeimg/默认头像.png" id="pic">
     <div id="search">
-        <input type="text" >
-        <button><img src="../../assets/homeimg/search.png" alt="图片走丢了"></button>
+        <input type="text" ref="message">
+        <button @click="send()"><img src="../../assets/homeimg/search.png"></button>
     </div>
   </header>
 </template>
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      message: '',
+      msg: ''
+    }
+  },
+  propo: ['user'],
+  created () {
+    console.log(this.user.user_Pic)
+  },
+  methods: {
+    send: function () {
+      if (this.$refs.message.value) {
+        this.msg = this.$refs.message.value
+        this.$router.push({
+          path: '/goodsshow',
+          query: {str: this.msg}
+        })
+      }
+    }
+  }
+}
 </script>
 <style scoped="scoped">
 header{
     width:100%;
     height:3.7rem;
     position:relative;
+    left:0;
     top:0.5rem;
 }
 #pic{
@@ -42,7 +65,7 @@ header{
     border:none;
     background-color:transparent;
     position:absolute;
-    left:90%;
+    left:88%;
     top:1rem;
 }
 </style>

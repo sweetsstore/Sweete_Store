@@ -7,7 +7,7 @@
       <span>{{title}}</span>
     </header>
     <div class="classes">
-    <ul :default-active="active" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <ul>
     <router-link v-for="(item,index) in items" :key="index" tag="li" :to="url" :class="{active: Index==index}" @click.native="change(index)">{{item}}</router-link>
     </ul>
     </div>
@@ -15,12 +15,6 @@
 </template>
 <script>
 export default {
-  props: {
-    active: {
-      type: String,
-      required: true
-    }
-  },
   data () {
     return {
       title: '热销榜单',
@@ -35,9 +29,6 @@ export default {
         path: '/classify'
       })
     },
-    handleSelect: function (key, keyPath) {
-      this.$emit('update:active', key)
-    },
     change: function (index) {
       this.Index = index
     }
@@ -51,7 +42,7 @@ export default {
 }
 header{
     width:100%;
-    height:1.8rem;
+    height:2rem;
     position:relative;
     left:0;
     top:1rem;
@@ -60,7 +51,7 @@ header button{
     border:none;
     background-color:transparent;
     width:2%;
-    height: 1.8rem;
+    height:2rem;
     position:absolute;
     left: .386667rem;
     top:0;
@@ -71,7 +62,7 @@ header span{
     font-size:130%;
     font-weight:bold;
     width:100%;
-    line-height:1.8rem;
+    height:2rem;
     text-align: center;
 }
 .classes{
@@ -84,7 +75,7 @@ header span{
     overflow-y:hidden;
 }
 .classes ul{
-    width:150%;
+    width:155%;
     list-style:none;
 }
 .classes ul li{

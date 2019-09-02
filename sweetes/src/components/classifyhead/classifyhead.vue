@@ -1,16 +1,16 @@
 <template>
     <header>
-      <button @click="go">
+      <button @click="go()">
         <img src="../../assets/classifyimg/返回.png" alt="图片走丢了~">
       </button>
-        <span>{{title}}</span>
+        {{title}}
     </header>
 </template>
 <script>
 export default {
   data () {
     return {
-      title: '热销榜单'
+      title: '商品分类'
     }
   },
   methods: {
@@ -24,28 +24,24 @@ export default {
 </script>
 <style scoped>
 header{
+    display:block;
     width:100%;
-    height:1.8rem;
-    position:relative;
-    left:0;
-    top:1rem;
-}
-header button{
-    border:none;
-    background-color:transparent;
-    width:2%;
-    height: 1.8rem;
-    position:absolute;
-    left: .386667rem;
-    top:0;
-    outline:none;
-}
-header span{
-    display:inline-block;
+    margin-top:1rem;
+    padding: 0;
     font-size:130%;
     font-weight:bold;
-    width:100%;
-    line-height:1.8rem;
     text-align: center;
+    position:relative;
+}
+header button{
+    display:inline-block;
+    border:none;
+    background-color:transparent;
+    outline:none;
+    position: absolute;
+    left:1rem;
+    top:0;
+    margin:0;
+    padding:0;
 }
 </style>

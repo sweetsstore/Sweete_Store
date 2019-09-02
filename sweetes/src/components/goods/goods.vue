@@ -1,36 +1,43 @@
 <template>
     <div>
         <ul class="cake">
-            <li v-for="(item, index) in items" :key="index">
-                <router-link :to="item.url"><img :src="item.src" alt="图片走丢咯~"></router-link>
-                <p class="name">{{item.name}}</p>
-                <router-link :to="item.url" tag="button">购买</router-link>
-                <p class="money">￥{{item.money}}</p>
-                <p class="number">已售：{{item.number}}</p>
+            <li v-for="(item, index) in items" :key="index" @click="go(index)">
+                <a href="#"><img :src="item.goods_Picture" alt="图片走丢咯~"></a>
+                <p class="name">{{item.goods_Name}}</p>
+                <button>购买</button>
+                <p class="money">￥{{item.goods_Price}}</p>
+                <p class="number">已售：{{item.goods_Num}}</p>
             </li>
         </ul>
     </div>
 </template>
 <script>
-export default
-{
+export default {
+  props: ['items'],
   data () {
     return {
-      items:
-            [
-              {
-                src: require('../../../assets/goodsshowimg/1.jpg'),
-                url: '/goodsdetail',
-                name: '这是一个蛋糕',
-                money: 30,
-                number: 67
-              }
-            ]
+      message: ''
+    }
+  },
+  methods: {
+    go (index) {
+      this.$router.push({
+        path: 'goodsdetailtest',
+        query: {id: this.items[index].goods_Id}
+      })
     }
   }
 }
 </script>
 <style>
+ul{
+    margin:0;
+    padding:0;
+}
+p{
+    margin:0;
+    padding:0;
+}
 .cake{
     width:100%;
     list-style:none;

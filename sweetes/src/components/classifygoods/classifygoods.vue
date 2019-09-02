@@ -1,24 +1,28 @@
 <template>
-<div id="main">
-    <div class="left" ref="left">
+<section>
+<div class="content">
+<div class="left" ref="left">
         <ul class="list" >
-          <li v-for= "(arr, index) in arrs" :key= "index" :class= "{current:currentIndex === index}" @click= "change(index, $event)">{{arr}}</li>
+          <li v-for="(arr, index) in arrs" :key= "index" :class="{current:currentIndex === index}" @click="change(index, $event)">{{arr}}</li>
         </ul>
-    </div>
-  <section class="right" ref="right">
-        <div v-for= "(item, i) in items" :key= "i" class= "right-item right-item-hook">
+</div>
+<div class="right" ref="right">
+       <ul>
+         <li v-for="(item, i) in items" :key= "i" class="right-item right-item-hook">
             <p>{{item.name}}</p>
             <ul>
-                <li v-for= "(good,id) in item.goods" :key= "id">
+                <li v-for="(good,id) in item.goods" :key= "id">
                     <a href="#">
                     <img :src= "good.src" alt="图片走丢了">
                     <span>{{good.goodname}}</span>
                     </a>
                 </li>
             </ul>
-        </div>
-  </section>
+        </li>
+       </ul>
+  </div>
 </div>
+</section>
 </template>
 <script>
 import BScroll from 'better-scroll'
@@ -202,7 +206,7 @@ export default {
       let rightItems = this.$refs.right.getElementsByClassName('right-item-hook')
       let height = 0
       this.listHeight.push(height)
-      for (let i = 0; i < Math.ceil(rightItems.length / 3); i++) {
+      for (let i = 0; i < rightItems.length; i++) {
         let item = rightItems[i]
         height += item.clientHeight
         this.listHeight.push(height)
@@ -212,16 +216,29 @@ export default {
 }
 </script>
 <style scoped="scoped">
+ul{
+  margin:0;
+  padding:0;
+}
+p{
+  margin:0;
+  padding:0;
+}
+section{
+  display: block;
+}
+.content{
+   display: flex;
+   margin-top:1rem;
+   height: 35rem;
+   overflow:hidden;
+}
 .left{
-    position:relative;
-    top:1.8rem;
-    left:0;
+    width:26%;
+    background-color:#f2f2f2;
 }
 .list{
-    width:26%;
-    height:35rem;
     list-style:none;
-    overflow:hidden;
 }
 .current{
     background-color:white;
@@ -233,51 +250,43 @@ export default {
     text-align:center;
     line-height:4rem;
     color:black;
-    background-color:#f2f2f2;
     border-bottom:white 1px solid;
 }
-section{
-    width:74%;
-    height:35rem;
-    position:absolute;
-    top:3.6rem;
-    right:0;
-    overflow:hidden;
-}
-section div{
+.right ul{
     width:100%;
+    list-style:none;
 }
-section div p{
+.right ul p{
     font-size:120%;
     font-weight:bold;
     padding-top:.4rem;
     padding-left:1rem;
 }
-section div ul{
+.right ul  li ul{
     list-style:none;
     width:100%;
     margin-top: 2rem;
     margin-left: 1rem;
 }
-section div ul li{
+.right ul li ul li{
     width:25%;
     height:4rem;
     display: inline-block;
     margin-right:.853333rem;
     margin-bottom: 3rem;
 }
-section div ul li a{
+.right ul li ul li a{
     display: block;
     width:100%;
     height:100%;
     text-decoration:none;
     color:black;
 }
-section div ul li img{
+.right ul li ul li img{
     width:90%;
     height:90%;
 }
-section div span{
+.right ul span{
     display:block;
     width:100%;
     text-align:center;

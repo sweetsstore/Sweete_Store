@@ -51,7 +51,7 @@ export default {
         })
       ).then(res => {
         if (res.data === 'YES') {
-          this.$router.push('/person')
+          this.$router.push('/home')
         } else {
           this.no = true
         }

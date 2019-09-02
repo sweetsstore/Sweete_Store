@@ -1,8 +1,8 @@
 <template>
 <div class="chart">
-    <swiper :options="swiperOption" ref="mySwiper" id="f">
+    <swiper :options="swiperOption" ref="mySwiper" id="f" >
       <swiper-slide v-for="(item,id) in items" :key="id">
-          <img id="imgs" :src="'/static/'+item.goods_Picture" alt="图片走丢咯~" @click="go()">
+          <img id="imgs" :src="item.goods_Picture" alt="图片走丢咯~" @click="go(id)">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -13,18 +13,21 @@ import '../../../node_modules/swiper/dist/css/swiper.min.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 // import qs from 'qs'
 export default {
+  props: ['items'],
   components: {
     swiper,
     swiperSlide
   },
   methods: {
-    go () {
-      this.$router.push({ path: '../../Pages/classify/classfiy.vue' })
+    go (id) {
+      this.$router.push({
+        path: 'goodsdetailtest',
+        query: {id: this.items[id].goods_Id}
+      })
     }
   },
   data () {
     return {
-      items: [],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
