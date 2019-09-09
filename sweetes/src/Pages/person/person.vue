@@ -121,7 +121,7 @@ export default {
         })
       ).then(res => {
         this.goodslist2 = res.data.ordersAndGoods
-        console.log(res.data)
+        console.log(res)
       })
     },
     orderevaluate (e) {
