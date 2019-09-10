@@ -54,7 +54,7 @@ export default {
       this.$refs.name.value = res.data.user_Name
       this.$refs.email.value = res.data.user_Email
       this.$refs.phone.value = res.data.user_Tel
-      console.log(res.data)
+      console.log(res)
     })
   },
   methods: {
