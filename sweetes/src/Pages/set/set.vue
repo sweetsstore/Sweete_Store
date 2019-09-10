@@ -70,7 +70,7 @@ export default {
           user_Pic: this.Pic
         })
       ).then(res => {
-        console.log(res.data)
+        console.log(res)
       })
     },
     head: function () {
