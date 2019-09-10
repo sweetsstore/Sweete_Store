@@ -67,7 +67,7 @@ export default {
           user_Name: this.$refs.name.value,
           user_Email: this.$refs.email.value,
           user_Tel: this.$refs.phone.value,
-          user_Pic: this.file.name
+          user_Pic: this.Pic
         })
       ).then(res => {
         console.log(res)
